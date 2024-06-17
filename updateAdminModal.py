@@ -219,6 +219,8 @@ class UpdateAdminWindow(QMainWindow):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
+        
+        self.admin_new_pass.setEchoMode(QLineEdit.Password) #ADDED
         self.updateAdmin.setCheckable(True)
         self.updateAdmin.setAutoExclusive(False)
 

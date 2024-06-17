@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 ################################################################################
 ## Form generated from reading UI file 'loginPageJaZQPq.ui'
 ##
@@ -7,6 +8,7 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
+
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
@@ -19,9 +21,11 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
     QVBoxLayout, QWidget)
 
+
 import resource1_rc
 import main_resources
 import resource1_rcc
+
 import psycopg2
 from database_config import get_database_config  # Assuming you have a function to get database config
 from AdminMain import Ui_MainWindow
@@ -31,17 +35,26 @@ from addItemUI import AddItemWindow
 from ui_updateItemUI2 import UpdateItemWindow
 from updateAdminModal import UpdateAdminWindow
 from updateStaffModal import UpdateStaffWindow
+from PySide6.QtWidgets import QMessageBox
+import re       #ADDED
+
+
+
+
+
 
 
 
 class Login_MainWindow(QMainWindow):
     login_successful = Signal()
 
+
     def __init__(self):
         super().__init__()
         self.conn = None  # Initialize the connection attribute
         self.setupUi(self)
         self.userInterface = userInterface()
+
 
     def connect_to_database(self):
         try:
@@ -52,49 +65,98 @@ class Login_MainWindow(QMainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error while connecting to PostgreSQL:", error)
             return None
-   
+
+
+    # ADDED
+    def show_message_box(self, title, message, icon):
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle(title)
+        msg_box.setText(message)
+        msg_box.setIcon(icon)
+        msg_box.setStyleSheet("""
+            QMessageBox {
+                background-color: #1F1F1F;
+            }
+            QLabel {
+                color: white;
+            }
+            QPushButton {
+                background-color: #1F1F1F;
+                color: white;
+            }
+        """)
+        msg_box.exec_()
+       
+
 
     def check_login(self):
         print("Login check initiated.")
         admin_user_id = 9242
         staff_user_id = 9243
 
+
         username = self.lineEdit_7.text()  
         password = self.lineEdit_8.text()  
+
+
+        # ADDED
+        if not username or not password:
+            self.show_message_box("Error", "Please fill in all fields", QMessageBox.Critical)
+            return
+        if len(password) < 7:
+            self.show_message_box("Error", " password must be at least 7 characters long", QMessageBox.Critical)
+            return
+       
+        if not re.search("[a-zA-Z]", password) or not re.search("[0-9]", password):
+            self.show_message_box("Error", " password must contain both letters and digits", QMessageBox.Critical)
+            return    
+
+
+
 
         try:
             if not self.conn:
                 self.conn = self.connect_to_database()
 
+
             if not self.conn:
                 return False
 
+
             cur = self.conn.cursor()
+
 
             query = "SELECT USER_ID, PASS_WORD FROM USERS WHERE USERNAME = %s AND PASS_WORD = %s"
             cur.execute(query, (username, password))
 
+
             user = cur.fetchone()
             cur.close()
 
+
             if user:
                 user_id, _ = user  # Unpack fetched data
+
 
                 if user_id == admin_user_id:
                     print("Login as admin!")
                     self.lineEdit_7.setText("")  
                     self.lineEdit_8.setText("")
 
+
                     self.mySideBar = mySideBar()
                     self.mySideBar.show()
+
 
                     self.addItemWindow = AddItemWindow()
                     self.updateItemWindow = UpdateItemWindow()
                     self.updateAdminWindow = UpdateAdminWindow()
                     self.UpdateStaffWindow = UpdateStaffWindow()
 
+
                     self.hide()
                     return True
+
 
                 elif user_id == staff_user_id:
                     print("Login as staff!")
@@ -102,30 +164,42 @@ class Login_MainWindow(QMainWindow):
                     self.lineEdit_7.setText("")  
                     self.lineEdit_8.setText("")  
 
+
                     self.hide()
+
 
                     return True
 
+
                 else:
                     print("Login failed. Invalid username or password.")
+                    self.show_message_box("Error", "Login failed. Invalid username or password.", QMessageBox.Critical)
+
+
                     return False
+
 
             else:
                 print("Login failed. Invalid username or password.")
+                self.show_message_box("Error", "Login failed. Invalid username or password.", QMessageBox.Critical)
+
+
                 return False
+
 
         except (Exception, psycopg2.Error) as error:
             print("Error while checking login credentials:", error)
             return False
 
-    
+
+   
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(947, 534)
         MainWindow.setStyleSheet(u"QWidget{\n"
-"	background-color:#1F1F1F;\n"
-"	\n"
+"   background-color:#1F1F1F;\n"
+"   \n"
 "}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -136,7 +210,9 @@ class Login_MainWindow(QMainWindow):
         self.rightWidget = QWidget(self.centralwidget)
         self.rightWidget.setObjectName(u"rightWidget")
 
+
         self.horizontalLayout.addWidget(self.rightWidget)
+
 
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
@@ -151,10 +227,14 @@ class Login_MainWindow(QMainWindow):
         self.pushButton.setIcon(icon)
         self.pushButton.setIconSize(QSize(400, 400))
 
+
         self.verticalLayout_4.addWidget(self.pushButton)
 
 
+
+
         self.horizontalLayout.addWidget(self.widget)
+
 
         self.widget_2 = QWidget(self.centralwidget)
         self.widget_2.setObjectName(u"widget_2")
@@ -163,7 +243,9 @@ class Login_MainWindow(QMainWindow):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalSpacer = QSpacerItem(20, 90, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
+
         self.verticalLayout.addItem(self.verticalSpacer)
+
 
         self.widget_3 = QWidget(self.widget_2)
         self.widget_3.setObjectName(u"widget_3")
@@ -174,14 +256,16 @@ class Login_MainWindow(QMainWindow):
         self.widget_3.setSizePolicy(sizePolicy)
         self.widget_3.setMinimumSize(QSize(300, 300))
         self.widget_3.setStyleSheet(u"QWidget{\n"
-"	background-color:rgb(59,59,59);\n"
-"	border-radius:10px;\n"
+"   background-color:rgb(59,59,59);\n"
+"   border-radius:10px;\n"
 "}")
         self.verticalLayout_3 = QVBoxLayout(self.widget_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalSpacer_3 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
+
         self.verticalLayout_3.addItem(self.verticalSpacer_3)
+
 
         self.dashboardTxt = QLabel(self.widget_3)
         self.dashboardTxt.setObjectName(u"dashboardTxt")
@@ -191,15 +275,19 @@ class Login_MainWindow(QMainWindow):
         font.setBold(True)
         self.dashboardTxt.setFont(font)
         self.dashboardTxt.setStyleSheet(u"QLabel{\n"
-"	color:white;\n"
-"	text-align:center;\n"
+"   color:white;\n"
+"   text-align:center;\n"
 "}")
+
 
         self.verticalLayout_3.addWidget(self.dashboardTxt, 0, Qt.AlignmentFlag.AlignHCenter)
 
+
         self.verticalSpacer_4 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
+
         self.verticalLayout_3.addItem(self.verticalSpacer_4)
+
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setSpacing(10)
@@ -238,7 +326,9 @@ class Login_MainWindow(QMainWindow):
 "}\n"
 "")
 
+
         self.verticalLayout_2.addWidget(self.lineEdit_7, 0, Qt.AlignmentFlag.AlignHCenter)
+
 
         self.lineEdit_8 = QLineEdit(self.widget_3)
         self.lineEdit_8.setObjectName(u"lineEdit_8")
@@ -271,11 +361,16 @@ class Login_MainWindow(QMainWindow):
         self.verticalLayout_2.addWidget(self.lineEdit_8, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
+
+
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
+
 
         self.verticalSpacer_6 = QSpacerItem(20, 24, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
+
         self.verticalLayout_3.addItem(self.verticalSpacer_6)
+
 
         self.loginButton_2 = QPushButton(self.widget_3)
         self.loginButton_2.setObjectName(u"loginButton_2")
@@ -302,7 +397,7 @@ class Login_MainWindow(QMainWindow):
 "QPushButton::pressed {\n"
 "    background-color: #B7B7B7;\n"
 "    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) inset;\n"
-"	color:black;\n"
+"   color:black;\n"
 "}\n"
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
@@ -310,36 +405,57 @@ class Login_MainWindow(QMainWindow):
         self.loginButton_2.setCheckable(True)
         self.loginButton_2.setAutoExclusive(False)
 
+
         self.verticalLayout_3.addWidget(self.loginButton_2, 0, Qt.AlignmentFlag.AlignHCenter)
 
+
         self.verticalSpacer_7 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
 
         self.verticalLayout_3.addItem(self.verticalSpacer_7)
 
 
+
+
         self.verticalLayout.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
+
         self.verticalSpacer_2 = QSpacerItem(20, 90, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
 
+
+
         self.horizontalLayout.addWidget(self.widget_2, 0, Qt.AlignmentFlag.AlignRight)
+
 
         self.widget_5 = QWidget(self.centralwidget)
         self.widget_5.setObjectName(u"widget_5")
 
+
         self.horizontalLayout.addWidget(self.widget_5)
+
 
         MainWindow.setCentralWidget(self.centralwidget)
 
+
         self.retranslateUi(MainWindow)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
         self.loginButton_2.clicked.connect(self.check_login)
 
 
+        # ADDED
+        # Connect signals and slots
+        self.lineEdit_7.returnPressed.connect(self.check_login)
+        self.lineEdit_8.returnPressed.connect(self.check_login)
+
+
     # setupUi
+
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -349,4 +465,5 @@ class Login_MainWindow(QMainWindow):
         self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.loginButton_2.setText(QCoreApplication.translate("MainWindow", u"Login", None))
     # retranslateUi
+
 

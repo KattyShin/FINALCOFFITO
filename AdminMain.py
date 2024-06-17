@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestvTXFwY.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestHEITDq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1062, 649)
+        MainWindow.resize(1072, 653)
         MainWindow.setStyleSheet(u"QMainWindow{\n"
 "	background-color:#1F1F1F;\n"
 "	border-radius:15px;\n"
@@ -316,15 +316,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_29.addWidget(self.pushButton)
 
-        self.label_5 = QLabel(self.widget_19)
-        self.label_5.setObjectName(u"label_5")
+        self.Dash_TotalSalesValue = QLabel(self.widget_19)
+        self.Dash_TotalSalesValue.setObjectName(u"Dash_TotalSalesValue")
         font5 = QFont()
         font5.setFamilies([u"Poppins Black"])
         font5.setPointSize(18)
         font5.setBold(True)
-        self.label_5.setFont(font5)
+        self.Dash_TotalSalesValue.setFont(font5)
 
-        self.horizontalLayout_29.addWidget(self.label_5)
+        self.horizontalLayout_29.addWidget(self.Dash_TotalSalesValue)
 
 
         self.verticalLayout_29.addWidget(self.widget_19)
@@ -374,11 +374,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_31.addWidget(self.pushButton_3)
 
-        self.label_8 = QLabel(self.widget_74)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font5)
+        self.Dash_Total_Items_Sold = QLabel(self.widget_74)
+        self.Dash_Total_Items_Sold.setObjectName(u"Dash_Total_Items_Sold")
+        self.Dash_Total_Items_Sold.setFont(font5)
 
-        self.horizontalLayout_31.addWidget(self.label_8)
+        self.horizontalLayout_31.addWidget(self.Dash_Total_Items_Sold)
 
 
         self.verticalLayout_33.addWidget(self.widget_74)
@@ -428,11 +428,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_32.addWidget(self.pushButton_4)
 
-        self.label_9 = QLabel(self.widget_75)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font5)
+        self.DashTotalProducts = QLabel(self.widget_75)
+        self.DashTotalProducts.setObjectName(u"DashTotalProducts")
+        self.DashTotalProducts.setFont(font5)
 
-        self.horizontalLayout_32.addWidget(self.label_9)
+        self.horizontalLayout_32.addWidget(self.DashTotalProducts)
 
 
         self.verticalLayout_35.addWidget(self.widget_75)
@@ -475,50 +475,50 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.line)
 
-        self.tableWidget = QTableWidget(self.widget_4)
-        if (self.tableWidget.columnCount() < 2):
-            self.tableWidget.setColumnCount(2)
+        self.DashboardTable = QTableWidget(self.widget_4)
+        if (self.DashboardTable.columnCount() < 2):
+            self.DashboardTable.setColumnCount(2)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.DashboardTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        if (self.tableWidget.rowCount() < 14):
-            self.tableWidget.setRowCount(14)
+        self.DashboardTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        if (self.DashboardTable.rowCount() < 14):
+            self.DashboardTable.setRowCount(14)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem2)
+        self.DashboardTable.setVerticalHeaderItem(0, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem3)
+        self.DashboardTable.setVerticalHeaderItem(1, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem4)
+        self.DashboardTable.setVerticalHeaderItem(2, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(3, __qtablewidgetitem5)
+        self.DashboardTable.setVerticalHeaderItem(3, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem6)
+        self.DashboardTable.setVerticalHeaderItem(4, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(5, __qtablewidgetitem7)
+        self.DashboardTable.setVerticalHeaderItem(5, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(6, __qtablewidgetitem8)
+        self.DashboardTable.setVerticalHeaderItem(6, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(7, __qtablewidgetitem9)
+        self.DashboardTable.setVerticalHeaderItem(7, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(8, __qtablewidgetitem10)
+        self.DashboardTable.setVerticalHeaderItem(8, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(9, __qtablewidgetitem11)
+        self.DashboardTable.setVerticalHeaderItem(9, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(10, __qtablewidgetitem12)
+        self.DashboardTable.setVerticalHeaderItem(10, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(11, __qtablewidgetitem13)
+        self.DashboardTable.setVerticalHeaderItem(11, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(12, __qtablewidgetitem14)
+        self.DashboardTable.setVerticalHeaderItem(12, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(13, __qtablewidgetitem15)
-        self.tableWidget.setObjectName(u"tableWidget")
+        self.DashboardTable.setVerticalHeaderItem(13, __qtablewidgetitem15)
+        self.DashboardTable.setObjectName(u"DashboardTable")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy1.setHorizontalStretch(50)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy1)
-        self.tableWidget.setStyleSheet(u"QTableWidget {\n"
+        sizePolicy1.setHeightForWidth(self.DashboardTable.sizePolicy().hasHeightForWidth())
+        self.DashboardTable.setSizePolicy(sizePolicy1)
+        self.DashboardTable.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
@@ -579,14 +579,14 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
-        self.tableWidget.setAlternatingRowColors(True)
-        self.tableWidget.setSortingEnabled(True)
-        self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget.verticalHeader().setVisible(False)
-        self.tableWidget.verticalHeader().setStretchLastSection(True)
+        self.DashboardTable.setAlternatingRowColors(True)
+        self.DashboardTable.setSortingEnabled(True)
+        self.DashboardTable.horizontalHeader().setCascadingSectionResizes(True)
+        self.DashboardTable.horizontalHeader().setStretchLastSection(True)
+        self.DashboardTable.verticalHeader().setVisible(False)
+        self.DashboardTable.verticalHeader().setStretchLastSection(True)
 
-        self.verticalLayout_7.addWidget(self.tableWidget)
+        self.verticalLayout_7.addWidget(self.DashboardTable)
 
 
         self.verticalLayout_6.addWidget(self.widget_4)
@@ -628,9 +628,9 @@ class Ui_MainWindow(object):
         self.bestSell1.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_5 = QHBoxLayout(self.bestSell1)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, -1, 0)
+        self.gridLayout_29 = QGridLayout(self.bestSell1)
+        self.gridLayout_29.setObjectName(u"gridLayout_29")
+        self.gridLayout_29.setContentsMargins(0, 0, -1, 0)
         self.widget_20 = QWidget(self.bestSell1)
         self.widget_20.setObjectName(u"widget_20")
         self.widget_20.setMinimumSize(QSize(51, 0))
@@ -645,7 +645,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.addWidget(self.toolButton)
 
 
-        self.horizontalLayout_5.addWidget(self.widget_20, 0, Qt.AlignmentFlag.AlignLeft)
+        self.gridLayout_29.addWidget(self.widget_20, 0, 0, 1, 1)
 
 
         self.verticalLayout_8.addWidget(self.bestSell1)
@@ -660,21 +660,29 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8 = QHBoxLayout(self.widget_7)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, -1, 0)
+        self.widget_44 = QWidget(self.widget_7)
+        self.widget_44.setObjectName(u"widget_44")
+        self.widget_44.setMinimumSize(QSize(51, 0))
+        self.widget_44.setStyleSheet(u"background-color: rgb(255, 140, 24);")
+        self.gridLayout_30 = QGridLayout(self.widget_44)
+        self.gridLayout_30.setObjectName(u"gridLayout_30")
+
+        self.horizontalLayout_8.addWidget(self.widget_44, 0, Qt.AlignmentFlag.AlignLeft)
+
         self.widget_21 = QWidget(self.widget_7)
         self.widget_21.setObjectName(u"widget_21")
-        self.widget_21.setMinimumSize(QSize(51, 0))
-        self.widget_21.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_10 = QGridLayout(self.widget_21)
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.toolButton_3 = QToolButton(self.widget_21)
-        self.toolButton_3.setObjectName(u"toolButton_3")
-        self.toolButton_3.setIcon(icon10)
-        self.toolButton_3.setIconSize(QSize(30, 30))
+        self.widget_21.setMinimumSize(QSize(0, 0))
+        self.widget_21.setStyleSheet(u"background-color: rgb(204, 204, 204);")
+        self.verticalLayout_38 = QVBoxLayout(self.widget_21)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.label_5 = QLabel(self.widget_21)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setMinimumSize(QSize(105, 45))
 
-        self.gridLayout_10.addWidget(self.toolButton_3, 0, 0, 1, 1)
+        self.verticalLayout_38.addWidget(self.label_5)
 
 
-        self.horizontalLayout_8.addWidget(self.widget_21, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_8.addWidget(self.widget_21)
 
 
         self.verticalLayout_8.addWidget(self.widget_7)
@@ -1805,42 +1813,42 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.horizontalLayout_27 = QHBoxLayout()
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
-        self.label_10 = QLabel(self.widget_29)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMinimumSize(QSize(50, 0))
-        self.label_10.setMaximumSize(QSize(140, 16777215))
+        self.GrandTotalSalesLbl = QLabel(self.widget_29)
+        self.GrandTotalSalesLbl.setObjectName(u"GrandTotalSalesLbl")
+        self.GrandTotalSalesLbl.setMinimumSize(QSize(50, 0))
+        self.GrandTotalSalesLbl.setMaximumSize(QSize(140, 16777215))
         font10 = QFont()
         font10.setFamilies([u"Poppins SemiBold"])
         font10.setPointSize(11)
         font10.setBold(True)
-        self.label_10.setFont(font10)
+        self.GrandTotalSalesLbl.setFont(font10)
 
-        self.horizontalLayout_27.addWidget(self.label_10)
+        self.horizontalLayout_27.addWidget(self.GrandTotalSalesLbl)
 
-        self.label_11 = QLabel(self.widget_29)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font10)
+        self.grandTotalSalesValue = QLabel(self.widget_29)
+        self.grandTotalSalesValue.setObjectName(u"grandTotalSalesValue")
+        self.grandTotalSalesValue.setFont(font10)
 
-        self.horizontalLayout_27.addWidget(self.label_11)
+        self.horizontalLayout_27.addWidget(self.grandTotalSalesValue)
 
 
         self.verticalLayout_11.addLayout(self.horizontalLayout_27)
 
         self.horizontalLayout_28 = QHBoxLayout()
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.label_18 = QLabel(self.widget_29)
-        self.label_18.setObjectName(u"label_18")
-        self.label_18.setMinimumSize(QSize(130, 0))
-        self.label_18.setMaximumSize(QSize(130, 16777215))
-        self.label_18.setFont(font10)
+        self.total_items_sold_lbl = QLabel(self.widget_29)
+        self.total_items_sold_lbl.setObjectName(u"total_items_sold_lbl")
+        self.total_items_sold_lbl.setMinimumSize(QSize(130, 0))
+        self.total_items_sold_lbl.setMaximumSize(QSize(130, 16777215))
+        self.total_items_sold_lbl.setFont(font10)
 
-        self.horizontalLayout_28.addWidget(self.label_18)
+        self.horizontalLayout_28.addWidget(self.total_items_sold_lbl)
 
-        self.label_21 = QLabel(self.widget_29)
-        self.label_21.setObjectName(u"label_21")
-        self.label_21.setFont(font10)
+        self.totat_items_sold_value = QLabel(self.widget_29)
+        self.totat_items_sold_value.setObjectName(u"totat_items_sold_value")
+        self.totat_items_sold_value.setFont(font10)
 
-        self.horizontalLayout_28.addWidget(self.label_21)
+        self.horizontalLayout_28.addWidget(self.totat_items_sold_value)
 
 
         self.verticalLayout_11.addLayout(self.horizontalLayout_28)
@@ -1854,12 +1862,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QHBoxLayout(self.widget_30)
         self.horizontalLayout_2.setSpacing(15)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pushButton_6 = QPushButton(self.widget_30)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(0, 31))
-        self.pushButton_6.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_6.setFont(font7)
-        self.pushButton_6.setStyleSheet(u"QPushButton {\n"
+        self.dailySalesBtn = QPushButton(self.widget_30)
+        self.dailySalesBtn.setObjectName(u"dailySalesBtn")
+        self.dailySalesBtn.setMinimumSize(QSize(0, 31))
+        self.dailySalesBtn.setMaximumSize(QSize(16777215, 31))
+        self.dailySalesBtn.setFont(font7)
+        self.dailySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
 "    border-radius: 6px;\n"
@@ -1880,17 +1888,17 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
-        self.pushButton_6.setCheckable(True)
-        self.pushButton_6.setAutoExclusive(True)
+        self.dailySalesBtn.setCheckable(True)
+        self.dailySalesBtn.setAutoExclusive(True)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_6)
+        self.horizontalLayout_2.addWidget(self.dailySalesBtn)
 
-        self.pushButton_7 = QPushButton(self.widget_30)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setMinimumSize(QSize(0, 31))
-        self.pushButton_7.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_7.setFont(font7)
-        self.pushButton_7.setStyleSheet(u"QPushButton {\n"
+        self.monthlySalesBtn = QPushButton(self.widget_30)
+        self.monthlySalesBtn.setObjectName(u"monthlySalesBtn")
+        self.monthlySalesBtn.setMinimumSize(QSize(0, 31))
+        self.monthlySalesBtn.setMaximumSize(QSize(16777215, 31))
+        self.monthlySalesBtn.setFont(font7)
+        self.monthlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
 "    border-radius: 6px;\n"
@@ -1911,17 +1919,17 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
-        self.pushButton_7.setCheckable(True)
-        self.pushButton_7.setAutoExclusive(True)
+        self.monthlySalesBtn.setCheckable(True)
+        self.monthlySalesBtn.setAutoExclusive(True)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_7)
+        self.horizontalLayout_2.addWidget(self.monthlySalesBtn)
 
-        self.pushButton_8 = QPushButton(self.widget_30)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMinimumSize(QSize(0, 31))
-        self.pushButton_8.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_8.setFont(font7)
-        self.pushButton_8.setStyleSheet(u"QPushButton {\n"
+        self.yearlySalesBtn = QPushButton(self.widget_30)
+        self.yearlySalesBtn.setObjectName(u"yearlySalesBtn")
+        self.yearlySalesBtn.setMinimumSize(QSize(0, 31))
+        self.yearlySalesBtn.setMaximumSize(QSize(16777215, 31))
+        self.yearlySalesBtn.setFont(font7)
+        self.yearlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
 "    border-radius: 6px;\n"
@@ -1942,17 +1950,17 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
-        self.pushButton_8.setCheckable(True)
-        self.pushButton_8.setAutoExclusive(True)
+        self.yearlySalesBtn.setCheckable(True)
+        self.yearlySalesBtn.setAutoExclusive(True)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_8)
+        self.horizontalLayout_2.addWidget(self.yearlySalesBtn)
 
-        self.pushButton_9 = QPushButton(self.widget_30)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setMinimumSize(QSize(0, 31))
-        self.pushButton_9.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_9.setFont(font7)
-        self.pushButton_9.setStyleSheet(u"QPushButton {\n"
+        self.itemSoldBtn = QPushButton(self.widget_30)
+        self.itemSoldBtn.setObjectName(u"itemSoldBtn")
+        self.itemSoldBtn.setMinimumSize(QSize(0, 31))
+        self.itemSoldBtn.setMaximumSize(QSize(16777215, 31))
+        self.itemSoldBtn.setFont(font7)
+        self.itemSoldBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
 "    border-radius: 6px;\n"
@@ -1973,10 +1981,10 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
-        self.pushButton_9.setCheckable(True)
-        self.pushButton_9.setAutoExclusive(True)
+        self.itemSoldBtn.setCheckable(True)
+        self.itemSoldBtn.setAutoExclusive(True)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_9)
+        self.horizontalLayout_2.addWidget(self.itemSoldBtn)
 
 
         self.verticalLayout_10.addWidget(self.widget_30)
@@ -1999,64 +2007,70 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.widget_28)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(9, -1, -1, -1)
-        self.tableWidget_2 = QTableWidget(self.widget_28)
-        if (self.tableWidget_2.columnCount() < 2):
-            self.tableWidget_2.setColumnCount(2)
+        self.SalesReportStackedWidget = QStackedWidget(self.widget_28)
+        self.SalesReportStackedWidget.setObjectName(u"SalesReportStackedWidget")
+        self.DailySalesPage = QWidget()
+        self.DailySalesPage.setObjectName(u"DailySalesPage")
+        self.verticalLayout_16 = QVBoxLayout(self.DailySalesPage)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.dailySalesTbl = QTableWidget(self.DailySalesPage)
+        if (self.dailySalesTbl.columnCount() < 2):
+            self.dailySalesTbl.setColumnCount(2)
         font11 = QFont()
         font11.setFamilies([u"Poppins SemiBold"])
         font11.setPointSize(10)
         font11.setBold(False)
         __qtablewidgetitem109 = QTableWidgetItem()
         __qtablewidgetitem109.setFont(font11);
-        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem109)
+        self.dailySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
         __qtablewidgetitem110.setFont(font11);
-        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem110)
-        if (self.tableWidget_2.rowCount() < 18):
-            self.tableWidget_2.setRowCount(18)
+        self.dailySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem110)
+        if (self.dailySalesTbl.rowCount() < 18):
+            self.dailySalesTbl.setRowCount(18)
         __qtablewidgetitem111 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem111)
+        self.dailySalesTbl.setVerticalHeaderItem(0, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem112)
+        self.dailySalesTbl.setVerticalHeaderItem(1, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem113)
+        self.dailySalesTbl.setVerticalHeaderItem(2, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem114)
+        self.dailySalesTbl.setVerticalHeaderItem(3, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem115)
+        self.dailySalesTbl.setVerticalHeaderItem(4, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem116)
+        self.dailySalesTbl.setVerticalHeaderItem(5, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem117)
+        self.dailySalesTbl.setVerticalHeaderItem(6, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem118)
+        self.dailySalesTbl.setVerticalHeaderItem(7, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem119)
+        self.dailySalesTbl.setVerticalHeaderItem(8, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem120)
+        self.dailySalesTbl.setVerticalHeaderItem(9, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem121)
+        self.dailySalesTbl.setVerticalHeaderItem(10, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem122)
+        self.dailySalesTbl.setVerticalHeaderItem(11, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem123)
+        self.dailySalesTbl.setVerticalHeaderItem(12, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem124)
+        self.dailySalesTbl.setVerticalHeaderItem(13, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem125)
+        self.dailySalesTbl.setVerticalHeaderItem(14, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(15, __qtablewidgetitem126)
+        self.dailySalesTbl.setVerticalHeaderItem(15, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(16, __qtablewidgetitem127)
+        self.dailySalesTbl.setVerticalHeaderItem(16, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(17, __qtablewidgetitem128)
+        self.dailySalesTbl.setVerticalHeaderItem(17, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
         __qtablewidgetitem129.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem129)
-        self.tableWidget_2.setObjectName(u"tableWidget_2")
-        sizePolicy1.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
-        self.tableWidget_2.setSizePolicy(sizePolicy1)
-        self.tableWidget_2.setStyleSheet(u"QTableWidget {\n"
+        self.dailySalesTbl.setItem(6, 1, __qtablewidgetitem129)
+        self.dailySalesTbl.setObjectName(u"dailySalesTbl")
+        sizePolicy1.setHeightForWidth(self.dailySalesTbl.sizePolicy().hasHeightForWidth())
+        self.dailySalesTbl.setSizePolicy(sizePolicy1)
+        self.dailySalesTbl.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
@@ -2117,14 +2131,409 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
-        self.tableWidget_2.setAlternatingRowColors(True)
-        self.tableWidget_2.setSortingEnabled(False)
-        self.tableWidget_2.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_2.horizontalHeader().setMinimumSectionSize(50)
-        self.tableWidget_2.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget_2.verticalHeader().setVisible(False)
+        self.dailySalesTbl.setAlternatingRowColors(True)
+        self.dailySalesTbl.setSortingEnabled(False)
+        self.dailySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
+        self.dailySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.dailySalesTbl.horizontalHeader().setStretchLastSection(True)
+        self.dailySalesTbl.verticalHeader().setVisible(False)
 
-        self.gridLayout_4.addWidget(self.tableWidget_2, 0, 0, 1, 1)
+        self.verticalLayout_16.addWidget(self.dailySalesTbl)
+
+        self.SalesReportStackedWidget.addWidget(self.DailySalesPage)
+        self.MonthlySalesPage = QWidget()
+        self.MonthlySalesPage.setObjectName(u"MonthlySalesPage")
+        self.verticalLayout_18 = QVBoxLayout(self.MonthlySalesPage)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.monthlySalesTbl = QTableWidget(self.MonthlySalesPage)
+        if (self.monthlySalesTbl.columnCount() < 2):
+            self.monthlySalesTbl.setColumnCount(2)
+        __qtablewidgetitem130 = QTableWidgetItem()
+        __qtablewidgetitem130.setFont(font11);
+        self.monthlySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem130)
+        __qtablewidgetitem131 = QTableWidgetItem()
+        __qtablewidgetitem131.setFont(font11);
+        self.monthlySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem131)
+        if (self.monthlySalesTbl.rowCount() < 18):
+            self.monthlySalesTbl.setRowCount(18)
+        __qtablewidgetitem132 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(0, __qtablewidgetitem132)
+        __qtablewidgetitem133 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(1, __qtablewidgetitem133)
+        __qtablewidgetitem134 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(2, __qtablewidgetitem134)
+        __qtablewidgetitem135 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(3, __qtablewidgetitem135)
+        __qtablewidgetitem136 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(4, __qtablewidgetitem136)
+        __qtablewidgetitem137 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(5, __qtablewidgetitem137)
+        __qtablewidgetitem138 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(6, __qtablewidgetitem138)
+        __qtablewidgetitem139 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(7, __qtablewidgetitem139)
+        __qtablewidgetitem140 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(8, __qtablewidgetitem140)
+        __qtablewidgetitem141 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(9, __qtablewidgetitem141)
+        __qtablewidgetitem142 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(10, __qtablewidgetitem142)
+        __qtablewidgetitem143 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(11, __qtablewidgetitem143)
+        __qtablewidgetitem144 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(12, __qtablewidgetitem144)
+        __qtablewidgetitem145 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(13, __qtablewidgetitem145)
+        __qtablewidgetitem146 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(14, __qtablewidgetitem146)
+        __qtablewidgetitem147 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(15, __qtablewidgetitem147)
+        __qtablewidgetitem148 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(16, __qtablewidgetitem148)
+        __qtablewidgetitem149 = QTableWidgetItem()
+        self.monthlySalesTbl.setVerticalHeaderItem(17, __qtablewidgetitem149)
+        __qtablewidgetitem150 = QTableWidgetItem()
+        __qtablewidgetitem150.setTextAlignment(Qt.AlignCenter);
+        self.monthlySalesTbl.setItem(6, 1, __qtablewidgetitem150)
+        self.monthlySalesTbl.setObjectName(u"monthlySalesTbl")
+        sizePolicy1.setHeightForWidth(self.monthlySalesTbl.sizePolicy().hasHeightForWidth())
+        self.monthlySalesTbl.setSizePolicy(sizePolicy1)
+        self.monthlySalesTbl.setStyleSheet(u"QTableWidget {\n"
+"    background-color: #1F1F1F;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid rgb(50, 50, 50);\n"
+"}\n"
+"\n"
+"QTableWidget::section {\n"
+"    border: none;\n"
+"    border-bottom: 1px solid #d0c6ff;\n"
+"    text-align: center; \n"
+"    padding: 3px 5px;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid rgb(50, 50, 50);\n"
+"    text-align: center; \n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"    text-align: center; \n"
+"}\n"
+"\n"
+"QTableView::item:alternate {\n"
+"    background-color: #272727; \n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #3B3B3B;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #606060;\n"
+"    min-height: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical,\n"
+"QSc"
+                        "rollBar::sub-line:vertical {\n"
+"    border: none;\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical,\n"
+"QScrollBar::sub-page:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:hover {\n"
+"    opacity: 0.7;\n"
+"}\n"
+"")
+        self.monthlySalesTbl.setAlternatingRowColors(True)
+        self.monthlySalesTbl.setSortingEnabled(False)
+        self.monthlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
+        self.monthlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.monthlySalesTbl.horizontalHeader().setStretchLastSection(True)
+        self.monthlySalesTbl.verticalHeader().setVisible(False)
+
+        self.verticalLayout_18.addWidget(self.monthlySalesTbl)
+
+        self.SalesReportStackedWidget.addWidget(self.MonthlySalesPage)
+        self.YearlySalesPage = QWidget()
+        self.YearlySalesPage.setObjectName(u"YearlySalesPage")
+        self.verticalLayout_32 = QVBoxLayout(self.YearlySalesPage)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.yearlySalesTbl = QTableWidget(self.YearlySalesPage)
+        if (self.yearlySalesTbl.columnCount() < 2):
+            self.yearlySalesTbl.setColumnCount(2)
+        __qtablewidgetitem151 = QTableWidgetItem()
+        __qtablewidgetitem151.setFont(font11);
+        self.yearlySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem151)
+        __qtablewidgetitem152 = QTableWidgetItem()
+        __qtablewidgetitem152.setFont(font11);
+        self.yearlySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem152)
+        if (self.yearlySalesTbl.rowCount() < 18):
+            self.yearlySalesTbl.setRowCount(18)
+        __qtablewidgetitem153 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(0, __qtablewidgetitem153)
+        __qtablewidgetitem154 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(1, __qtablewidgetitem154)
+        __qtablewidgetitem155 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(2, __qtablewidgetitem155)
+        __qtablewidgetitem156 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(3, __qtablewidgetitem156)
+        __qtablewidgetitem157 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(4, __qtablewidgetitem157)
+        __qtablewidgetitem158 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(5, __qtablewidgetitem158)
+        __qtablewidgetitem159 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(6, __qtablewidgetitem159)
+        __qtablewidgetitem160 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(7, __qtablewidgetitem160)
+        __qtablewidgetitem161 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(8, __qtablewidgetitem161)
+        __qtablewidgetitem162 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(9, __qtablewidgetitem162)
+        __qtablewidgetitem163 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(10, __qtablewidgetitem163)
+        __qtablewidgetitem164 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(11, __qtablewidgetitem164)
+        __qtablewidgetitem165 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(12, __qtablewidgetitem165)
+        __qtablewidgetitem166 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(13, __qtablewidgetitem166)
+        __qtablewidgetitem167 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(14, __qtablewidgetitem167)
+        __qtablewidgetitem168 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(15, __qtablewidgetitem168)
+        __qtablewidgetitem169 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(16, __qtablewidgetitem169)
+        __qtablewidgetitem170 = QTableWidgetItem()
+        self.yearlySalesTbl.setVerticalHeaderItem(17, __qtablewidgetitem170)
+        __qtablewidgetitem171 = QTableWidgetItem()
+        __qtablewidgetitem171.setTextAlignment(Qt.AlignCenter);
+        self.yearlySalesTbl.setItem(6, 1, __qtablewidgetitem171)
+        self.yearlySalesTbl.setObjectName(u"yearlySalesTbl")
+        sizePolicy1.setHeightForWidth(self.yearlySalesTbl.sizePolicy().hasHeightForWidth())
+        self.yearlySalesTbl.setSizePolicy(sizePolicy1)
+        self.yearlySalesTbl.setStyleSheet(u"QTableWidget {\n"
+"    background-color: #1F1F1F;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid rgb(50, 50, 50);\n"
+"}\n"
+"\n"
+"QTableWidget::section {\n"
+"    border: none;\n"
+"    border-bottom: 1px solid #d0c6ff;\n"
+"    text-align: center; \n"
+"    padding: 3px 5px;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid rgb(50, 50, 50);\n"
+"    text-align: center; \n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"    text-align: center; \n"
+"}\n"
+"\n"
+"QTableView::item:alternate {\n"
+"    background-color: #272727; \n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #3B3B3B;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #606060;\n"
+"    min-height: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical,\n"
+"QSc"
+                        "rollBar::sub-line:vertical {\n"
+"    border: none;\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical,\n"
+"QScrollBar::sub-page:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:hover {\n"
+"    opacity: 0.7;\n"
+"}\n"
+"")
+        self.yearlySalesTbl.setAlternatingRowColors(True)
+        self.yearlySalesTbl.setSortingEnabled(False)
+        self.yearlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
+        self.yearlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.yearlySalesTbl.horizontalHeader().setStretchLastSection(True)
+        self.yearlySalesTbl.verticalHeader().setVisible(False)
+
+        self.verticalLayout_32.addWidget(self.yearlySalesTbl)
+
+        self.SalesReportStackedWidget.addWidget(self.YearlySalesPage)
+        self.ItemSoldPage = QWidget()
+        self.ItemSoldPage.setObjectName(u"ItemSoldPage")
+        self.verticalLayout_31 = QVBoxLayout(self.ItemSoldPage)
+        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.itemSoldTbl = QTableWidget(self.ItemSoldPage)
+        if (self.itemSoldTbl.columnCount() < 4):
+            self.itemSoldTbl.setColumnCount(4)
+        __qtablewidgetitem172 = QTableWidgetItem()
+        __qtablewidgetitem172.setFont(font11);
+        self.itemSoldTbl.setHorizontalHeaderItem(0, __qtablewidgetitem172)
+        __qtablewidgetitem173 = QTableWidgetItem()
+        __qtablewidgetitem173.setFont(font11);
+        self.itemSoldTbl.setHorizontalHeaderItem(1, __qtablewidgetitem173)
+        __qtablewidgetitem174 = QTableWidgetItem()
+        __qtablewidgetitem174.setFont(font4);
+        self.itemSoldTbl.setHorizontalHeaderItem(2, __qtablewidgetitem174)
+        __qtablewidgetitem175 = QTableWidgetItem()
+        __qtablewidgetitem175.setFont(font4);
+        self.itemSoldTbl.setHorizontalHeaderItem(3, __qtablewidgetitem175)
+        if (self.itemSoldTbl.rowCount() < 18):
+            self.itemSoldTbl.setRowCount(18)
+        __qtablewidgetitem176 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(0, __qtablewidgetitem176)
+        __qtablewidgetitem177 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(1, __qtablewidgetitem177)
+        __qtablewidgetitem178 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(2, __qtablewidgetitem178)
+        __qtablewidgetitem179 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(3, __qtablewidgetitem179)
+        __qtablewidgetitem180 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(4, __qtablewidgetitem180)
+        __qtablewidgetitem181 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(5, __qtablewidgetitem181)
+        __qtablewidgetitem182 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(6, __qtablewidgetitem182)
+        __qtablewidgetitem183 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(7, __qtablewidgetitem183)
+        __qtablewidgetitem184 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(8, __qtablewidgetitem184)
+        __qtablewidgetitem185 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(9, __qtablewidgetitem185)
+        __qtablewidgetitem186 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(10, __qtablewidgetitem186)
+        __qtablewidgetitem187 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(11, __qtablewidgetitem187)
+        __qtablewidgetitem188 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(12, __qtablewidgetitem188)
+        __qtablewidgetitem189 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(13, __qtablewidgetitem189)
+        __qtablewidgetitem190 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(14, __qtablewidgetitem190)
+        __qtablewidgetitem191 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(15, __qtablewidgetitem191)
+        __qtablewidgetitem192 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(16, __qtablewidgetitem192)
+        __qtablewidgetitem193 = QTableWidgetItem()
+        self.itemSoldTbl.setVerticalHeaderItem(17, __qtablewidgetitem193)
+        __qtablewidgetitem194 = QTableWidgetItem()
+        __qtablewidgetitem194.setTextAlignment(Qt.AlignCenter);
+        self.itemSoldTbl.setItem(6, 1, __qtablewidgetitem194)
+        self.itemSoldTbl.setObjectName(u"itemSoldTbl")
+        sizePolicy1.setHeightForWidth(self.itemSoldTbl.sizePolicy().hasHeightForWidth())
+        self.itemSoldTbl.setSizePolicy(sizePolicy1)
+        self.itemSoldTbl.setStyleSheet(u"QTableWidget {\n"
+"    background-color: #1F1F1F;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid rgb(50, 50, 50);\n"
+"}\n"
+"\n"
+"QTableWidget::section {\n"
+"    border: none;\n"
+"    border-bottom: 1px solid #d0c6ff;\n"
+"    text-align: center; \n"
+"    padding: 3px 5px;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid rgb(50, 50, 50);\n"
+"    text-align: center; \n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"    text-align: center; \n"
+"}\n"
+"\n"
+"QTableView::item:alternate {\n"
+"    background-color: #272727; \n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #3B3B3B;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #606060;\n"
+"    min-height: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical,\n"
+"QSc"
+                        "rollBar::sub-line:vertical {\n"
+"    border: none;\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical,\n"
+"QScrollBar::sub-page:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:hover {\n"
+"    opacity: 0.7;\n"
+"}\n"
+"")
+        self.itemSoldTbl.setAlternatingRowColors(True)
+        self.itemSoldTbl.setSortingEnabled(False)
+        self.itemSoldTbl.horizontalHeader().setCascadingSectionResizes(True)
+        self.itemSoldTbl.horizontalHeader().setMinimumSectionSize(100)
+        self.itemSoldTbl.horizontalHeader().setDefaultSectionSize(170)
+        self.itemSoldTbl.horizontalHeader().setStretchLastSection(True)
+        self.itemSoldTbl.verticalHeader().setVisible(False)
+
+        self.verticalLayout_31.addWidget(self.itemSoldTbl)
+
+        self.SalesReportStackedWidget.addWidget(self.ItemSoldPage)
+
+        self.gridLayout_4.addWidget(self.SalesReportStackedWidget, 0, 0, 1, 1)
 
 
         self.verticalLayout_9.addWidget(self.widget_28)
@@ -3316,24 +3725,25 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_15.toggled.connect(self.icon_only.setHidden)
-        self.pushButton_15.toggled.connect(self.word_iicon.setVisible)
-        self.mng_account1.toggled.connect(self.mng_account2.setChecked)
-        self.mng_account2.toggled.connect(self.mng_account1.setChecked)
-        self.sales_report1.toggled.connect(self.sales_report2.setChecked)
-        self.sales_report2.toggled.connect(self.sales_report1.setChecked)
-        self.delete_item1.toggled.connect(self.delete_item1_2.setChecked)
-        self.delete_item1_2.toggled.connect(self.delete_item1.setChecked)
-        self.update_item2.toggled.connect(self.update_item1.setChecked)
-        self.update_item1.toggled.connect(self.update_item2.setChecked)
-        self.add_item2.toggled.connect(self.add_item1.setChecked)
-        self.add_item1.toggled.connect(self.add_item2.setChecked)
-        self.dashboard1.toggled.connect(self.dashboard2.setChecked)
-        self.dashboard2.toggled.connect(self.dashboard1.setChecked)
-        self.logout1.toggled.connect(MainWindow.close)
         self.logout2.toggled.connect(MainWindow.close)
+        self.pushButton_15.toggled.connect(self.word_iicon.setVisible)
+        self.sales_report2.toggled.connect(self.sales_report1.setChecked)
+        self.sales_report1.toggled.connect(self.sales_report2.setChecked)
+        self.add_item2.toggled.connect(self.add_item1.setChecked)
+        self.mng_account2.toggled.connect(self.mng_account1.setChecked)
+        self.delete_item1.toggled.connect(self.delete_item1_2.setChecked)
+        self.pushButton_15.toggled.connect(self.icon_only.setHidden)
+        self.dashboard2.toggled.connect(self.dashboard1.setChecked)
+        self.delete_item1_2.toggled.connect(self.delete_item1.setChecked)
+        self.logout1.toggled.connect(MainWindow.close)
+        self.update_item1.toggled.connect(self.update_item2.setChecked)
+        self.add_item1.toggled.connect(self.add_item2.setChecked)
+        self.mng_account1.toggled.connect(self.mng_account2.setChecked)
+        self.update_item2.toggled.connect(self.update_item1.setChecked)
+        self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
         self.stackedWidget.setCurrentIndex(0)
+        self.SalesReportStackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3354,21 +3764,21 @@ class Ui_MainWindow(object):
         self.dashboardTxt.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Total Sales", None))
         self.pushButton.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
+        self.Dash_TotalSalesValue.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Total Item Sold", None))
         self.pushButton_3.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Total No. of Items", None))
+        self.Dash_Total_Items_Sold.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Total No. of Products", None))
         self.pushButton_4.setText("")
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"17", None))
+        self.DashTotalProducts.setText(QCoreApplication.translate("MainWindow", u"17", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Sales", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.DashboardTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Date", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.DashboardTable.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Sales", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Best Selling", None))
         self.toolButton.setText("")
-        self.toolButton_3.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.toolButton_4.setText("")
         self.toolButton_5.setText("")
         self.toolButton_6.setText("")
@@ -3490,22 +3900,53 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"323232", None));
         self.product_table_3.setSortingEnabled(__sortingEnabled2)
 
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Grand Total Sales: ", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"447,000", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Total Items Sold: ", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"11,175", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Daily", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Monthly", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Yearly", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Item Sold", None))
-        ___qtablewidgetitem47 = self.tableWidget_2.horizontalHeaderItem(0)
+        self.GrandTotalSalesLbl.setText(QCoreApplication.translate("MainWindow", u"Grand Total Sales: ", None))
+        self.grandTotalSalesValue.setText(QCoreApplication.translate("MainWindow", u"447,000", None))
+        self.total_items_sold_lbl.setText(QCoreApplication.translate("MainWindow", u"Total Items Sold: ", None))
+        self.totat_items_sold_value.setText(QCoreApplication.translate("MainWindow", u"11,175", None))
+        self.dailySalesBtn.setText(QCoreApplication.translate("MainWindow", u"Daily", None))
+        self.monthlySalesBtn.setText(QCoreApplication.translate("MainWindow", u"Monthly", None))
+        self.yearlySalesBtn.setText(QCoreApplication.translate("MainWindow", u"Yearly", None))
+        self.itemSoldBtn.setText(QCoreApplication.translate("MainWindow", u"Item Sold", None))
+        ___qtablewidgetitem47 = self.dailySalesTbl.horizontalHeaderItem(0)
         ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Date", None));
-        ___qtablewidgetitem48 = self.tableWidget_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem48 = self.dailySalesTbl.horizontalHeaderItem(1)
         ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Total Sales", None));
 
-        __sortingEnabled3 = self.tableWidget_2.isSortingEnabled()
-        self.tableWidget_2.setSortingEnabled(False)
-        self.tableWidget_2.setSortingEnabled(__sortingEnabled3)
+        __sortingEnabled3 = self.dailySalesTbl.isSortingEnabled()
+        self.dailySalesTbl.setSortingEnabled(False)
+        self.dailySalesTbl.setSortingEnabled(__sortingEnabled3)
+
+        ___qtablewidgetitem49 = self.monthlySalesTbl.horizontalHeaderItem(0)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Date", None));
+        ___qtablewidgetitem50 = self.monthlySalesTbl.horizontalHeaderItem(1)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Total Sales", None));
+
+        __sortingEnabled4 = self.monthlySalesTbl.isSortingEnabled()
+        self.monthlySalesTbl.setSortingEnabled(False)
+        self.monthlySalesTbl.setSortingEnabled(__sortingEnabled4)
+
+        ___qtablewidgetitem51 = self.yearlySalesTbl.horizontalHeaderItem(0)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Date", None));
+        ___qtablewidgetitem52 = self.yearlySalesTbl.horizontalHeaderItem(1)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Total Sales", None));
+
+        __sortingEnabled5 = self.yearlySalesTbl.isSortingEnabled()
+        self.yearlySalesTbl.setSortingEnabled(False)
+        self.yearlySalesTbl.setSortingEnabled(__sortingEnabled5)
+
+        ___qtablewidgetitem53 = self.itemSoldTbl.horizontalHeaderItem(0)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Product ID", None));
+        ___qtablewidgetitem54 = self.itemSoldTbl.horizontalHeaderItem(1)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Product Name", None));
+        ___qtablewidgetitem55 = self.itemSoldTbl.horizontalHeaderItem(2)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Price", None));
+        ___qtablewidgetitem56 = self.itemSoldTbl.horizontalHeaderItem(3)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Quantity Sold", None));
+
+        __sortingEnabled6 = self.itemSoldTbl.isSortingEnabled()
+        self.itemSoldTbl.setSortingEnabled(False)
+        self.itemSoldTbl.setSortingEnabled(__sortingEnabled6)
 
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_19.setText("")

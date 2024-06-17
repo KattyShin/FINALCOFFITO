@@ -218,6 +218,8 @@ class UpdateStaffWindow(QMainWindow):
 "QPushButton:hover {\n"
 "    background-color: #FFA54E; \n"
 "}")
+        self.staff_new_pass.setEchoMode(QLineEdit.Password) #ADDED
+
         self.updateStaffBtn.setCheckable(True)
         self.updateStaffBtn.setAutoExclusive(False)
 

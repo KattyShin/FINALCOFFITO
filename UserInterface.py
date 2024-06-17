@@ -121,6 +121,8 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.Amt_ContactNum_Val.textChanged.connect(self.calculate_change)
 
         self.payButton.clicked.connect(self.payButtonClicked)
+        self.Amt_ContactNum_Val.returnPressed.connect(self.handle_pay_button)
+
         
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow
@@ -360,6 +362,11 @@ class userInterface(QMainWindow, Ui_MainWindow):
             if not contact_number or not contact_number.isdigit():
                 self.show_invalid_gcash_number_error()
                 return
+             # ADDED
+            if len(contact_number)  != 11:
+                self.show_length_error_message()
+                return
+
 
         self.handle_pay_button()
 
@@ -418,16 +425,20 @@ class userInterface(QMainWindow, Ui_MainWindow):
     #         self.conn.rollback()
     #         return False
 
+     #ADDED
     def insert_order_to_database(self, payment_method):
         try:
             cursor = self.conn.cursor()
 
+
             # Assuming you have the staff ID available
             staff_id = 8742  # Replace with actual staff ID
+
 
             # Insert into CUSTOMER to get new CUS_ID
             cursor.execute("INSERT INTO CUSTOMER DEFAULT VALUES RETURNING CUS_ID;")
             cus_id = cursor.fetchone()[0]
+
 
             # Insert into ORDERS
             order_summary_query = """
@@ -436,6 +447,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
             """
             cursor.execute(order_summary_query, (staff_id, cus_id))
             order_id = cursor.fetchone()[0]
+
 
             # Insert into ORDER_ITEMS
             order_items_query = """
@@ -446,22 +458,51 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 item_name = self.order_table.item(row, 0).text()
                 item_quantity = int(self.order_table.item(row, 2).text())
 
+
                 cursor.execute("SELECT PROD_ID FROM PRODUCT WHERE PROD_NAME = %s", (item_name,))
                 prod_id = cursor.fetchone()[0]
+
 
                 cursor.execute(order_items_query, (order_id, prod_id, item_quantity))
                 order_item_id = cursor.fetchone()[0]  # Fetch the ORDER_ITEM_ID if needed
 
+
             # Insert into PAYMENT_TRANSACTION
             payment_trans_query = """
             INSERT INTO PAYMENT_TRANSACTION (ORDER_ID, PAYMENT_TRANS_TOT_AMOUNT, PAYMENT_TRANS_METHOD, PAYMENT_TRANS_DETAILS)
-            VALUES (%s, %s, %s, %s);
+            VALUES (%s, %s, %s, %s) RETURNING PAYMENT_TRANS_ID;
             """
             cursor.execute(payment_trans_query, (order_id, self.total_price, payment_method, self.Amt_ContactNum_Val.text() if self.Amt_ContactNum_Val.isVisible() else None))
+            payment_trans_id = cursor.fetchone()[0]
+
+
+            # Insert into SALES_REPORT
+            sales_report_query = """
+            INSERT INTO SALES_REPORT (SALES_DATE, PAYMENT_TRANS_ID)
+            VALUES (CURRENT_DATE, %s) RETURNING SALES_ID;
+            """
+            cursor.execute(sales_report_query, (payment_trans_id,))
+            sales_id = cursor.fetchone()[0]
+
+
+            # Insert into SALES_HISTORY
+            sales_history_query = """
+            INSERT INTO SALES_HISTORY (DAILY_TOTAL_SALES, GENERAL_TOTAL_SALES, SALES_ID)
+            SELECT SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) AS DAILY_TOTAL,
+                (SELECT SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) FROM PAYMENT_TRANSACTION pt) AS GENERAL_TOTAL,
+                %s
+            FROM PAYMENT_TRANSACTION pt
+            WHERE pt.ORDER_ID = %s
+            GROUP BY pt.ORDER_ID
+            """
+            cursor.execute(sales_history_query, (sales_id, order_id))
+
 
             self.conn.commit()
             cursor.close()
             return True
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error while inserting order into the database:", error)
             self.conn.rollback()
@@ -472,19 +513,20 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
 
 
+
     def handle_pay_button(self):
-        confirmation_reply = QMessageBox.question(
-            self, 'Payment Confirmation', 'Are you sure you want to confirm the payment?',
-            QMessageBox.Yes | QMessageBox.No, QMessageBox.No
+        confirmation_reply = self.show_confirmation_dialog(
+            'Payment Confirmation', 'Are you sure you want to confirm the payment?'
         )
 
         if confirmation_reply == QMessageBox.Yes:
             if self.insert_order_to_database(self.get_payment_method()):
-                QMessageBox.information(self, 'Payment Successful', 'Payment has been successfully processed.')
+                self.show_message_box('Payment Successful', 'Payment has been successfully processed.', QMessageBox.Information)
                 self.reset_order()
                 self.switch_to_orderListPage()
             else:
-                QMessageBox.critical(self, 'Payment Failed', 'An error occurred while processing the payment. Please try again.')
+                self.show_message_box('Payment Failed', 'An error occurred while processing the payment. Please try again.', QMessageBox.Critical)
+
 
     def get_payment_method(self):
         if self.gcashSelectRBtn.isChecked():
@@ -503,27 +545,73 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.Amt_ContactNum_Val.clear()
         self.changeAmount.clear()
 
+    def show_message_box(self, title, message, icon):
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle(title)
+        msg_box.setText(message)
+        msg_box.setIcon(icon)
+        msg_box.setStyleSheet("""
+            QMessageBox {
+                background-color: #1F1F1F;
+            }
+            QLabel {
+                color: white;
+            }
+            QPushButton {
+                background-color: #1F1F1F;
+                color: white;
+            }
+        """)
+        msg_box.exec_()
+    def show_confirmation_dialog(self, title, message):
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle(title)
+        msg_box.setText(message)
+        msg_box.setIcon(QMessageBox.Question)
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        msg_box.setDefaultButton(QMessageBox.No)
+        msg_box.setStyleSheet("""
+            QMessageBox {
+                background-color: #1F1F1F;
+            }
+            QLabel {
+                color: white;
+            }
+            QPushButton {
+                background-color: #1F1F1F;
+                color: white;
+            }
+        """)
+        reply = msg_box.exec_()
+        return reply
+
+       
+
 
     def show_empty_order_message(self):
-        QMessageBox.warning(self, "Empty Order", "Please add products to the order before proceeding.")
+        self.show_message_box("Empty Order", "Please add products to the order before proceeding.", QMessageBox.Warning)
 
     def show_payment_method_error(self):
-        QMessageBox.warning(self, "Payment Method", "Please select a payment method before proceeding.")
+        self.show_message_box("Payment Method", "Please select a payment method before proceeding.", QMessageBox.Warning)
 
     def show_invalid_cash_amount_error(self):
-        QMessageBox.warning(self, "Invalid Cash Amount", "Please enter a valid cash amount.")
+        self.show_message_box("Invalid Cash Amount", "Please enter a valid cash amount.", QMessageBox.Warning)
 
     def show_insufficient_cash_error(self):
-        QMessageBox.warning(self, "Insufficient Cash", "The cash amount is less than the total price.")
+        self.show_message_box("Insufficient Cash", "The cash amount is less than the total price.", QMessageBox.Warning)
 
     def show_invalid_gcash_number_error(self):
-        QMessageBox.warning(self, "Invalid Gcash Number", "Please enter a valid Gcash number.")
+        self.show_message_box("Invalid Gcash Number", "Please enter a valid Gcash number.", QMessageBox.Warning)
 
     def show_order_success_message(self):
-        QMessageBox.information(self, "Order Successful", "The order has been successfully placed.")
+        self.show_message_box("Order Successful", "The order has been successfully placed.", QMessageBox.Information)
 
     def show_order_error_message(self):
-        QMessageBox.critical(self, "Order Error", "There was an error placing the order. Please try again.")
+        self.show_message_box("Order Error", "There was an error placing the order. Please try again.", QMessageBox.Critical)
+
+    def show_length_error_message(self):
+        self.show_message_box("Error", "Mobile number must be 11 digits.", QMessageBox.Critical)
+
     
     def show_empty_order_message(self):
         message_box = QMessageBox(self)
@@ -629,7 +717,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 ui.setupUi(new_product_container)
 
                 ui.prodNameLabel.setText(prod_name)
-                ui.prodPriceLabel.setText(f"Price: {prod_price} PHP")  # Displaying product price
+                # ui.prodPriceLabel.setText(f"Price: {prod_price} PHP")  # Displaying product price
 
                 ui.productBtn.clicked.connect(lambda _, name=prod_name: self.prodBtnClicked(name))
 

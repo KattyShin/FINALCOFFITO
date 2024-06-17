@@ -12,7 +12,11 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMessageBox
 from updateAdminModal import UpdateAdminWindow
 from updateStaffModal import UpdateStaffWindow
-import re       #ADDED
+import re      
+
+
+
+
 
 
 
@@ -20,6 +24,8 @@ import re       #ADDED
 class mySideBar(QMainWindow, Ui_MainWindow):
    
     from database_config import get_database_config
+
+
 
 
     def connect_to_database(self):
@@ -33,11 +39,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             return None
 
 
+
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Coffito Admin")
         self.setWindowIcon(QIcon(r'C:\Users\Dennis\Desktop\POS System Coffito\CoffitoLogo (40 x 40 px).png'))
+
+
 
 
         self.conn = self.connect_to_database()
@@ -47,7 +57,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.resize_start_pos = None
         self.resize_start_geometry = None
        
-        # MODIFIED -----ADDED
         # Initialize selected product attributes
         self.selected_prod_id = None
         self.selected_prod_name = None
@@ -57,85 +66,124 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.showNormal()
 
 
+
+
         self.word_iicon.setHidden(True)
         self.center_on_screen()
 
+
         self.logout1.clicked.connect(self.show_login_window)
         self.logout2.clicked.connect(self.show_login_window)
+
+
 
 
         self.dashboard1.clicked.connect(self.switch_to_dashboardPage)
         self.dashboard2.clicked.connect(self.switch_to_dashboardPage)
 
 
+
+
         self.add_item1.clicked.connect(self.switch_to_addProductPage)
         self.add_item2.clicked.connect(self.switch_to_addProductPage)
+
+
 
 
         self.update_item1.clicked.connect(self.switch_to_updateProductPage)
         self.update_item2.clicked.connect(self.switch_to_updateProductPage)
 
 
+
+
         self.delete_item1.clicked.connect(self.switch_to_deleteProductPage)
         self.delete_item1_2.clicked.connect(self.switch_to_deleteProductPage)
+
+
 
 
         self.sales_report1.clicked.connect(self.switch_to_salesReportPage)
         self.sales_report2.clicked.connect(self.switch_to_salesReportPage)
 
 
+
+
         self.mng_account1.clicked.connect(self.switch_to_manageAccountsPage)
         self.mng_account2.clicked.connect(self.switch_to_manageAccountsPage)
 
 
+
+
         self.toolButton.clicked.connect(self.maximizeOrNormalize)
+
 
         self.add_prod_button.clicked.connect(self.show_add_item_window)
        
 
 
+
+
         self.dashboardTxt.setHidden(True)
+        self.fetch_total_products() #ADDED
+        self.fetch_items_sold_today()  #ADDED
+        self.fetch_total_sales() #ADDED
+
+
 
         self.AddItemWindow = AddItemWindow()
         self.UpdateItemWindow = UpdateItemWindow()
+
 
         self.AddItemWindow.addProdButton.clicked.connect(self.add_product_to_db)
        
         self.update_prod_button_2.clicked.connect(self.delete_selected_product)
 
-        # MODIFIED
+
         #display text in UpdateWindow
         self.update_prod_button.clicked.connect(self.display_and_show_update_item_window)
+
+
 
 
         # update button
         self.UpdateItemWindow.pushButton_32.clicked.connect(self.update_product_details)
 
-        #MODIFIED
+
+       
         self.lineEdit_3.textChanged.connect(self.search_AddItem)
         self.lineEdit_4.textChanged.connect(self.search_Update)
         self.lineEdit_5.textChanged.connect(self.search_Delete)
+
 
         #admin password
         self.UpdateAdminWindow = UpdateAdminWindow()  
         self.pushButton_21.clicked.connect(self.show_update_admin_window)
         self.UpdateAdminWindow.updateAdmin.clicked.connect(self.update_admin_acc)
 
+
         #staff    
         self.UpdateStaffWindow = UpdateStaffWindow()
         self.pushButton_22.clicked.connect(self.show_update_staff_window)
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
 
+
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow
 
+
         self.login_window = Login_MainWindow()
         self.login_window.show()
+
 
     def switch_to_dashboardPage(self):
         self.stackedWidget.setCurrentIndex(0)
         self.dashboardTxt.setText("Dashboard")
         self.dashboardTxt.setHidden(False)
+        self.fetch_total_products() #ADDED
+        self.fetch_items_sold_today()  #ADDED
+        self.fetch_total_sales() #ADDED
+
+
 
 
     def switch_to_addProductPage(self):
@@ -145,11 +193,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.fetch_products()
 
 
+
+
     def switch_to_updateProductPage(self):
         self.stackedWidget.setCurrentIndex(2)
         self.dashboardTxt.setText("Update Item")
         self.dashboardTxt.setHidden(False)
         self.fetch_products_up()
+
+
 
 
     def switch_to_deleteProductPage(self):
@@ -159,10 +211,16 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.fetch_products_del()
 
 
+
+
     def switch_to_salesReportPage(self):
         self.stackedWidget.setCurrentIndex(4)
         self.dashboardTxt.setText("Sales Report")
         self.dashboardTxt.setHidden(False)
+        self.fetch_grand_total_sales()
+        self.fetch_grand_items_sold()
+
+
 
 
     def switch_to_manageAccountsPage(self):
@@ -173,18 +231,25 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.fetch_staff_acc()
 
 
+
+
     def show_add_item_window(self):
         self.AddItemWindow.show()
+
+
 
 
     def show_update_item_window(self):
         self.UpdateItemWindow.show()
 
 
-    #MODIFIED ADDED
+
+
     def show_update_admin_window(self):
         self.UpdateAdminWindow.show()
         self.dispaly_admin_acc()
+
+
 
 
     def show_update_staff_window(self):
@@ -192,7 +257,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.display_staff_acc()
 
 
-    
 
 
    
@@ -217,21 +281,27 @@ class mySideBar(QMainWindow, Ui_MainWindow):
        
 
 
-#MODIFIED ADDED      
+
+
     def dispaly_admin_acc(self):
         username = self.label_50.text()
         password = self.label_52.text()
+
+
 
 
         self.UpdateAdminWindow.adminUsername.setText(username)
         self.UpdateAdminWindow.admin_new_pass.setText(password)
 
 
-#MODIFIED ADDED
+
+
     def update_admin_acc(self):
         username = self.UpdateAdminWindow.adminUsername.text()
         newpass = self.UpdateAdminWindow.admin_new_pass.text()
         user_id = 9242
+
+
 
 
         if not username or not newpass:
@@ -259,8 +329,11 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 cur.close()
                 self.show_message_box("Success", "Updated successfully.", QMessageBox.Information)
 
+
                 self.UpdateAdminWindow.hide()
                 self.fetch_admin_acc()
+
+
 
 
             except (Exception, psycopg2.Error) as error:
@@ -269,7 +342,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.show_message_box("Error", f"{error}", QMessageBox.Critical)
 
 
-#MODIFIED ADDED
+
+
     def fetch_admin_acc(self):
         user_id = 9242
         try:
@@ -287,6 +361,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 password = row[1]
 
 
+
+
                 # Set the label text to display the username
                 self.label_50.setText(username)
                 self.label_52.setText(password)
@@ -296,10 +372,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                  print("User not found.")          
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error updating product in PostgreSQL:", error)
             self.conn.rollback()
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
+
+
 
 
     def fetch_staff_acc(self):
@@ -319,6 +399,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 password = row[1]
 
 
+
+
                 # Set the label text to display the username
                 self.label_54.setText(username)
                 self.label_56.setText(password)
@@ -328,27 +410,35 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                  print("User not found.")          
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error updating product in PostgreSQL:", error)
             self.conn.rollback()
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
 
 
-    #MODIFIED ADDED      
+
+
     def display_staff_acc(self):
         username = self.label_54.text()
         password = self.label_56.text()
+
+
 
 
         self.UpdateStaffWindow.staffUsername.setText(username)
         self.UpdateStaffWindow.staff_new_pass.setText(password)
 
 
-#MODIFIED ADDED
+
+
     def update_staff_acc(self):
         username = self.UpdateStaffWindow.staffUsername.text().lower()
         newpass = self.UpdateStaffWindow.staff_new_pass.text()
         user_id = 9243
+
+
 
 
         if not username or not newpass:
@@ -377,8 +467,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.show_message_box("Success", "Updated successfully.", QMessageBox.Information)
 
 
+
+
                 self.UpdateStaffWindow.hide()
                 self.fetch_staff_acc()
+
+
 
 
             except (Exception, psycopg2.Error) as error:
@@ -397,7 +491,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
-# MODIFIED -----ADDED
+
+
+
+
+
+
     def display_and_show_update_item_window(self):
         selected_items = self.product_table_2.selectedItems()
         if not selected_items:
@@ -411,11 +510,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.selected_prod_category = self.product_table_2.item(row, 3).text()
 
 
+
+
             # Set retrieved data into UpdateItemWindow fields before showing it
             self.UpdateItemWindow.prodId_Label.setText(self.selected_prod_id)
             self.UpdateItemWindow.upProd_Name.setText(self.selected_prod_name)
             self.UpdateItemWindow.upProd_Price.setText(self.selected_prod_price)
             self.UpdateItemWindow.upProd_Category.setCurrentText(self.selected_prod_category)
+
+
 
 
             self.UpdateItemWindow.show()
@@ -425,12 +528,19 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
-#MODIFIED
+
+
+
+
+
+
     def update_product_details(self):
         updated_prod_id = self.UpdateItemWindow.prodId_Label.text()
         updated_prod_name = self.UpdateItemWindow.upProd_Name.text().upper()
         updated_prod_price = self.UpdateItemWindow.upProd_Price.text()
         updated_prod_category = self.UpdateItemWindow.upProd_Category.currentText()
+
+
 
 
         try:
@@ -447,13 +557,19 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.close()
 
 
+
+
             print(f"Product with PROD_ID {updated_prod_id} updated successfully.")
             self.show_message_box("Success", "Updated successfully.", QMessageBox.Information)
+
+
 
 
             # Hide UpdateItemWindow
             self.UpdateItemWindow.hide()          
             self.fetch_products_up()
+
+
 
 
         except (Exception, psycopg2.Error) as error:
@@ -464,8 +580,115 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
+ 
+     #ADDED
+    def fetch_grand_total_sales(self):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("SELECT SUM(PAYMENT_TRANS_TOT_AMOUNT) FROM PAYMENT_TRANSACTION")
+            grand_total_sales = cur.fetchone()[0]
+            cur.close()
+           
+            # Convert the total_products to a string before setting it to the label
+            self.grandTotalSalesValue.setText(str(grand_total_sales))
 
 
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving products from the database: ", error)
+            self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
+            return None
+ #ADDED
+    def fetch_total_sales(self):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("SELECT SUM(PAYMENT_TRANS_TOT_AMOUNT) FROM PAYMENT_TRANSACTION WHERE PAYMENT_TRANS_DATE = CURRENT_DATE")
+            total_sales_today= cur.fetchone()[0]
+            cur.close()
+           
+            # Convert the total_products to a string before setting it to the label
+            if total_sales_today is not None:
+                self.Dash_TotalSalesValue.setText("₱ " + str(total_sales_today))
+            else:
+                self.Dash_TotalSalesValue.setText("₱ 0")
+
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving products from the database: ", error)
+            self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
+            return None
+
+
+    # ADDED
+    def fetch_items_sold_today(self):
+        try:
+            cur = self.conn.cursor()
+           
+            # Query to get the total items sold based on the current date
+            query = """
+            SELECT SUM(oi.ORDER_ITEM_QTY)
+            FROM ORDER_ITEMS oi
+            JOIN ORDERS o ON oi.ORDER_ID = o.ORDER_ID
+            WHERE o.ORDER_DATE = CURRENT_DATE
+            """
+           
+            cur.execute(query)
+            total_items_sold_today = cur.fetchone()[0]
+            cur.close()
+           
+            # Convert the total_items_sold_today to a string before setting it to the label
+            self.Dash_Total_Items_Sold.setText(str(total_items_sold_today))
+
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving items sold from the database: ", error)
+            self.show_message_box("Error", f"Error retrieving items sold from the database: {error}", QMessageBox.Critical)
+            return None
+
+
+    # ADDED
+    def fetch_grand_items_sold(self):
+        try:
+            cur = self.conn.cursor()
+           
+            # Query to get the total items sold based on the current date
+            query = """
+            SELECT SUM(oi.ORDER_ITEM_QTY)
+            FROM ORDER_ITEMS oi
+            JOIN ORDERS o ON oi.ORDER_ID = o.ORDER_ID
+            """
+           
+            cur.execute(query)
+            total_grand_items_sold= cur.fetchone()[0]
+            cur.close()
+           
+            # Convert the total_items_sold_today to a string before setting it to the label
+            self.totat_items_sold_value.setText(str(total_grand_items_sold))
+
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving items sold from the database: ", error)
+            self.show_message_box("Error", f"Error retrieving items sold from the database: {error}", QMessageBox.Critical)
+            return None
+
+
+
+
+    #ADDED
+    def fetch_total_products(self):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("SELECT COUNT(PROD_ID) FROM PRODUCT")
+            total_products = cur.fetchone()[0]
+            cur.close()
+           
+            # Convert the total_products to a string before setting it to the label
+            self.DashTotalProducts.setText(str(total_products))
+
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving products from the database: ", error)
+            self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
+            return None
 
 
 
@@ -481,10 +704,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.product_table.setAlternatingRowColors(True)  # Keep alternating row colors
 
 
+
+
             # Set the header properties
             header = self.product_table.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
+
+
 
 
             for row, product in enumerate(products):
@@ -496,7 +723,11 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                     self.product_table.setItem(row, col, item)
 
 
+
+
                     # Optionally, set the item's background color or other styling here
+
+
 
 
             # Center align all items in the vertical header as well
@@ -504,12 +735,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             vertical_header.setDefaultAlignment(QtCore.Qt.AlignCenter)
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving products from the database: ", error)
             self.show_message_box("Error", f"Error retrieving products from the database:  {error}", QMessageBox.Critical)
 
 
-#MODIFIED
+
+
     def fetch_products_up(self):
         try:
             cur = self.conn.cursor()
@@ -521,10 +755,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.product_table_2.setAlternatingRowColors(True)  # Keep alternating row colors
 
 
+
+
             # Set the header properties
             header = self.product_table_2.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
+
+
 
 
             for row, product in enumerate(products):
@@ -538,14 +776,24 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
+
+
+
+
             # Center align all items in the vertical header as well
             vertical_header = self.product_table_2.verticalHeader()
             vertical_header.setDefaultAlignment(QtCore.Qt.AlignCenter)
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving products from the database: ", error)
             self.show_message_box("Error", f"Error retrieving products from the database:{error}", QMessageBox.Critical)
+
+
+
+
 
 
 
@@ -559,15 +807,21 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.close()
 
 
+
+
            
             self.product_table_3.setRowCount(0)
             self.product_table_3.setAlternatingRowColors(True)  # Keep alternating row colors
+
+
 
 
             # Set the header properties
             header = self.product_table_3.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
+
+
 
 
             for row, product in enumerate(products):
@@ -579,12 +833,18 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                     self.product_table_3.setItem(row, col, item)
 
 
+
+
                     # Optionally, set the item's background color or other styling here
+
+
 
 
             # Center align all items in the vertical header as well
             vertical_header = self.product_table_3.verticalHeader()
             vertical_header.setDefaultAlignment(QtCore.Qt.AlignCenter)
+
+
 
 
         except (Exception, psycopg2.Error) as error:
@@ -594,11 +854,16 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
-#MODIFIED
+
+
+
+
     def add_product_to_db(self):
         product_name = self.AddItemWindow.addProd_Name.text().upper()
         product_price = self.AddItemWindow.addProd_Price.text()
         product_category = self.AddItemWindow.addProd_Category.currentText()
+
+
 
 
         if product_price == "" or product_name == " ":
@@ -621,6 +886,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.conn.commit()
 
 
+
+
             # Fetch the newly inserted product
             new_product = cur.fetchone()
             cur.close()
@@ -628,10 +895,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.show_message_box("Success", "Product added successfully.", QMessageBox.Information)
 
 
+
+
             # Clear input fields
             self.AddItemWindow.addProd_Name.clear()
             self.AddItemWindow.addProd_Price.clear()
             self.AddItemWindow.addProd_Category.setCurrentIndex(0)
+
+
 
 
             # Hide the AddItemWindow and switch back to the "Add Product" page
@@ -647,7 +918,10 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
- #MODIFIED
+
+
+
+
     def delete_selected_product(self):
         selected_row = self.product_table_3.currentRow()
         if selected_row == -1:
@@ -684,13 +958,25 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
+
+
+
+
+
+
+
+
 #SEARCH BAR
     def search_AddItem(self):
         search_text = self.lineEdit_3.text()
 
 
+
+
         # Clear previous search results in the table
         self.product_table.setRowCount(0)
+
+
 
 
         try:
@@ -707,13 +993,19 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 cur.execute(search_query, search_params)
 
 
+
+
             else:              
                 self.fetch_products()
                 return
 
 
+
+
             results = cur.fetchall()
             cur.close()
+
+
 
 
             if results:
@@ -726,9 +1018,17 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                         self.product_table.setItem(row, col, item)
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving search results from the database:", error)
             self.show_message_box("Error", f"Error retrieving search results: {error}", QMessageBox.Critical)
+
+
+
+
+
+
 
 
 
@@ -739,8 +1039,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         search_text = self.lineEdit_4.text()
 
 
+
+
         # Clear previous search results in the table
         self.product_table_2.setRowCount(0)
+
+
 
 
         try:
@@ -760,8 +1064,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 return
 
 
+
+
             results = cur.fetchall()
             cur.close()
+
+
 
 
             if results:
@@ -774,6 +1082,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                         self.product_table_2.setItem(row, col, item)
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving search results from the database:", error)
             self.show_message_box("Error", f"Error retrieving search results: {error}", QMessageBox.Critical)
@@ -782,8 +1092,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         search_text = self.lineEdit_5.text()
 
 
+
+
         # Clear previous search results in the table
         self.product_table_3.setRowCount(0)
+
+
 
 
         try:
@@ -802,13 +1116,21 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
 
 
+
+
+
+
             else:              
                 self.fetch_products_del()
                 return
 
 
+
+
             results = cur.fetchall()
             cur.close()
+
+
 
 
             if results:
@@ -821,9 +1143,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                         self.product_table_3.setItem(row, col, item)
 
 
+
+
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving search results from the database:", error)
             self.show_message_box("Error", f"Error retrieving search results: {error}", QMessageBox.Critical)
+
+
+
+
 
 
 
@@ -833,6 +1161,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.showNormal()
         else:
             self.showMaximized()
+
+
 
 
     def mousePressEvent(self, event):
@@ -846,6 +1176,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.resize_start_geometry = self.geometry()
 
 
+
+
     def mouseMoveEvent(self, event):
         if self.draggable:
             self.move(event.globalPos() - self.drag_pos)
@@ -856,14 +1188,20 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.setGeometry(new_geometry)
 
 
+
+
     def mouseReleaseEvent(self, event):
         if event.button() == Qt.LeftButton:
             self.draggable = False
             self.resizing = False
 
 
+
+
     def normalizeWindow(self):
         self.showNormal()
+
+
 
 
     def center_on_screen(self):
@@ -871,15 +1209,26 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         screen_geometry = screen.geometry()
 
 
+
+
         center_point = screen_geometry.center()
+
+
 
 
         window_rect = self.frameGeometry()
         window_rect.moveCenter(center_point)
 
 
+
+
         self.move(window_rect.topLeft())
 
 
+
+
    
+
+
+
 

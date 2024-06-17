@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="iCons">
+    <file>icons/icons8-back-48.png</file>
+    <file>CoffitoLogo (40 x 40 px).png</file>
+    <file>icons/CoffitoLogo (1).png</file>
+    <file>icons/CoffitoLogo (2).png</file>
+    <file>icons/CoffitoLogo (3).png</file>
+    <file>icons/CoffitoLogo.png</file>
+    <file>Coffito Cup logo sticker_46mm-1.png</file>
+    <file>icons/icons8-total-sales-100.png</file>
+    <file>icons/coffee-cup (1).png</file>
+    <file>icons/coffee-cup (2).png</file>
+    <file>icons/coffee-cup4.png</file>
+    <file>icons/administrator (1).png</file>
+    <file>icons/coffee-cup.png</file>
+    <file>icons/Green Simple Monoline Badge CK Letter Logo (3).png</file>
+    <file>icons/icons8-add-40.png</file>
+    <file>icons/icons8-add-folder-40.png</file>
+    <file>icons/icons8-coffee0-40.png</file>
+    <file>icons/icons8-coffee-40.png</file>
+    <file>icons/icons8-delete-40(1).png</file>
+    <file>icons/icons8-delete-40.png</file>
+    <file>icons/icons8-edit-40 (1).png</file>
+    <file>icons/icons8-edit-40.png</file>
+    <file>icons/icons8-logout-40.png</file>
+    <file>icons/icons8-logouto-40.png</file>
+    <file>icons/icons8-menu-40.png</file>
+    <file>icons/icons8-menu-40-1.png</file>
+    <file>icons/icons8-sales-40(1).png</file>
+    <file>icons/icons8-sales-40.png</file>
+    <file>icons/icons8-search-26.png</file>
+    <file>icons/personalization.png</file>
+  </qresource>
+</RCC>

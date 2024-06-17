@@ -43,7 +43,6 @@ class Login_MainWindow(QMainWindow):
         self.setupUi(self)
         self.userInterface = userInterface()
 
-
     def connect_to_database(self):
         try:
             config = get_database_config()
@@ -62,8 +61,6 @@ class Login_MainWindow(QMainWindow):
 
         username = self.lineEdit_7.text()  
         password = self.lineEdit_8.text()  
-
-        
 
         try:
             if not self.conn:
@@ -85,18 +82,18 @@ class Login_MainWindow(QMainWindow):
 
                 if user_id == admin_user_id:
                     print("Login as admin!")
+                    self.lineEdit_7.setText("")  
+                    self.lineEdit_8.setText("")
 
-                    self.sidee = mySideBar()
+                    self.mySideBar = mySideBar()
                     self.mySideBar.show()
-                    
+
                     self.addItemWindow = AddItemWindow()
                     self.updateItemWindow = UpdateItemWindow()
                     self.updateAdminWindow = UpdateAdminWindow()
                     self.UpdateStaffWindow = UpdateStaffWindow()
-                    self.login_successful.emit()
 
-                    self.lineEdit_7.setText("")  
-                    self.lineEdit_8.setText("")  
+                    self.hide()
                     return True
 
                 elif user_id == staff_user_id:
@@ -104,6 +101,8 @@ class Login_MainWindow(QMainWindow):
                     self.userInterface.show()
                     self.lineEdit_7.setText("")  
                     self.lineEdit_8.setText("")  
+
+                    self.hide()
 
                     return True
 
@@ -338,6 +337,7 @@ class Login_MainWindow(QMainWindow):
 
         QMetaObject.connectSlotsByName(MainWindow)
         self.loginButton_2.clicked.connect(self.check_login)
+
 
     # setupUi
 

@@ -100,7 +100,9 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.proceedBtn.clicked.connect(self.switch_to_orderSummaryPage)
         self.backBtn.clicked.connect(self.switch_to_orderListPage)
         
-        
+        self.logout1.clicked.connect(self.show_login_window)
+        self.logout2.clicked.connect(self.show_login_window)
+
 
         for product_name, button in self.product_buttons.items():
             button.clicked.connect(lambda _, name=product_name: self.prodBtnClicked(name))
@@ -120,6 +122,11 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         self.payButton.clicked.connect(self.payButtonClicked)
         
+    def show_login_window(self):
+        from ui_loginPage import Login_MainWindow
+
+        self.login_window = Login_MainWindow()
+        self.login_window.show()
 
     def set_gcash_selected(self):
         self.Amount_ContactNum.setText("Mobile Number:")

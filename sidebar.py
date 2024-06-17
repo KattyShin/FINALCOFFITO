@@ -60,6 +60,9 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.word_iicon.setHidden(True)
         self.center_on_screen()
 
+        self.logout1.clicked.connect(self.show_login_window)
+        self.logout2.clicked.connect(self.show_login_window)
+
 
         self.dashboard1.clicked.connect(self.switch_to_dashboardPage)
         self.dashboard2.clicked.connect(self.switch_to_dashboardPage)
@@ -123,8 +126,11 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.pushButton_22.clicked.connect(self.show_update_staff_window)
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
 
+    def show_login_window(self):
+        from ui_loginPage import Login_MainWindow
 
-
+        self.login_window = Login_MainWindow()
+        self.login_window.show()
 
     def switch_to_dashboardPage(self):
         self.stackedWidget.setCurrentIndex(0)

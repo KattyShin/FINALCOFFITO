@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestHEITDq.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestyUpRFu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -621,17 +621,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_4)
 
-        self.bestSell1 = QWidget(self.widget_40)
-        self.bestSell1.setObjectName(u"bestSell1")
-        self.bestSell1.setMinimumSize(QSize(0, 45))
-        self.bestSell1.setMaximumSize(QSize(16777215, 45))
-        self.bestSell1.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell = QWidget(self.widget_40)
+        self.bestSell.setObjectName(u"bestSell")
+        self.bestSell.setMinimumSize(QSize(0, 45))
+        self.bestSell.setMaximumSize(QSize(16777215, 45))
+        self.bestSell.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.gridLayout_29 = QGridLayout(self.bestSell1)
-        self.gridLayout_29.setObjectName(u"gridLayout_29")
-        self.gridLayout_29.setContentsMargins(0, 0, -1, 0)
-        self.widget_20 = QWidget(self.bestSell1)
+        self.horizontalLayout_5 = QHBoxLayout(self.bestSell)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, -1, 0)
+        self.widget_20 = QWidget(self.bestSell)
         self.widget_20.setObjectName(u"widget_20")
         self.widget_20.setMinimumSize(QSize(51, 0))
         self.widget_20.setStyleSheet(u"background-color: rgb(255, 140, 24);")
@@ -645,250 +645,345 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.addWidget(self.toolButton)
 
 
-        self.gridLayout_29.addWidget(self.widget_20, 0, 0, 1, 1)
+        self.horizontalLayout_5.addWidget(self.widget_20)
+
+        self.bestSell1 = QLabel(self.bestSell)
+        self.bestSell1.setObjectName(u"bestSell1")
+        self.bestSell1.setMinimumSize(QSize(121, 31))
+        self.bestSell1.setMaximumSize(QSize(121, 31))
+        font7 = QFont()
+        font7.setFamilies([u"Poppins"])
+        font7.setPointSize(10)
+        font7.setBold(True)
+        self.bestSell1.setFont(font7)
+        self.bestSell1.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell1.setWordWrap(True)
+
+        self.horizontalLayout_5.addWidget(self.bestSell1)
 
 
-        self.verticalLayout_8.addWidget(self.bestSell1)
+        self.verticalLayout_8.addWidget(self.bestSell)
 
-        self.widget_7 = QWidget(self.widget_40)
-        self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setMinimumSize(QSize(0, 45))
-        self.widget_7.setMaximumSize(QSize(16777215, 45))
-        self.widget_7.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_2 = QWidget(self.widget_40)
+        self.bestSell1_2.setObjectName(u"bestSell1_2")
+        self.bestSell1_2.setMinimumSize(QSize(0, 45))
+        self.bestSell1_2.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_2.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_8 = QHBoxLayout(self.widget_7)
+        self.horizontalLayout_8 = QHBoxLayout(self.bestSell1_2)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, -1, 0)
-        self.widget_44 = QWidget(self.widget_7)
-        self.widget_44.setObjectName(u"widget_44")
-        self.widget_44.setMinimumSize(QSize(51, 0))
-        self.widget_44.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_30 = QGridLayout(self.widget_44)
-        self.gridLayout_30.setObjectName(u"gridLayout_30")
-
-        self.horizontalLayout_8.addWidget(self.widget_44, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.widget_21 = QWidget(self.widget_7)
+        self.widget_21 = QWidget(self.bestSell1_2)
         self.widget_21.setObjectName(u"widget_21")
-        self.widget_21.setMinimumSize(QSize(0, 0))
-        self.widget_21.setStyleSheet(u"background-color: rgb(204, 204, 204);")
+        self.widget_21.setMinimumSize(QSize(51, 0))
+        self.widget_21.setStyleSheet(u"background-color: rgb(255, 140, 24);")
         self.verticalLayout_38 = QVBoxLayout(self.widget_21)
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
-        self.label_5 = QLabel(self.widget_21)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setMinimumSize(QSize(105, 45))
+        self.toolButton_3 = QToolButton(self.widget_21)
+        self.toolButton_3.setObjectName(u"toolButton_3")
+        self.toolButton_3.setIcon(icon10)
+        self.toolButton_3.setIconSize(QSize(30, 30))
 
-        self.verticalLayout_38.addWidget(self.label_5)
+        self.verticalLayout_38.addWidget(self.toolButton_3)
 
 
         self.horizontalLayout_8.addWidget(self.widget_21)
 
+        self.bestSell2 = QLabel(self.bestSell1_2)
+        self.bestSell2.setObjectName(u"bestSell2")
+        self.bestSell2.setMinimumSize(QSize(121, 31))
+        self.bestSell2.setMaximumSize(QSize(121, 31))
+        self.bestSell2.setFont(font7)
+        self.bestSell2.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell2.setWordWrap(True)
 
-        self.verticalLayout_8.addWidget(self.widget_7)
+        self.horizontalLayout_8.addWidget(self.bestSell2)
 
-        self.widget_8 = QWidget(self.widget_40)
-        self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setMinimumSize(QSize(0, 45))
-        self.widget_8.setMaximumSize(QSize(16777215, 45))
-        self.widget_8.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+
+        self.verticalLayout_8.addWidget(self.bestSell1_2)
+
+        self.bestSell1_3 = QWidget(self.widget_40)
+        self.bestSell1_3.setObjectName(u"bestSell1_3")
+        self.bestSell1_3.setMinimumSize(QSize(0, 45))
+        self.bestSell1_3.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_3.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_9 = QHBoxLayout(self.widget_8)
+        self.horizontalLayout_9 = QHBoxLayout(self.bestSell1_3)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.horizontalLayout_9.setContentsMargins(0, 0, -1, 0)
-        self.widget_22 = QWidget(self.widget_8)
+        self.widget_22 = QWidget(self.bestSell1_3)
         self.widget_22.setObjectName(u"widget_22")
         self.widget_22.setMinimumSize(QSize(51, 0))
         self.widget_22.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_11 = QGridLayout(self.widget_22)
-        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.verticalLayout_55 = QVBoxLayout(self.widget_22)
+        self.verticalLayout_55.setObjectName(u"verticalLayout_55")
         self.toolButton_4 = QToolButton(self.widget_22)
         self.toolButton_4.setObjectName(u"toolButton_4")
         self.toolButton_4.setIcon(icon10)
         self.toolButton_4.setIconSize(QSize(30, 30))
 
-        self.gridLayout_11.addWidget(self.toolButton_4, 0, 0, 1, 1)
+        self.verticalLayout_55.addWidget(self.toolButton_4)
 
 
-        self.horizontalLayout_9.addWidget(self.widget_22, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_9.addWidget(self.widget_22)
+
+        self.bestSell3 = QLabel(self.bestSell1_3)
+        self.bestSell3.setObjectName(u"bestSell3")
+        self.bestSell3.setMinimumSize(QSize(121, 31))
+        self.bestSell3.setMaximumSize(QSize(121, 31))
+        self.bestSell3.setFont(font7)
+        self.bestSell3.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell3.setWordWrap(True)
+
+        self.horizontalLayout_9.addWidget(self.bestSell3)
 
 
-        self.verticalLayout_8.addWidget(self.widget_8)
+        self.verticalLayout_8.addWidget(self.bestSell1_3)
 
-        self.widget_9 = QWidget(self.widget_40)
-        self.widget_9.setObjectName(u"widget_9")
-        self.widget_9.setMinimumSize(QSize(0, 45))
-        self.widget_9.setMaximumSize(QSize(16777215, 45))
-        self.widget_9.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_4 = QWidget(self.widget_40)
+        self.bestSell1_4.setObjectName(u"bestSell1_4")
+        self.bestSell1_4.setMinimumSize(QSize(0, 45))
+        self.bestSell1_4.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_4.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_13 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_13 = QHBoxLayout(self.bestSell1_4)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.horizontalLayout_13.setContentsMargins(0, 0, -1, 0)
-        self.widget_23 = QWidget(self.widget_9)
+        self.widget_23 = QWidget(self.bestSell1_4)
         self.widget_23.setObjectName(u"widget_23")
         self.widget_23.setMinimumSize(QSize(51, 0))
         self.widget_23.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_21 = QGridLayout(self.widget_23)
-        self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.verticalLayout_56 = QVBoxLayout(self.widget_23)
+        self.verticalLayout_56.setObjectName(u"verticalLayout_56")
         self.toolButton_5 = QToolButton(self.widget_23)
         self.toolButton_5.setObjectName(u"toolButton_5")
         self.toolButton_5.setIcon(icon10)
         self.toolButton_5.setIconSize(QSize(30, 30))
 
-        self.gridLayout_21.addWidget(self.toolButton_5, 0, 0, 1, 1)
+        self.verticalLayout_56.addWidget(self.toolButton_5)
 
 
-        self.horizontalLayout_13.addWidget(self.widget_23, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_13.addWidget(self.widget_23)
+
+        self.bestSell4 = QLabel(self.bestSell1_4)
+        self.bestSell4.setObjectName(u"bestSell4")
+        self.bestSell4.setMinimumSize(QSize(121, 31))
+        self.bestSell4.setMaximumSize(QSize(121, 31))
+        self.bestSell4.setFont(font7)
+        self.bestSell4.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell4.setWordWrap(True)
+
+        self.horizontalLayout_13.addWidget(self.bestSell4)
 
 
-        self.verticalLayout_8.addWidget(self.widget_9)
+        self.verticalLayout_8.addWidget(self.bestSell1_4)
 
-        self.widget_10 = QWidget(self.widget_40)
-        self.widget_10.setObjectName(u"widget_10")
-        self.widget_10.setMinimumSize(QSize(0, 45))
-        self.widget_10.setMaximumSize(QSize(16777215, 45))
-        self.widget_10.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_5 = QWidget(self.widget_40)
+        self.bestSell1_5.setObjectName(u"bestSell1_5")
+        self.bestSell1_5.setMinimumSize(QSize(0, 45))
+        self.bestSell1_5.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_5.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_16 = QHBoxLayout(self.widget_10)
+        self.horizontalLayout_16 = QHBoxLayout(self.bestSell1_5)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(0, 0, -1, 0)
-        self.widget_24 = QWidget(self.widget_10)
+        self.widget_24 = QWidget(self.bestSell1_5)
         self.widget_24.setObjectName(u"widget_24")
         self.widget_24.setMinimumSize(QSize(51, 0))
         self.widget_24.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_22 = QGridLayout(self.widget_24)
-        self.gridLayout_22.setObjectName(u"gridLayout_22")
+        self.verticalLayout_57 = QVBoxLayout(self.widget_24)
+        self.verticalLayout_57.setObjectName(u"verticalLayout_57")
         self.toolButton_6 = QToolButton(self.widget_24)
         self.toolButton_6.setObjectName(u"toolButton_6")
         self.toolButton_6.setIcon(icon10)
         self.toolButton_6.setIconSize(QSize(30, 30))
 
-        self.gridLayout_22.addWidget(self.toolButton_6, 0, 0, 1, 1)
+        self.verticalLayout_57.addWidget(self.toolButton_6)
 
 
-        self.horizontalLayout_16.addWidget(self.widget_24, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_16.addWidget(self.widget_24)
+
+        self.bestSell5 = QLabel(self.bestSell1_5)
+        self.bestSell5.setObjectName(u"bestSell5")
+        self.bestSell5.setMinimumSize(QSize(121, 31))
+        self.bestSell5.setMaximumSize(QSize(121, 31))
+        self.bestSell5.setFont(font7)
+        self.bestSell5.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell5.setWordWrap(True)
+
+        self.horizontalLayout_16.addWidget(self.bestSell5)
 
 
-        self.verticalLayout_8.addWidget(self.widget_10)
+        self.verticalLayout_8.addWidget(self.bestSell1_5)
 
-        self.widget_11 = QWidget(self.widget_40)
-        self.widget_11.setObjectName(u"widget_11")
-        self.widget_11.setMinimumSize(QSize(0, 45))
-        self.widget_11.setMaximumSize(QSize(16777215, 45))
-        self.widget_11.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_6 = QWidget(self.widget_40)
+        self.bestSell1_6.setObjectName(u"bestSell1_6")
+        self.bestSell1_6.setMinimumSize(QSize(0, 45))
+        self.bestSell1_6.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_6.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_17 = QHBoxLayout(self.widget_11)
+        self.horizontalLayout_17 = QHBoxLayout(self.bestSell1_6)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(0, 0, -1, 0)
-        self.widget_25 = QWidget(self.widget_11)
+        self.widget_25 = QWidget(self.bestSell1_6)
         self.widget_25.setObjectName(u"widget_25")
         self.widget_25.setMinimumSize(QSize(51, 0))
         self.widget_25.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_23 = QGridLayout(self.widget_25)
-        self.gridLayout_23.setObjectName(u"gridLayout_23")
+        self.verticalLayout_58 = QVBoxLayout(self.widget_25)
+        self.verticalLayout_58.setObjectName(u"verticalLayout_58")
         self.toolButton_7 = QToolButton(self.widget_25)
         self.toolButton_7.setObjectName(u"toolButton_7")
         self.toolButton_7.setIcon(icon10)
         self.toolButton_7.setIconSize(QSize(30, 30))
 
-        self.gridLayout_23.addWidget(self.toolButton_7, 0, 0, 1, 1)
+        self.verticalLayout_58.addWidget(self.toolButton_7)
 
 
-        self.horizontalLayout_17.addWidget(self.widget_25, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_17.addWidget(self.widget_25)
+
+        self.bestSell6 = QLabel(self.bestSell1_6)
+        self.bestSell6.setObjectName(u"bestSell6")
+        self.bestSell6.setMinimumSize(QSize(121, 31))
+        self.bestSell6.setMaximumSize(QSize(121, 31))
+        self.bestSell6.setFont(font7)
+        self.bestSell6.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell6.setWordWrap(True)
+
+        self.horizontalLayout_17.addWidget(self.bestSell6)
 
 
-        self.verticalLayout_8.addWidget(self.widget_11)
+        self.verticalLayout_8.addWidget(self.bestSell1_6)
 
-        self.widget_12 = QWidget(self.widget_40)
-        self.widget_12.setObjectName(u"widget_12")
-        self.widget_12.setMinimumSize(QSize(0, 45))
-        self.widget_12.setMaximumSize(QSize(16777215, 45))
-        self.widget_12.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_7 = QWidget(self.widget_40)
+        self.bestSell1_7.setObjectName(u"bestSell1_7")
+        self.bestSell1_7.setMinimumSize(QSize(0, 45))
+        self.bestSell1_7.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_7.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_18 = QHBoxLayout(self.widget_12)
+        self.horizontalLayout_18 = QHBoxLayout(self.bestSell1_7)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, -1, 0)
-        self.widget_26 = QWidget(self.widget_12)
+        self.widget_26 = QWidget(self.bestSell1_7)
         self.widget_26.setObjectName(u"widget_26")
         self.widget_26.setMinimumSize(QSize(51, 0))
         self.widget_26.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_24 = QGridLayout(self.widget_26)
-        self.gridLayout_24.setObjectName(u"gridLayout_24")
+        self.verticalLayout_59 = QVBoxLayout(self.widget_26)
+        self.verticalLayout_59.setObjectName(u"verticalLayout_59")
         self.toolButton_8 = QToolButton(self.widget_26)
         self.toolButton_8.setObjectName(u"toolButton_8")
         self.toolButton_8.setIcon(icon10)
         self.toolButton_8.setIconSize(QSize(30, 30))
 
-        self.gridLayout_24.addWidget(self.toolButton_8, 0, 0, 1, 1)
+        self.verticalLayout_59.addWidget(self.toolButton_8)
 
 
-        self.horizontalLayout_18.addWidget(self.widget_26, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_18.addWidget(self.widget_26)
+
+        self.bestSell7 = QLabel(self.bestSell1_7)
+        self.bestSell7.setObjectName(u"bestSell7")
+        self.bestSell7.setMinimumSize(QSize(121, 31))
+        self.bestSell7.setMaximumSize(QSize(121, 31))
+        self.bestSell7.setFont(font7)
+        self.bestSell7.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell7.setWordWrap(True)
+
+        self.horizontalLayout_18.addWidget(self.bestSell7)
 
 
-        self.verticalLayout_8.addWidget(self.widget_12)
+        self.verticalLayout_8.addWidget(self.bestSell1_7)
 
-        self.widget_13 = QWidget(self.widget_40)
-        self.widget_13.setObjectName(u"widget_13")
-        self.widget_13.setMinimumSize(QSize(0, 45))
-        self.widget_13.setMaximumSize(QSize(16777215, 45))
-        self.widget_13.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell08 = QWidget(self.widget_40)
+        self.bestSell08.setObjectName(u"bestSell08")
+        self.bestSell08.setMinimumSize(QSize(0, 45))
+        self.bestSell08.setMaximumSize(QSize(16777215, 45))
+        self.bestSell08.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_19 = QHBoxLayout(self.widget_13)
+        self.horizontalLayout_19 = QHBoxLayout(self.bestSell08)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 0, -1, 0)
-        self.widget_71 = QWidget(self.widget_13)
-        self.widget_71.setObjectName(u"widget_71")
-        self.widget_71.setMinimumSize(QSize(51, 0))
-        self.widget_71.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_25 = QGridLayout(self.widget_71)
-        self.gridLayout_25.setObjectName(u"gridLayout_25")
-        self.toolButton_9 = QToolButton(self.widget_71)
+        self.widget_44 = QWidget(self.bestSell08)
+        self.widget_44.setObjectName(u"widget_44")
+        self.widget_44.setMinimumSize(QSize(51, 0))
+        self.widget_44.setStyleSheet(u"background-color: rgb(255, 140, 24);")
+        self.verticalLayout_60 = QVBoxLayout(self.widget_44)
+        self.verticalLayout_60.setObjectName(u"verticalLayout_60")
+        self.toolButton_9 = QToolButton(self.widget_44)
         self.toolButton_9.setObjectName(u"toolButton_9")
         self.toolButton_9.setIcon(icon10)
         self.toolButton_9.setIconSize(QSize(30, 30))
 
-        self.gridLayout_25.addWidget(self.toolButton_9, 0, 0, 1, 1)
+        self.verticalLayout_60.addWidget(self.toolButton_9)
 
 
-        self.horizontalLayout_19.addWidget(self.widget_71, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_19.addWidget(self.widget_44)
+
+        self.bestSell8 = QLabel(self.bestSell08)
+        self.bestSell8.setObjectName(u"bestSell8")
+        self.bestSell8.setMinimumSize(QSize(121, 31))
+        self.bestSell8.setMaximumSize(QSize(121, 31))
+        self.bestSell8.setFont(font7)
+        self.bestSell8.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell8.setWordWrap(True)
+
+        self.horizontalLayout_19.addWidget(self.bestSell8)
 
 
-        self.verticalLayout_8.addWidget(self.widget_13)
+        self.verticalLayout_8.addWidget(self.bestSell08)
 
-        self.widget_14 = QWidget(self.widget_40)
-        self.widget_14.setObjectName(u"widget_14")
-        self.widget_14.setMinimumSize(QSize(0, 45))
-        self.widget_14.setMaximumSize(QSize(16777215, 45))
-        self.widget_14.setStyleSheet(u"background-color: rgb(204, 204, 204);\n"
+        self.bestSell1_9 = QWidget(self.widget_40)
+        self.bestSell1_9.setObjectName(u"bestSell1_9")
+        self.bestSell1_9.setMinimumSize(QSize(0, 45))
+        self.bestSell1_9.setMaximumSize(QSize(16777215, 45))
+        self.bestSell1_9.setStyleSheet(u"background-color: rgb(180,180,180);\n"
 "border-radius:7px;\n"
 "")
-        self.horizontalLayout_20 = QHBoxLayout(self.widget_14)
+        self.horizontalLayout_20 = QHBoxLayout(self.bestSell1_9)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(0, 0, -1, 0)
-        self.widget_72 = QWidget(self.widget_14)
-        self.widget_72.setObjectName(u"widget_72")
-        self.widget_72.setMinimumSize(QSize(51, 0))
-        self.widget_72.setStyleSheet(u"background-color: rgb(255, 140, 24);")
-        self.gridLayout_26 = QGridLayout(self.widget_72)
-        self.gridLayout_26.setObjectName(u"gridLayout_26")
-        self.toolButton_10 = QToolButton(self.widget_72)
+        self.widget_47 = QWidget(self.bestSell1_9)
+        self.widget_47.setObjectName(u"widget_47")
+        self.widget_47.setMinimumSize(QSize(51, 0))
+        self.widget_47.setStyleSheet(u"background-color: rgb(255, 140, 24);")
+        self.verticalLayout_61 = QVBoxLayout(self.widget_47)
+        self.verticalLayout_61.setObjectName(u"verticalLayout_61")
+        self.toolButton_10 = QToolButton(self.widget_47)
         self.toolButton_10.setObjectName(u"toolButton_10")
         self.toolButton_10.setIcon(icon10)
         self.toolButton_10.setIconSize(QSize(30, 30))
 
-        self.gridLayout_26.addWidget(self.toolButton_10, 0, 0, 1, 1)
+        self.verticalLayout_61.addWidget(self.toolButton_10)
 
 
-        self.horizontalLayout_20.addWidget(self.widget_72, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_20.addWidget(self.widget_47)
+
+        self.bestSell9 = QLabel(self.bestSell1_9)
+        self.bestSell9.setObjectName(u"bestSell9")
+        self.bestSell9.setMinimumSize(QSize(121, 31))
+        self.bestSell9.setMaximumSize(QSize(121, 31))
+        self.bestSell9.setFont(font7)
+        self.bestSell9.setStyleSheet(u"color: white;\n"
+"")
+        self.bestSell9.setWordWrap(True)
+
+        self.horizontalLayout_20.addWidget(self.bestSell9)
 
 
-        self.verticalLayout_8.addWidget(self.widget_14)
+        self.verticalLayout_8.addWidget(self.bestSell1_9)
 
 
         self.verticalLayout_12.addWidget(self.widget_40, 0, Qt.AlignmentFlag.AlignTop)
@@ -950,11 +1045,11 @@ class Ui_MainWindow(object):
         self.pushButton_14.setObjectName(u"pushButton_14")
         self.pushButton_14.setMinimumSize(QSize(25, 25))
         self.pushButton_14.setMaximumSize(QSize(25, 25))
-        font7 = QFont()
-        font7.setFamilies([u"Roboto"])
-        font7.setPointSize(10)
-        font7.setBold(True)
-        self.pushButton_14.setFont(font7)
+        font8 = QFont()
+        font8.setFamilies([u"Roboto"])
+        font8.setPointSize(10)
+        font8.setBold(True)
+        self.pushButton_14.setFont(font8)
         self.pushButton_14.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -984,7 +1079,7 @@ class Ui_MainWindow(object):
         self.add_prod_button.setObjectName(u"add_prod_button")
         self.add_prod_button.setMinimumSize(QSize(150, 30))
         self.add_prod_button.setMaximumSize(QSize(150, 25))
-        self.add_prod_button.setFont(font7)
+        self.add_prod_button.setFont(font8)
         self.add_prod_button.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1027,24 +1122,24 @@ class Ui_MainWindow(object):
         self.product_table = QTableWidget(self.widget_35)
         if (self.product_table.columnCount() < 5):
             self.product_table.setColumnCount(5)
-        font8 = QFont()
-        font8.setFamilies([u"Inter SemiBold"])
-        font8.setPointSize(10)
-        font8.setBold(True)
+        font9 = QFont()
+        font9.setFamilies([u"Inter SemiBold"])
+        font9.setPointSize(10)
+        font9.setBold(True)
         __qtablewidgetitem16 = QTableWidgetItem()
-        __qtablewidgetitem16.setFont(font8);
+        __qtablewidgetitem16.setFont(font9);
         self.product_table.setHorizontalHeaderItem(0, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        __qtablewidgetitem17.setFont(font8);
+        __qtablewidgetitem17.setFont(font9);
         self.product_table.setHorizontalHeaderItem(1, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        __qtablewidgetitem18.setFont(font8);
+        __qtablewidgetitem18.setFont(font9);
         self.product_table.setHorizontalHeaderItem(2, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        __qtablewidgetitem19.setFont(font8);
+        __qtablewidgetitem19.setFont(font9);
         self.product_table.setHorizontalHeaderItem(3, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        __qtablewidgetitem20.setFont(font8);
+        __qtablewidgetitem20.setFont(font9);
         self.product_table.setHorizontalHeaderItem(4, __qtablewidgetitem20)
         if (self.product_table.rowCount() < 16):
             self.product_table.setRowCount(16)
@@ -1110,11 +1205,11 @@ class Ui_MainWindow(object):
         self.product_table.setObjectName(u"product_table")
         sizePolicy1.setHeightForWidth(self.product_table.sizePolicy().hasHeightForWidth())
         self.product_table.setSizePolicy(sizePolicy1)
-        font9 = QFont()
-        font9.setFamilies([u"Inter Medium"])
-        font9.setPointSize(9)
-        font9.setBold(False)
-        self.product_table.setFont(font9)
+        font10 = QFont()
+        font10.setFamilies([u"Inter Medium"])
+        font10.setPointSize(9)
+        font10.setBold(False)
+        self.product_table.setFont(font10)
         self.product_table.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
@@ -1258,7 +1353,7 @@ class Ui_MainWindow(object):
         self.pushButton_16.setObjectName(u"pushButton_16")
         self.pushButton_16.setMinimumSize(QSize(25, 25))
         self.pushButton_16.setMaximumSize(QSize(25, 25))
-        self.pushButton_16.setFont(font7)
+        self.pushButton_16.setFont(font8)
         self.pushButton_16.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -1286,7 +1381,7 @@ class Ui_MainWindow(object):
         self.update_prod_button.setObjectName(u"update_prod_button")
         self.update_prod_button.setMinimumSize(QSize(150, 30))
         self.update_prod_button.setMaximumSize(QSize(150, 25))
-        self.update_prod_button.setFont(font7)
+        self.update_prod_button.setFont(font8)
         self.update_prod_button.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1327,19 +1422,19 @@ class Ui_MainWindow(object):
         if (self.product_table_2.columnCount() < 5):
             self.product_table_2.setColumnCount(5)
         __qtablewidgetitem47 = QTableWidgetItem()
-        __qtablewidgetitem47.setFont(font8);
+        __qtablewidgetitem47.setFont(font9);
         self.product_table_2.setHorizontalHeaderItem(0, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
-        __qtablewidgetitem48.setFont(font8);
+        __qtablewidgetitem48.setFont(font9);
         self.product_table_2.setHorizontalHeaderItem(1, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
-        __qtablewidgetitem49.setFont(font8);
+        __qtablewidgetitem49.setFont(font9);
         self.product_table_2.setHorizontalHeaderItem(2, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
-        __qtablewidgetitem50.setFont(font8);
+        __qtablewidgetitem50.setFont(font9);
         self.product_table_2.setHorizontalHeaderItem(3, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
-        __qtablewidgetitem51.setFont(font8);
+        __qtablewidgetitem51.setFont(font9);
         self.product_table_2.setHorizontalHeaderItem(4, __qtablewidgetitem51)
         if (self.product_table_2.rowCount() < 16):
             self.product_table_2.setRowCount(16)
@@ -1405,7 +1500,7 @@ class Ui_MainWindow(object):
         self.product_table_2.setObjectName(u"product_table_2")
         sizePolicy1.setHeightForWidth(self.product_table_2.sizePolicy().hasHeightForWidth())
         self.product_table_2.setSizePolicy(sizePolicy1)
-        self.product_table_2.setFont(font9)
+        self.product_table_2.setFont(font10)
         self.product_table_2.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
@@ -1549,7 +1644,7 @@ class Ui_MainWindow(object):
         self.pushButton_17.setObjectName(u"pushButton_17")
         self.pushButton_17.setMinimumSize(QSize(25, 25))
         self.pushButton_17.setMaximumSize(QSize(25, 25))
-        self.pushButton_17.setFont(font7)
+        self.pushButton_17.setFont(font8)
         self.pushButton_17.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -1577,7 +1672,7 @@ class Ui_MainWindow(object):
         self.update_prod_button_2.setObjectName(u"update_prod_button_2")
         self.update_prod_button_2.setMinimumSize(QSize(150, 30))
         self.update_prod_button_2.setMaximumSize(QSize(150, 25))
-        self.update_prod_button_2.setFont(font7)
+        self.update_prod_button_2.setFont(font8)
         self.update_prod_button_2.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1620,19 +1715,19 @@ class Ui_MainWindow(object):
         if (self.product_table_3.columnCount() < 5):
             self.product_table_3.setColumnCount(5)
         __qtablewidgetitem78 = QTableWidgetItem()
-        __qtablewidgetitem78.setFont(font8);
+        __qtablewidgetitem78.setFont(font9);
         self.product_table_3.setHorizontalHeaderItem(0, __qtablewidgetitem78)
         __qtablewidgetitem79 = QTableWidgetItem()
-        __qtablewidgetitem79.setFont(font8);
+        __qtablewidgetitem79.setFont(font9);
         self.product_table_3.setHorizontalHeaderItem(1, __qtablewidgetitem79)
         __qtablewidgetitem80 = QTableWidgetItem()
-        __qtablewidgetitem80.setFont(font8);
+        __qtablewidgetitem80.setFont(font9);
         self.product_table_3.setHorizontalHeaderItem(2, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
-        __qtablewidgetitem81.setFont(font8);
+        __qtablewidgetitem81.setFont(font9);
         self.product_table_3.setHorizontalHeaderItem(3, __qtablewidgetitem81)
         __qtablewidgetitem82 = QTableWidgetItem()
-        __qtablewidgetitem82.setFont(font8);
+        __qtablewidgetitem82.setFont(font9);
         self.product_table_3.setHorizontalHeaderItem(4, __qtablewidgetitem82)
         if (self.product_table_3.rowCount() < 16):
             self.product_table_3.setRowCount(16)
@@ -1698,7 +1793,7 @@ class Ui_MainWindow(object):
         self.product_table_3.setObjectName(u"product_table_3")
         sizePolicy1.setHeightForWidth(self.product_table_3.sizePolicy().hasHeightForWidth())
         self.product_table_3.setSizePolicy(sizePolicy1)
-        self.product_table_3.setFont(font9)
+        self.product_table_3.setFont(font10)
         self.product_table_3.setStyleSheet(u"QTableWidget {\n"
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
@@ -1817,17 +1912,17 @@ class Ui_MainWindow(object):
         self.GrandTotalSalesLbl.setObjectName(u"GrandTotalSalesLbl")
         self.GrandTotalSalesLbl.setMinimumSize(QSize(50, 0))
         self.GrandTotalSalesLbl.setMaximumSize(QSize(140, 16777215))
-        font10 = QFont()
-        font10.setFamilies([u"Poppins SemiBold"])
-        font10.setPointSize(11)
-        font10.setBold(True)
-        self.GrandTotalSalesLbl.setFont(font10)
+        font11 = QFont()
+        font11.setFamilies([u"Poppins SemiBold"])
+        font11.setPointSize(11)
+        font11.setBold(True)
+        self.GrandTotalSalesLbl.setFont(font11)
 
         self.horizontalLayout_27.addWidget(self.GrandTotalSalesLbl)
 
         self.grandTotalSalesValue = QLabel(self.widget_29)
         self.grandTotalSalesValue.setObjectName(u"grandTotalSalesValue")
-        self.grandTotalSalesValue.setFont(font10)
+        self.grandTotalSalesValue.setFont(font11)
 
         self.horizontalLayout_27.addWidget(self.grandTotalSalesValue)
 
@@ -1840,13 +1935,13 @@ class Ui_MainWindow(object):
         self.total_items_sold_lbl.setObjectName(u"total_items_sold_lbl")
         self.total_items_sold_lbl.setMinimumSize(QSize(130, 0))
         self.total_items_sold_lbl.setMaximumSize(QSize(130, 16777215))
-        self.total_items_sold_lbl.setFont(font10)
+        self.total_items_sold_lbl.setFont(font11)
 
         self.horizontalLayout_28.addWidget(self.total_items_sold_lbl)
 
         self.totat_items_sold_value = QLabel(self.widget_29)
         self.totat_items_sold_value.setObjectName(u"totat_items_sold_value")
-        self.totat_items_sold_value.setFont(font10)
+        self.totat_items_sold_value.setFont(font11)
 
         self.horizontalLayout_28.addWidget(self.totat_items_sold_value)
 
@@ -1866,7 +1961,7 @@ class Ui_MainWindow(object):
         self.dailySalesBtn.setObjectName(u"dailySalesBtn")
         self.dailySalesBtn.setMinimumSize(QSize(0, 31))
         self.dailySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.dailySalesBtn.setFont(font7)
+        self.dailySalesBtn.setFont(font8)
         self.dailySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1897,7 +1992,7 @@ class Ui_MainWindow(object):
         self.monthlySalesBtn.setObjectName(u"monthlySalesBtn")
         self.monthlySalesBtn.setMinimumSize(QSize(0, 31))
         self.monthlySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.monthlySalesBtn.setFont(font7)
+        self.monthlySalesBtn.setFont(font8)
         self.monthlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1928,7 +2023,7 @@ class Ui_MainWindow(object):
         self.yearlySalesBtn.setObjectName(u"yearlySalesBtn")
         self.yearlySalesBtn.setMinimumSize(QSize(0, 31))
         self.yearlySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.yearlySalesBtn.setFont(font7)
+        self.yearlySalesBtn.setFont(font8)
         self.yearlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1959,7 +2054,7 @@ class Ui_MainWindow(object):
         self.itemSoldBtn.setObjectName(u"itemSoldBtn")
         self.itemSoldBtn.setMinimumSize(QSize(0, 31))
         self.itemSoldBtn.setMaximumSize(QSize(16777215, 31))
-        self.itemSoldBtn.setFont(font7)
+        self.itemSoldBtn.setFont(font8)
         self.itemSoldBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2016,15 +2111,15 @@ class Ui_MainWindow(object):
         self.dailySalesTbl = QTableWidget(self.DailySalesPage)
         if (self.dailySalesTbl.columnCount() < 2):
             self.dailySalesTbl.setColumnCount(2)
-        font11 = QFont()
-        font11.setFamilies([u"Poppins SemiBold"])
-        font11.setPointSize(10)
-        font11.setBold(False)
+        font12 = QFont()
+        font12.setFamilies([u"Poppins SemiBold"])
+        font12.setPointSize(10)
+        font12.setBold(False)
         __qtablewidgetitem109 = QTableWidgetItem()
-        __qtablewidgetitem109.setFont(font11);
+        __qtablewidgetitem109.setFont(font12);
         self.dailySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
-        __qtablewidgetitem110.setFont(font11);
+        __qtablewidgetitem110.setFont(font12);
         self.dailySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem110)
         if (self.dailySalesTbl.rowCount() < 18):
             self.dailySalesTbl.setRowCount(18)
@@ -2131,10 +2226,12 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
+        self.dailySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.dailySalesTbl.setAlternatingRowColors(True)
         self.dailySalesTbl.setSortingEnabled(False)
         self.dailySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
-        self.dailySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.dailySalesTbl.horizontalHeader().setMinimumSectionSize(100)
+        self.dailySalesTbl.horizontalHeader().setDefaultSectionSize(250)
         self.dailySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.dailySalesTbl.verticalHeader().setVisible(False)
 
@@ -2149,10 +2246,10 @@ class Ui_MainWindow(object):
         if (self.monthlySalesTbl.columnCount() < 2):
             self.monthlySalesTbl.setColumnCount(2)
         __qtablewidgetitem130 = QTableWidgetItem()
-        __qtablewidgetitem130.setFont(font11);
+        __qtablewidgetitem130.setFont(font12);
         self.monthlySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
-        __qtablewidgetitem131.setFont(font11);
+        __qtablewidgetitem131.setFont(font12);
         self.monthlySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem131)
         if (self.monthlySalesTbl.rowCount() < 18):
             self.monthlySalesTbl.setRowCount(18)
@@ -2259,10 +2356,12 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
+        self.monthlySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.monthlySalesTbl.setAlternatingRowColors(True)
         self.monthlySalesTbl.setSortingEnabled(False)
         self.monthlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.monthlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.monthlySalesTbl.horizontalHeader().setDefaultSectionSize(250)
         self.monthlySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.monthlySalesTbl.verticalHeader().setVisible(False)
 
@@ -2277,10 +2376,10 @@ class Ui_MainWindow(object):
         if (self.yearlySalesTbl.columnCount() < 2):
             self.yearlySalesTbl.setColumnCount(2)
         __qtablewidgetitem151 = QTableWidgetItem()
-        __qtablewidgetitem151.setFont(font11);
+        __qtablewidgetitem151.setFont(font12);
         self.yearlySalesTbl.setHorizontalHeaderItem(0, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
-        __qtablewidgetitem152.setFont(font11);
+        __qtablewidgetitem152.setFont(font12);
         self.yearlySalesTbl.setHorizontalHeaderItem(1, __qtablewidgetitem152)
         if (self.yearlySalesTbl.rowCount() < 18):
             self.yearlySalesTbl.setRowCount(18)
@@ -2387,10 +2486,12 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
+        self.yearlySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.yearlySalesTbl.setAlternatingRowColors(True)
         self.yearlySalesTbl.setSortingEnabled(False)
         self.yearlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.yearlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
+        self.yearlySalesTbl.horizontalHeader().setDefaultSectionSize(250)
         self.yearlySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.yearlySalesTbl.verticalHeader().setVisible(False)
 
@@ -2405,10 +2506,10 @@ class Ui_MainWindow(object):
         if (self.itemSoldTbl.columnCount() < 4):
             self.itemSoldTbl.setColumnCount(4)
         __qtablewidgetitem172 = QTableWidgetItem()
-        __qtablewidgetitem172.setFont(font11);
+        __qtablewidgetitem172.setFont(font12);
         self.itemSoldTbl.setHorizontalHeaderItem(0, __qtablewidgetitem172)
         __qtablewidgetitem173 = QTableWidgetItem()
-        __qtablewidgetitem173.setFont(font11);
+        __qtablewidgetitem173.setFont(font12);
         self.itemSoldTbl.setHorizontalHeaderItem(1, __qtablewidgetitem173)
         __qtablewidgetitem174 = QTableWidgetItem()
         __qtablewidgetitem174.setFont(font4);
@@ -2521,11 +2622,12 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
+        self.itemSoldTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.itemSoldTbl.setAlternatingRowColors(True)
         self.itemSoldTbl.setSortingEnabled(False)
         self.itemSoldTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.itemSoldTbl.horizontalHeader().setMinimumSectionSize(100)
-        self.itemSoldTbl.horizontalHeader().setDefaultSectionSize(170)
+        self.itemSoldTbl.horizontalHeader().setDefaultSectionSize(190)
         self.itemSoldTbl.horizontalHeader().setStretchLastSection(True)
         self.itemSoldTbl.verticalHeader().setVisible(False)
 
@@ -2562,7 +2664,7 @@ class Ui_MainWindow(object):
         self.label_25 = QLabel(self.widget_66)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setGeometry(QRect(10, 0, 109, 27))
-        self.label_25.setFont(font10)
+        self.label_25.setFont(font11)
         self.label_25.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2631,7 +2733,7 @@ class Ui_MainWindow(object):
         self.label_49.setObjectName(u"label_49")
         self.label_49.setMinimumSize(QSize(0, 13))
         self.label_49.setMaximumSize(QSize(85, 13))
-        self.label_49.setFont(font10)
+        self.label_49.setFont(font11)
         self.label_49.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2641,7 +2743,7 @@ class Ui_MainWindow(object):
         self.label_50 = QLabel(self.widget_80)
         self.label_50.setObjectName(u"label_50")
         self.label_50.setMaximumSize(QSize(16777215, 13))
-        self.label_50.setFont(font10)
+        self.label_50.setFont(font11)
         self.label_50.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2668,7 +2770,7 @@ class Ui_MainWindow(object):
         self.label_51.setObjectName(u"label_51")
         self.label_51.setMinimumSize(QSize(0, 13))
         self.label_51.setMaximumSize(QSize(85, 13))
-        self.label_51.setFont(font10)
+        self.label_51.setFont(font11)
         self.label_51.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2678,7 +2780,7 @@ class Ui_MainWindow(object):
         self.label_52 = QLabel(self.widget_81)
         self.label_52.setObjectName(u"label_52")
         self.label_52.setMaximumSize(QSize(16777215, 13))
-        self.label_52.setFont(font10)
+        self.label_52.setFont(font11)
         self.label_52.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2710,7 +2812,7 @@ class Ui_MainWindow(object):
         self.pushButton_21.setObjectName(u"pushButton_21")
         self.pushButton_21.setMinimumSize(QSize(0, 31))
         self.pushButton_21.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_21.setFont(font7)
+        self.pushButton_21.setFont(font8)
         self.pushButton_21.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2765,7 +2867,7 @@ class Ui_MainWindow(object):
         self.label_26 = QLabel(self.widget_85)
         self.label_26.setObjectName(u"label_26")
         self.label_26.setGeometry(QRect(10, 0, 109, 27))
-        self.label_26.setFont(font10)
+        self.label_26.setFont(font11)
         self.label_26.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2828,7 +2930,7 @@ class Ui_MainWindow(object):
         self.label_53.setObjectName(u"label_53")
         self.label_53.setMinimumSize(QSize(0, 13))
         self.label_53.setMaximumSize(QSize(85, 13))
-        self.label_53.setFont(font10)
+        self.label_53.setFont(font11)
         self.label_53.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2838,7 +2940,7 @@ class Ui_MainWindow(object):
         self.label_54 = QLabel(self.widget_90)
         self.label_54.setObjectName(u"label_54")
         self.label_54.setMaximumSize(QSize(16777215, 13))
-        self.label_54.setFont(font10)
+        self.label_54.setFont(font11)
         self.label_54.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2865,7 +2967,7 @@ class Ui_MainWindow(object):
         self.label_55.setObjectName(u"label_55")
         self.label_55.setMinimumSize(QSize(0, 13))
         self.label_55.setMaximumSize(QSize(85, 13))
-        self.label_55.setFont(font10)
+        self.label_55.setFont(font11)
         self.label_55.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2875,7 +2977,7 @@ class Ui_MainWindow(object):
         self.label_56 = QLabel(self.widget_91)
         self.label_56.setObjectName(u"label_56")
         self.label_56.setMaximumSize(QSize(16777215, 13))
-        self.label_56.setFont(font10)
+        self.label_56.setFont(font11)
         self.label_56.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -2907,7 +3009,7 @@ class Ui_MainWindow(object):
         self.pushButton_22.setObjectName(u"pushButton_22")
         self.pushButton_22.setMinimumSize(QSize(0, 31))
         self.pushButton_22.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_22.setFont(font7)
+        self.pushButton_22.setFont(font8)
         self.pushButton_22.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2983,11 +3085,11 @@ class Ui_MainWindow(object):
         self.label_28.setObjectName(u"label_28")
         sizePolicy.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
         self.label_28.setSizePolicy(sizePolicy)
-        font12 = QFont()
-        font12.setFamilies([u"Poppins SemiBold"])
-        font12.setPointSize(35)
-        font12.setBold(True)
-        self.label_28.setFont(font12)
+        font13 = QFont()
+        font13.setFamilies([u"Poppins SemiBold"])
+        font13.setPointSize(35)
+        font13.setBold(True)
+        self.label_28.setFont(font13)
         self.label_28.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -3031,11 +3133,11 @@ class Ui_MainWindow(object):
 
         self.label_30 = QLabel(self.layoutWidget)
         self.label_30.setObjectName(u"label_30")
-        font13 = QFont()
-        font13.setFamilies([u"Poppins Medium"])
-        font13.setPointSize(14)
-        font13.setBold(False)
-        self.label_30.setFont(font13)
+        font14 = QFont()
+        font14.setFamilies([u"Poppins Medium"])
+        font14.setPointSize(14)
+        font14.setBold(False)
+        self.label_30.setFont(font14)
         self.label_30.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -3060,10 +3162,10 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setSizePolicy(sizePolicy4)
         self.lineEdit_2.setMinimumSize(QSize(185, 35))
         self.lineEdit_2.setMaximumSize(QSize(16777215, 30))
-        font14 = QFont()
-        font14.setFamilies([u"Poppins Medium"])
-        font14.setPointSize(11)
-        self.lineEdit_2.setFont(font14)
+        font15 = QFont()
+        font15.setFamilies([u"Poppins Medium"])
+        font15.setPointSize(11)
+        self.lineEdit_2.setFont(font15)
         self.lineEdit_2.setStyleSheet(u"QLineEdit {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3098,7 +3200,7 @@ class Ui_MainWindow(object):
         self.lineEdit_6.setSizePolicy(sizePolicy4)
         self.lineEdit_6.setMinimumSize(QSize(200, 35))
         self.lineEdit_6.setMaximumSize(QSize(16777215, 30))
-        self.lineEdit_6.setFont(font14)
+        self.lineEdit_6.setFont(font15)
         self.lineEdit_6.setStyleSheet(u"QLineEdit {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3150,7 +3252,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setFont(font14)
+        self.comboBox.setFont(font15)
         self.comboBox.setStyleSheet(u"QComboBox {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3236,7 +3338,7 @@ class Ui_MainWindow(object):
         self.pushButton_31.setObjectName(u"pushButton_31")
         self.pushButton_31.setMinimumSize(QSize(132, 31))
         self.pushButton_31.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_31.setFont(font7)
+        self.pushButton_31.setFont(font8)
         self.pushButton_31.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3313,7 +3415,7 @@ class Ui_MainWindow(object):
         self.label_37.setObjectName(u"label_37")
         sizePolicy.setHeightForWidth(self.label_37.sizePolicy().hasHeightForWidth())
         self.label_37.setSizePolicy(sizePolicy)
-        self.label_37.setFont(font12)
+        self.label_37.setFont(font13)
         self.label_37.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -3357,7 +3459,7 @@ class Ui_MainWindow(object):
 
         self.label_39 = QLabel(self.layoutWidget_3)
         self.label_39.setObjectName(u"label_39")
-        self.label_39.setFont(font13)
+        self.label_39.setFont(font14)
         self.label_39.setStyleSheet(u"QLabel{\n"
 "	color:white;\n"
 "}")
@@ -3382,7 +3484,7 @@ class Ui_MainWindow(object):
         self.lineEdit_7.setSizePolicy(sizePolicy4)
         self.lineEdit_7.setMinimumSize(QSize(185, 35))
         self.lineEdit_7.setMaximumSize(QSize(16777215, 30))
-        self.lineEdit_7.setFont(font14)
+        self.lineEdit_7.setFont(font15)
         self.lineEdit_7.setStyleSheet(u"QLineEdit {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3417,7 +3519,7 @@ class Ui_MainWindow(object):
         self.lineEdit_8.setSizePolicy(sizePolicy4)
         self.lineEdit_8.setMinimumSize(QSize(200, 35))
         self.lineEdit_8.setMaximumSize(QSize(16777215, 30))
-        self.lineEdit_8.setFont(font14)
+        self.lineEdit_8.setFont(font15)
         self.lineEdit_8.setStyleSheet(u"QLineEdit {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3466,7 +3568,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setFont(font14)
+        self.comboBox_2.setFont(font15)
         self.comboBox_2.setStyleSheet(u"QComboBox {\n"
 "    background-color: #1F1F1F;\n"
 "    border: 1px solid #3B3B3B;\n"
@@ -3552,7 +3654,7 @@ class Ui_MainWindow(object):
         self.pushButton_32.setObjectName(u"pushButton_32")
         self.pushButton_32.setMinimumSize(QSize(132, 31))
         self.pushButton_32.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_32.setFont(font7)
+        self.pushButton_32.setFont(font8)
         self.pushButton_32.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3601,7 +3703,7 @@ class Ui_MainWindow(object):
         self.label_12.setObjectName(u"label_12")
         self.label_12.setMinimumSize(QSize(850, 584))
         self.label_12.setStyleSheet(u"border-radius:10px;")
-        self.label_12.setPixmap(QPixmap(u":/mainIcons/minimal-wallpaper-46.jpg"))
+        self.label_12.setPixmap(QPixmap(u"../../../Downloads/Untitled design (5).png"))
         self.label_12.setScaledContents(True)
 
         self.verticalLayout_28.addWidget(self.label_12)
@@ -3743,7 +3845,7 @@ class Ui_MainWindow(object):
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
         self.stackedWidget.setCurrentIndex(0)
-        self.SalesReportStackedWidget.setCurrentIndex(0)
+        self.SalesReportStackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3778,14 +3880,23 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Sales", None));
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Best Selling", None))
         self.toolButton.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.bestSell1.setText(QCoreApplication.translate("MainWindow", u"Americano Strawberry", None))
+        self.toolButton_3.setText("")
+        self.bestSell2.setText(QCoreApplication.translate("MainWindow", u"Matcha Coffee", None))
         self.toolButton_4.setText("")
+        self.bestSell3.setText(QCoreApplication.translate("MainWindow", u"Iced Choco", None))
         self.toolButton_5.setText("")
+        self.bestSell4.setText(QCoreApplication.translate("MainWindow", u"Matcha", None))
         self.toolButton_6.setText("")
+        self.bestSell5.setText(QCoreApplication.translate("MainWindow", u"Spanish Latte", None))
         self.toolButton_7.setText("")
+        self.bestSell6.setText(QCoreApplication.translate("MainWindow", u"Caramel", None))
         self.toolButton_8.setText("")
+        self.bestSell7.setText(QCoreApplication.translate("MainWindow", u"Vanilla", None))
         self.toolButton_9.setText("")
+        self.bestSell8.setText(QCoreApplication.translate("MainWindow", u"Mocha", None))
         self.toolButton_10.setText("")
+        self.bestSell9.setText(QCoreApplication.translate("MainWindow", u"Ube Latte", None))
         self.pushButton_14.setText("")
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.add_prod_button.setText(QCoreApplication.translate("MainWindow", u"Add Item", None))

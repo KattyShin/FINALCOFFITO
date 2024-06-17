@@ -2,7 +2,7 @@ import os
 
 def get_database_config():
     host = os.environ.get('POSTGRES_HOST', 'localhost')
-    database = os.environ.get('POSTGRES_DB', 'RECOFFITO')
+    database = os.environ.get('POSTGRES_DB', 'COFFITO_COFFEE_SHOP')
     user = os.environ.get('POSTGRES_USER', 'postgres')
     password = 'betaTrident1@'
     return {

@@ -90,6 +90,8 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         self.word_iicon.setHidden(True)
 
+        
+
         self.gcashSelectRBtn.clicked.connect(self.set_gcash_selected)
         self.cashSelectBtn.clicked.connect(self.set_cash_selected)
 
@@ -102,6 +104,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         
         self.logout1.clicked.connect(self.show_login_window)
         self.logout2.clicked.connect(self.show_login_window)
+
 
 
         for product_name, button in self.product_buttons.items():
@@ -122,6 +125,8 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         self.payButton.clicked.connect(self.payButtonClicked)
         self.Amt_ContactNum_Val.returnPressed.connect(self.handle_pay_button)
+
+        
 
         
     def show_login_window(self):

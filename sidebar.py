@@ -166,6 +166,24 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.pushButton_22.clicked.connect(self.show_update_staff_window)
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
 
+        self.dailySalesBtn.clicked.connect(self.switch_to_dailySales)
+        self.monthlySalesBtn.clicked.connect(self.switch_to_monthlySales)
+        self.yearlySalesBtn.clicked.connect(self.switch_to_yearlySales)
+        self.itemSoldBtn.clicked.connect(self.switch_to_itemSold)
+
+
+    def switch_to_dailySales(self):
+        self.SalesReportStackedWidget.setCurrentIndex(0)
+
+    def switch_to_monthlySales(self):
+        self.SalesReportStackedWidget.setCurrentIndex(1)
+    
+    def switch_to_yearlySales(self):
+        self.SalesReportStackedWidget.setCurrentIndex(2) 
+
+    def switch_to_itemSold (self):
+        self.SalesReportStackedWidget.setCurrentIndex(3) 
+
 
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow

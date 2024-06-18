@@ -51,8 +51,9 @@ class UpdateAdminWindow(QMainWindow):
         self.updateAdmin_Modal.setSizePolicy(sizePolicy)
         self.updateAdmin_Modal.setMinimumSize(QSize(300, 300))
         self.updateAdmin_Modal.setStyleSheet(u"QWidget{\n"
-"	background-color:rgb(59,59,59);\n"
+"	background-color:rgb(80,80,80);\n"
 "	border-radius:10px;\n"
+
 "}")
         self.verticalLayout_4 = QVBoxLayout(self.updateAdmin_Modal)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")

@@ -41,13 +41,7 @@ import re       #ADDED
 
 
 
-
-
-
-
 class Login_MainWindow(QMainWindow):
-    login_successful = Signal()
-
 
     def __init__(self):
         super().__init__()

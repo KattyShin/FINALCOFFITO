@@ -368,7 +368,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 self.show_invalid_gcash_number_error()
                 return
              # ADDED
-            if len(contact_number)  != 11:
+            if len(contact_number) != 11 or not contact_number.startswith("09"):
                 self.show_length_error_message()
                 return
 
@@ -516,9 +516,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
 
 
-
-
-
     def handle_pay_button(self):
         confirmation_reply = self.show_confirmation_dialog(
             'Payment Confirmation', 'Are you sure you want to confirm the payment?'
@@ -563,9 +560,20 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 color: white;
             }
             QPushButton {
-                background-color: #1F1F1F;
+                background-color: #0d6efd; 
                 color: white;
+                border: none;
+                padding: 7px;
+                border-radius: 5px;
+                width: 40px;
             }
+            QPushButton:hover {
+                background-color: #0a58ca; 
+            }
+            QPushButton:pressed {
+                background-color: #084298; 
+            } 
+                                               
         """)
         msg_box.exec_()
     def show_confirmation_dialog(self, title, message):
@@ -583,9 +591,21 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 color: white;
             }
             QPushButton {
-                background-color: #1F1F1F;
+                background-color: #0d6efd; 
                 color: white;
+                border: none;
+                padding: 7px;
+                border-radius: 5px;
+                width:40px;
+                              
+                
             }
+            QPushButton:hover {
+                background-color: #0a58ca; 
+            }
+            QPushButton:pressed {
+                background-color: #084298; 
+            } 
         """)
         reply = msg_box.exec_()
         return reply
@@ -615,7 +635,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.show_message_box("Order Error", "There was an error placing the order. Please try again.", QMessageBox.Critical)
 
     def show_length_error_message(self):
-        self.show_message_box("Error", "Mobile number must be 11 digits.", QMessageBox.Critical)
+        self.show_message_box("Error", "Invalid mobile number.", QMessageBox.Critical)
 
     
     def show_empty_order_message(self):

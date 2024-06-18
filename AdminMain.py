@@ -3952,7 +3952,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem20 = self.product_table_2.horizontalHeaderItem(3)
         ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Category", None));
         ___qtablewidgetitem21 = self.product_table_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Created At", None));
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Updated At", None));
 
         __sortingEnabled1 = self.product_table_2.isSortingEnabled()
         self.product_table_2.setSortingEnabled(False)

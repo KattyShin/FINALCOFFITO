@@ -908,7 +908,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
     def fetch_products_up(self):
         try:
             cur = self.conn.cursor()
-            cur.execute("SELECT PROD_ID, PROD_NAME, PROD_PRICE, PROD_CATEGORY, TO_CHAR(CREATED_AT, 'MM-DD-YYYY') AS CREATED_DATE FROM PRODUCT")
+            cur.execute("SELECT PROD_ID, PROD_NAME, PROD_PRICE, PROD_CATEGORY, TO_CHAR(UPDATED_AT, 'MM-DD-YYYY') AS CREATED_DATE FROM PRODUCT")
             products = cur.fetchall()
             cur.close()
            

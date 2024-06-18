@@ -61,7 +61,6 @@ class Login_MainWindow(QMainWindow):
             return None
 
 
-    # ADDED
     def show_message_box(self, title, message, icon):
         msg_box = QMessageBox()
         msg_box.setWindowTitle(title)
@@ -75,12 +74,22 @@ class Login_MainWindow(QMainWindow):
                 color: white;
             }
             QPushButton {
-                background-color: #1F1F1F;
+                background-color: #0d6efd; 
                 color: white;
+                border: none;
+                padding: 7px;
+                border-radius: 5px;
+                width: 40px;
             }
+            QPushButton:hover {
+                background-color: #0a58ca; 
+            }
+            QPushButton:pressed {
+                background-color: #084298; 
+            } 
+                                               
         """)
         msg_box.exec_()
-       
 
 
     def check_login(self):

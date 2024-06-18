@@ -222,6 +222,7 @@ class UpdateAdminWindow(QMainWindow):
 "}")
         
         self.admin_new_pass.setEchoMode(QLineEdit.Password) #ADDED
+
         self.updateAdmin.setCheckable(True)
         self.updateAdmin.setAutoExclusive(False)
 

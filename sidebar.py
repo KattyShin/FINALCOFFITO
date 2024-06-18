@@ -13,7 +13,8 @@ from PySide6.QtWidgets import QMessageBox
 from updateAdminModal import UpdateAdminWindow
 from updateStaffModal import UpdateStaffWindow
 import datetime
-import re      
+import re   
+import hashlib   
 
 MONTHS = {
     1: "January",   2: "February",   3: "March",
@@ -89,6 +90,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.fetch_total_products() #ADDED
         self.fetch_items_sold_today()  #ADDED
         self.fetch_total_sales() #ADDED
+        self.best_selling()
 
         self.AddItemWindow = AddItemWindow()
         self.AddItemWindow.addProdButton.clicked.connect(self.add_product_to_db)
@@ -146,7 +148,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
     def switch_to_itemSold(self):
         self.SalesReportStackedWidget.setCurrentIndex(3) 
-        
+        self.populateItemSoldTable()
     
 
     def dailySales(self):
@@ -307,6 +309,67 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             print("Error retrieving yearly sales data from the database:", error)
             self.show_message_box("Error", f"Error retrieving yearly sales data: {error}", QtWidgets.QMessageBox.Critical)
 
+    def populateItemSoldTable(self):
+        self.itemSoldTbl.setRowCount(0)
+        self.itemSoldTbl.setColumnCount(4)
+        self.itemSoldTbl.setHorizontalHeaderLabels(["Product ID", "Product Name", "Price", "Quantity Sold"])
+
+        try:
+            cur = self.conn.cursor()
+
+            query = """
+                SELECT oi.PROD_ID, p.PROD_NAME, p.PROD_PRICE, SUM(oi.ORDER_ITEM_QTY) AS TOTAL_QTY_SOLD
+                FROM ORDER_ITEMS oi
+                JOIN PRODUCT p ON oi.PROD_ID = p.PROD_ID
+                GROUP BY oi.PROD_ID, p.PROD_NAME, p.PROD_PRICE
+                ORDER BY oi.PROD_ID DESC;
+            """
+            cur.execute(query)
+            rows = cur.fetchall()
+            cur.close()
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
+
+            for row_num, row_data in enumerate(rows):
+                prod_id = row_data[0]
+                prod_name = row_data[1]
+                prod_price = row_data[2]
+                quantity_sold = row_data[3]
+
+                self.itemSoldTbl.insertRow(row_num)
+
+                # Set item alignment, font color, and font
+                item_prod_id = QtWidgets.QTableWidgetItem(str(prod_id))
+                item_prod_id.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_prod_id.setForeground(white_color)
+                item_prod_id.setFont(font)
+                self.itemSoldTbl.setItem(row_num, 0, item_prod_id)
+
+                item_prod_name = QtWidgets.QTableWidgetItem(prod_name)
+                item_prod_name.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_prod_name.setForeground(white_color)
+                item_prod_name.setFont(font)
+                self.itemSoldTbl.setItem(row_num, 1, item_prod_name)
+
+                item_price = QtWidgets.QTableWidgetItem(f"{prod_price:.2f}")  # Format price to two decimal places
+                item_price.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_price.setForeground(white_color)
+                item_price.setFont(font)
+                self.itemSoldTbl.setItem(row_num, 2, item_price)
+
+                item_qty_sold = QtWidgets.QTableWidgetItem(str(quantity_sold))
+                item_qty_sold.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_qty_sold.setForeground(white_color)
+                item_qty_sold.setFont(font)
+                self.itemSoldTbl.setItem(row_num, 3, item_qty_sold)
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving item sold data from the database:", error)
+            self.show_message_box("Error", f"Error retrieving item sold data: {error}", QtWidgets.QMessageBox.Critical)
+
+
+
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow
 
@@ -345,6 +408,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.dashboardTxt.setHidden(False)
         self.fetch_grand_total_sales()
         self.fetch_grand_items_sold()
+        self.dailySales()
 
     def switch_to_manageAccountsPage(self):
         self.stackedWidget.setCurrentIndex(5)
@@ -431,31 +495,71 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         reply = msg_box.exec_()
         return reply
 
-    # def show_message_box(self, title, message, icon):
-    #     msg_box = QMessageBox()
-    #     msg_box.setWindowTitle(title)
-    #     msg_box.setText(message)
-    #     msg_box.setIcon(icon)
-    #     msg_box.setStyleSheet("""
-    #         QMessageBox {
-    #             background-color: #1F1F1F;
-    #         }
-    #         QLabel {
-    #             color: white;
-    #         }
-    #         QPushButton {
-    #             background-color: #1F1F1F;
-    #             color: white;
-    #         }
-    #     """)
-    #     msg_box.exec_()
+    
+# new added
+    def best_selling(self):
+        try:
+            cur = self.conn.cursor()
+
+
+            select_bestselling = """
+                SELECT P.PROD_NAME, SUM(OI.ORDER_ITEM_QTY) AS total_sold
+                FROM ORDER_ITEMS OI
+                JOIN PRODUCT P ON OI.PROD_ID = P.PROD_ID
+                GROUP BY OI.PROD_ID, P.PROD_NAME
+                ORDER BY total_sold DESC
+                LIMIT 4
+            """
+
+
+            cur.execute(select_bestselling)
+
+
+            # Fetch top 4 products with highest total sold quantity
+            top_products = cur.fetchmany(4)
+
+
+            # Directly set the text of labels using fetched data
+            for i in range(len(top_products)):
+                product_name, total_sold = top_products[i]
+                # Set the text of labels with product name or details
+                if i == 0:
+                    self.bestSell1.setText(product_name)
+                elif i == 1:
+                    self.bestSell2.setText(product_name)
+                elif i == 2:
+                    self.bestSell3.setText(product_name)
+                elif i == 3:
+                    self.bestSell4.setText(product_name)
+                elif i == 4:
+                    self.bestSell5.setText(product_name)
+                elif i == 5:
+                    self.bestSell6.setText(product_name)
+                elif i == 6:
+                    self.bestSell7.setText(product_name)
+                elif i == 7:
+                    self.bestSell8.setText(product_name)
+                else:
+                    self.bestSell9.setText(product_name)
+
+
+        except (Exception, psycopg2.Error) as error:
+            self.conn.rollback()
+            print(error)
+            self.show_message_box("Error", f"{error}", QMessageBox.Critical)
+
+
+
+
        
     def dispaly_admin_acc(self):
         username = self.label_50.text()
-        password = self.label_52.text()
+        # Access the stored unformatted password attribute
+        password = self.unformatted_password if hasattr(self, 'unformatted_password') else self.label_52.text()
 
         self.UpdateAdminWindow.adminUsername.setText(username)
         self.UpdateAdminWindow.admin_new_pass.setText(password)
+
 
     def update_admin_acc(self):
         username = self.UpdateAdminWindow.adminUsername.text()
@@ -512,9 +616,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 username = row[0]
                 password = row[1]
 
-                # Set the label text to display the username
+                formatted_password = f"**** {password[4:]}"
                 self.label_50.setText(username)
-                self.label_52.setText(password)
+                self.label_52.setText(formatted_password)
+
+
+                 # Store the unformatted password as an attribute
+                self.unformatted_password = password
+
                 self.conn.commit()      
        
             else:
@@ -542,9 +651,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 username = row[0]
                 password = row[1]
 
-                # Set the label text to display the username
+
+                formatted_password = f"**** {password[4:]}"
+
+
+                 # Store the unformatted password as an attribute
+                self.unformatted_password_staff = password
+
                 self.label_54.setText(username)
-                self.label_56.setText(password)
+                self.label_56.setText(formatted_password)
                 self.conn.commit()      
        
             else:
@@ -555,12 +670,17 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.conn.rollback()
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
 
-    def display_staff_acc(self):
-        username = self.label_54.text()
-        password = self.label_56.text()
 
-        self.UpdateStaffWindow.staffUsername.setText(username)
-        self.UpdateStaffWindow.staff_new_pass.setText(password)
+
+
+    def display_staff_acc(self):
+            username = self.label_54.text()
+            # Access the stored unformatted password attribute
+            password = self.unformatted_password_staff if hasattr(self, 'unformatted_password') else self.label_56.text()
+
+            self.UpdateStaffWindow.staffUsername.setText(username)
+            self.UpdateStaffWindow.staff_new_pass.setText(password)
+
 
     def update_staff_acc(self):
         username = self.UpdateStaffWindow.staffUsername.text().lower()

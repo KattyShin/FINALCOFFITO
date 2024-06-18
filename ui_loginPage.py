@@ -421,9 +421,7 @@ class Login_MainWindow(QMainWindow):
 
         self.verticalLayout.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
 
-
         self.verticalSpacer_2 = QSpacerItem(20, 90, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 

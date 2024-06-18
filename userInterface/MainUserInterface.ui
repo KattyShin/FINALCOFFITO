@@ -69,7 +69,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget_2">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="orderListPage">
           <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1587,7 +1587,7 @@ QScrollBar:hover {
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-185</y>
+                <y>-214</y>
                 <width>516</width>
                 <height>676</height>
                </rect>

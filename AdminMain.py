@@ -3741,6 +3741,7 @@ class Ui_MainWindow(object):
 "	color: #FF8C18;\n"
 "	font-weight:bold;\n"
 "}")
+        
         self.verticalLayout_3 = QVBoxLayout(self.icon_only)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(3, -1, 3, -1)
@@ -4113,5 +4114,4 @@ class Ui_MainWindow(object):
     # retranslateUi
 
 
-# SIR BAYOT
 

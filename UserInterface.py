@@ -124,7 +124,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.Amt_ContactNum_Val.textChanged.connect(self.calculate_change)
 
         self.payButton.clicked.connect(self.payButtonClicked)
-        self.Amt_ContactNum_Val.returnPressed.connect(self.handle_pay_button)
+        self.Amt_ContactNum_Val.returnPressed.connect(self.payButtonClicked)
 
         
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestyUpRFu.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestMofELP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -2169,6 +2169,7 @@ class Ui_MainWindow(object):
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QTableWidget::section {\n"
@@ -2210,9 +2211,9 @@ class Ui_MainWindow(object):
 "    border-radius: 5px;\n"
 "}\n"
 "\n"
-"QScrollBar::add-line:vertical,\n"
-"QSc"
-                        "rollBar::sub-line:vertical {\n"
+"QScrollBar::add-lin"
+                        "e:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
 "    border: none;\n"
 "    background: none;\n"
 "}\n"
@@ -2299,6 +2300,7 @@ class Ui_MainWindow(object):
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QTableWidget::section {\n"
@@ -2340,9 +2342,9 @@ class Ui_MainWindow(object):
 "    border-radius: 5px;\n"
 "}\n"
 "\n"
-"QScrollBar::add-line:vertical,\n"
-"QSc"
-                        "rollBar::sub-line:vertical {\n"
+"QScrollBar::add-lin"
+                        "e:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
 "    border: none;\n"
 "    background: none;\n"
 "}\n"
@@ -2429,6 +2431,7 @@ class Ui_MainWindow(object):
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QTableWidget::section {\n"
@@ -2470,9 +2473,9 @@ class Ui_MainWindow(object):
 "    border-radius: 5px;\n"
 "}\n"
 "\n"
-"QScrollBar::add-line:vertical,\n"
-"QSc"
-                        "rollBar::sub-line:vertical {\n"
+"QScrollBar::add-lin"
+                        "e:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
 "    border: none;\n"
 "    background: none;\n"
 "}\n"
@@ -2565,6 +2568,7 @@ class Ui_MainWindow(object):
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
+"	color: white;\n"
 "}\n"
 "\n"
 "QTableWidget::section {\n"
@@ -2606,9 +2610,9 @@ class Ui_MainWindow(object):
 "    border-radius: 5px;\n"
 "}\n"
 "\n"
-"QScrollBar::add-line:vertical,\n"
-"QSc"
-                        "rollBar::sub-line:vertical {\n"
+"QScrollBar::add-lin"
+                        "e:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
 "    border: none;\n"
 "    background: none;\n"
 "}\n"
@@ -3845,7 +3849,7 @@ class Ui_MainWindow(object):
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
         self.stackedWidget.setCurrentIndex(0)
-        self.SalesReportStackedWidget.setCurrentIndex(1)
+        self.SalesReportStackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

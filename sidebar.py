@@ -12,8 +12,15 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMessageBox
 from updateAdminModal import UpdateAdminWindow
 from updateStaffModal import UpdateStaffWindow
+import datetime
 import re      
 
+MONTHS = {
+    1: "January",   2: "February",   3: "March",
+    4: "April",     5: "May",        6: "June",
+    7: "July",      8: "August",     9: "September",
+    10: "October",  11: "November",  12: "December"
+}
 
 class mySideBar(QMainWindow, Ui_MainWindow):
    
@@ -117,7 +124,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
         self.UpdateStaffWindow.staff_new_pass.returnPressed.connect(self.update_staff_acc)
         self.UpdateStaffWindow.staffUsername.returnPressed.connect(self.update_staff_acc)
-        
+
         self.pushButton_22.clicked.connect(self.show_update_staff_window)
 
         self.dailySalesBtn.clicked.connect(self.switch_to_dailySales)
@@ -131,20 +138,21 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
     def switch_to_monthlySales(self):
         self.SalesReportStackedWidget.setCurrentIndex(1)
+        self.monthlySales()
     
     def switch_to_yearlySales(self):
-        self.SalesReportStackedWidget.setCurrentIndex(2) 
+        self.SalesReportStackedWidget.setCurrentIndex(2)
+        self.yearlySales()
 
     def switch_to_itemSold(self):
         self.SalesReportStackedWidget.setCurrentIndex(3) 
+        
+    
 
     def dailySales(self):
+        self.dailySalesTbl.setRowCount(0)
         self.dailySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
-
-        header = self.dailySalesTbl.horizontalHeader()
-        header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        header.setDefaultAlignment(QtCore.Qt.AlignCenter)
-
+        
         try:
             cur = self.conn.cursor()
             query = """
@@ -165,32 +173,139 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             # Set header properties
             header = self.dailySalesTbl.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-            header.setDefaultAlignment(QtCore.Qt.AlignCenter)
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
 
             for row_num, row_data in enumerate(rows):
-                sales_date = row_data[0]
+                sales_date = row_data[0].strftime("%B %d, %Y")  # Format date as "Month Day, Year"
                 total_sales = row_data[1]
 
                 self.dailySalesTbl.insertRow(row_num)
 
-                # Set item alignment and font color
+                # Set item alignment, font color, and font
                 item_date = QtWidgets.QTableWidgetItem(str(sales_date))
                 item_date.setTextAlignment(QtCore.Qt.AlignCenter)
-                item_date.setForeground(QtGui.QColor("white"))
+                item_date.setForeground(white_color)
+                item_date.setFont(font)
                 self.dailySalesTbl.setItem(row_num, 0, item_date)
 
                 item_sales = QtWidgets.QTableWidgetItem(str(total_sales))
                 item_sales.setTextAlignment(QtCore.Qt.AlignCenter)
-                item_sales.setForeground(QtGui.QColor("white"))
+                item_sales.setForeground(white_color)
+                item_sales.setFont(font)
                 self.dailySalesTbl.setItem(row_num, 1, item_sales)
-
-            # Center align vertical header
-            vertical_header = self.dailySalesTbl.verticalHeader()
-            vertical_header.setDefaultAlignment(QtCore.Qt.AlignCenter)
 
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving daily sales data from the database:", error)
-            self.show_message_box("Error", f"Error retrieving daily sales data: {error}", QMessageBox.Critical)
+            self.show_message_box("Error", f"Error retrieving daily sales data: {error}", QtWidgets.QMessageBox.Critical)
+
+
+    def monthlySales(self):
+        self.monthlySalesTbl.setRowCount(0)
+        self.monthlySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
+
+        try:
+            cur = self.conn.cursor()
+            query = """
+                SELECT TO_CHAR(sr.SALES_DATE, 'YYYY-MM') AS MONTH_YEAR, SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) AS TOTAL_SALES
+                FROM SALES_REPORT sr
+                JOIN PAYMENT_TRANSACTION pt ON sr.PAYMENT_TRANS_ID = pt.PAYMENT_TRANS_ID
+                GROUP BY TO_CHAR(sr.SALES_DATE, 'YYYY-MM')
+                ORDER BY TO_CHAR(sr.SALES_DATE, 'YYYY-MM') DESC;
+            """
+            cur.execute(query)
+            rows = cur.fetchall()
+            cur.close()
+
+            self.monthlySalesTbl.setRowCount(0)
+            self.monthlySalesTbl.setColumnCount(2)
+            self.monthlySalesTbl.setHorizontalHeaderLabels(["Date", "Total Sales"])
+
+            # Set header properties
+            header = self.monthlySalesTbl.horizontalHeader()
+            header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
+
+            for row_num, row_data in enumerate(rows):
+                month_year = row_data[0]
+                total_sales = row_data[1]
+
+                self.monthlySalesTbl.insertRow(row_num)
+
+                # Convert month_year to readable format
+                year, month = map(int, month_year.split('-'))
+                formatted_date = f"{MONTHS.get(month, 'Unknown')} {year}"
+                
+                # Set item alignment, font color, and font
+                item_month_year = QtWidgets.QTableWidgetItem(str(formatted_date))
+                item_month_year.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_month_year.setForeground(white_color)
+                item_month_year.setFont(font)
+                self.monthlySalesTbl.setItem(row_num, 0, item_month_year)
+
+                item_sales = QtWidgets.QTableWidgetItem(str(total_sales))
+                item_sales.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_sales.setForeground(white_color)
+                item_sales.setFont(font)
+                self.monthlySalesTbl.setItem(row_num, 1, item_sales)
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving monthly sales data from the database:", error)
+            self.show_message_box("Error", f"Error retrieving monthly sales data: {error}", QtWidgets.QMessageBox.Critical)
+
+    def yearlySales(self):
+        self.yearlySalesTbl.setRowCount(0)
+        self.yearlySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
+
+        try:
+            cur = self.conn.cursor()
+            query = """
+                SELECT EXTRACT(YEAR FROM sr.SALES_DATE) AS YEAR, SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) AS TOTAL_SALES
+                FROM SALES_REPORT sr
+                JOIN PAYMENT_TRANSACTION pt ON sr.PAYMENT_TRANS_ID = pt.PAYMENT_TRANS_ID
+                GROUP BY EXTRACT(YEAR FROM sr.SALES_DATE)
+                ORDER BY EXTRACT(YEAR FROM sr.SALES_DATE) DESC;
+            """
+            cur.execute(query)
+            rows = cur.fetchall()
+            cur.close()
+
+            self.yearlySalesTbl.setRowCount(0)
+            self.yearlySalesTbl.setColumnCount(2)
+            self.yearlySalesTbl.setHorizontalHeaderLabels(["Date", "Total Sales"])
+
+            # Set header properties
+            header = self.yearlySalesTbl.horizontalHeader()
+            header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
+
+            for row_num, row_data in enumerate(rows):
+                year = row_data[0]
+                total_sales = row_data[1]
+
+                self.yearlySalesTbl.insertRow(row_num)
+
+                # Set item alignment, font color, and font
+                item_year = QtWidgets.QTableWidgetItem(str(year))
+                item_year.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_year.setForeground(white_color)
+                item_year.setFont(font)
+                self.yearlySalesTbl.setItem(row_num, 0, item_year)
+
+                item_sales = QtWidgets.QTableWidgetItem(str(total_sales))
+                item_sales.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_sales.setForeground(white_color)
+                item_sales.setFont(font)
+                self.yearlySalesTbl.setItem(row_num, 1, item_sales)
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving yearly sales data from the database:", error)
+            self.show_message_box("Error", f"Error retrieving yearly sales data: {error}", QtWidgets.QMessageBox.Critical)
 
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow

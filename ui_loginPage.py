@@ -19,7 +19,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+    QVBoxLayout, QCheckBox,QWidget)
 
 
 import resource1_rc
@@ -352,10 +352,16 @@ class Login_MainWindow(QMainWindow):
 "}\n"
 "")
         self.lineEdit_8.setEchoMode(QLineEdit.Password) ####
+
+        # showing and hiding password
+        self.checkBox_show_password = QCheckBox(self.widget_3)  # ADDED
+        self.checkBox_show_password.setObjectName(u"checkBox_show_password")
+        self.checkBox_show_password.setText("Show Password")  # ADDED
+        self.checkBox_show_password.setStyleSheet(u"QCheckBox { color: white; }")  # ADDED
+        self.checkBox_show_password.stateChanged.connect(self.toggle_password_visibility)  # ADDED
+        self.verticalLayout_2.addWidget(self.checkBox_show_password)  # ADDED
+
         self.verticalLayout_2.addWidget(self.lineEdit_8, 0, Qt.AlignmentFlag.AlignHCenter)
-
-
-
 
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
 
@@ -447,10 +453,13 @@ class Login_MainWindow(QMainWindow):
         self.lineEdit_7.returnPressed.connect(self.check_login)
         self.lineEdit_8.returnPressed.connect(self.check_login)
 
+    def toggle_password_visibility(self):  # ADDED
+        if self.checkBox_show_password.isChecked():
+            self.lineEdit_8.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.lineEdit_8.setEchoMode(QLineEdit.EchoMode.Password)
 
-    # setupUi
-
-
+    
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.pushButton.setText("")

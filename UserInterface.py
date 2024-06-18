@@ -694,38 +694,10 @@ class userInterface(QMainWindow, Ui_MainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error while checking for new products:", error)
 
-    # def add_new_products(self, new_products):
-    #     if not self.scrollAreaWidgetContents.layout():
-    #         self.scrollAreaWidgetContents.setLayout(QBoxLayout())
-
-    #     for product_name in new_products:
-    #         cursor = self.conn.cursor()
-    #         query = "SELECT PROD_NAME, PROD_PRICE, PROD_QUANTITY FROM PRODUCT WHERE PROD_NAME = %s"
-    #         cursor.execute(query, (product_name,))
-    #         product = cursor.fetchone()
-    #         cursor.close()
-
-    #         if product:
-    #             prod_name, prod_price, prod_quantity = product
-
-    #             new_product_container = QWidget()
-    #             ui = Ui_Form()
-    #             ui.setupUi(new_product_container)
-
-    #             ui.prodNameLabel.setText(prod_name)
-                
-
-
-    #             ui.productBtn.clicked.connect(lambda _, name=prod_name, quantity=prod_quantity: self.prodBtnClicked(name, quantity))
-
-    #             self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
-
-    #             self.product_buttons[prod_name] = ui.productBtn
-    #             self.product_widgets[prod_name] = new_product_container
-
     def add_new_products(self, new_products):
         if not self.scrollAreaWidgetContents.layout():
             self.scrollAreaWidgetContents.setLayout(QBoxLayout())
+        prod_quantity=0
 
         for product_name in new_products:
             cursor = self.conn.cursor()
@@ -742,14 +714,43 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 ui.setupUi(new_product_container)
 
                 ui.prodNameLabel.setText(prod_name)
-                # ui.prodPriceLabel.setText(f"Price: {prod_price} PHP")  # Displaying product price
+                
 
-                ui.productBtn.clicked.connect(lambda _, name=prod_name: self.prodBtnClicked(name))
+
+                ui.productBtn.clicked.connect(lambda _, name=prod_name, quantity=prod_quantity: self.prodBtnClicked(name, quantity))
 
                 self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
 
                 self.product_buttons[prod_name] = ui.productBtn
                 self.product_widgets[prod_name] = new_product_container
+
+    # def add_new_products(self, new_products):
+    #     if not self.scrollAreaWidgetContents.layout():
+    #         self.scrollAreaWidgetContents.setLayout(QBoxLayout())
+
+    #     for product_name in new_products:
+    #         cursor = self.conn.cursor()
+    #         query = "SELECT PROD_NAME, PROD_PRICE FROM PRODUCT WHERE PROD_NAME = %s"
+    #         cursor.execute(query, (product_name,))
+    #         product = cursor.fetchone()
+    #         cursor.close()
+
+    #         if product:
+    #             prod_name, prod_price = product
+
+    #             new_product_container = QWidget()
+    #             ui = Ui_Form()
+    #             ui.setupUi(new_product_container)
+
+    #             ui.prodNameLabel.setText(prod_name)
+    #             # ui.prodPriceLabel.setText(f"Price: {prod_price} PHP")  # Displaying product price
+
+    #             ui.productBtn.clicked.connect(lambda _, name=prod_name: self.prodBtnClicked(name))
+
+    #             self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
+
+    #             self.product_buttons[prod_name] = ui.productBtn
+    #             self.product_widgets[prod_name] = new_product_container
 
 
     def mousePressEvent(self, event):

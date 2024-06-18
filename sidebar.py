@@ -95,6 +95,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
         self.UpdateItemWindow = UpdateItemWindow()
         self.UpdateItemWindow.pushButton_32.clicked.connect(self.update_product_details)
+        self.UpdateItemWindow.upProd_Name.returnPressed.connect(self.update_product_details)
+        self.UpdateItemWindow.upProd_Price.returnPressed.connect(self.update_product_details)
 
 
         self.lineEdit_3.textChanged.connect(self.search_AddItem)
@@ -104,14 +106,19 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
         #admin password
         self.UpdateAdminWindow = UpdateAdminWindow()  
-        self.pushButton_21.clicked.connect(self.show_update_admin_window)
         self.UpdateAdminWindow.updateAdmin.clicked.connect(self.update_admin_acc)
+        self.UpdateAdminWindow.adminUsername.returnPressed.connect(self.update_admin_acc)
+        self.UpdateAdminWindow.admin_new_pass.returnPressed.connect(self.update_admin_acc)
 
+        self.pushButton_21.clicked.connect(self.show_update_admin_window)
 
         #staff    
         self.UpdateStaffWindow = UpdateStaffWindow()
-        self.pushButton_22.clicked.connect(self.show_update_staff_window)
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
+        self.UpdateStaffWindow.staff_new_pass.returnPressed.connect(self.update_staff_acc)
+        self.UpdateStaffWindow.staffUsername.returnPressed.connect(self.update_staff_acc)
+        
+        self.pushButton_22.clicked.connect(self.show_update_staff_window)
 
         self.dailySalesBtn.clicked.connect(self.switch_to_dailySales)
         self.monthlySalesBtn.clicked.connect(self.switch_to_monthlySales)

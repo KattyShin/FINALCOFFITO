@@ -353,13 +353,7 @@ class Login_MainWindow(QMainWindow):
 "")
         self.lineEdit_8.setEchoMode(QLineEdit.Password) ####
 
-        # showing and hiding password
-        self.checkBox_show_password = QCheckBox(self.widget_3)  # ADDED
-        self.checkBox_show_password.setObjectName(u"checkBox_show_password")
-        self.checkBox_show_password.setText("Show Password")  # ADDED
-        self.checkBox_show_password.setStyleSheet(u"QCheckBox { color: white; }")  # ADDED
-        self.checkBox_show_password.stateChanged.connect(self.toggle_password_visibility)  # ADDED
-        self.verticalLayout_2.addWidget(self.checkBox_show_password)  # ADDED
+        
 
         self.verticalLayout_2.addWidget(self.lineEdit_8, 0, Qt.AlignmentFlag.AlignHCenter)
 
@@ -368,6 +362,14 @@ class Login_MainWindow(QMainWindow):
 
         self.verticalSpacer_6 = QSpacerItem(20, 24, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
+        # showing and hiding password
+        self.checkBox_show_password = QCheckBox(self.widget_3)  # ADDED
+        self.checkBox_show_password.setObjectName(u"checkBox_show_password")
+        self.checkBox_show_password.setText("Show Password")  # ADDED
+        self.checkBox_show_password.setStyleSheet(u"QCheckBox { color: white; margin-left: 50px; }")  # ADDED
+        self.checkBox_show_password.stateChanged.connect(self.toggle_password_visibility)  # ADDED
+        self.verticalLayout_2.addWidget(self.checkBox_show_password)  # ADDED
+        
 
         self.verticalLayout_3.addItem(self.verticalSpacer_6)
 

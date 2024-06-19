@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="dashBg">
+    <file>icons/Untitled design (6).png</file>
+    <file>../../Downloads/LowCaf.png</file>
+  </qresource>
+</RCC>

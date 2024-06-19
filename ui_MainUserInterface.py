@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainUserInterfacemttegd.ui'
+## Form generated from reading UI file 'MainUserInterfaceXnIlyf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -919,635 +919,9 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -185, 516, 676))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 478, 462))
         self.gridLayout_3 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.widget_18 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_18.setObjectName(u"widget_18")
-        self.widget_18.setMinimumSize(QSize(120, 160))
-        self.widget_18.setMaximumSize(QSize(120, 160))
-        self.widget_18.setSizeIncrement(QSize(40, 0))
-        self.widget_18.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_27 = QVBoxLayout(self.widget_18)
-        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
-        self.verticalLayout_27.setContentsMargins(0, 0, 0, -1)
-        self.product10 = QPushButton(self.widget_18)
-        self.product10.setObjectName(u"product10")
-        self.product10.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        icon4 = QIcon()
-        icon4.addFile(u":/iCons/icons/coffee-cup.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.product10.setIcon(icon4)
-        self.product10.setIconSize(QSize(70, 120))
-        self.product10.setCheckable(True)
-
-        self.verticalLayout_27.addWidget(self.product10)
-
-        self.prodname10 = QLabel(self.widget_18)
-        self.prodname10.setObjectName(u"prodname10")
-        self.prodname10.setFont(font3)
-        self.prodname10.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname10.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname10.setWordWrap(True)
-
-        self.verticalLayout_27.addWidget(self.prodname10)
-
-
-        self.gridLayout_3.addWidget(self.widget_18, 2, 1, 1, 1)
-
-        self.widget_20 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_20.setObjectName(u"widget_20")
-        self.widget_20.setMinimumSize(QSize(120, 160))
-        self.widget_20.setMaximumSize(QSize(120, 160))
-        self.widget_20.setSizeIncrement(QSize(40, 0))
-        self.widget_20.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_29 = QVBoxLayout(self.widget_20)
-        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.verticalLayout_29.setContentsMargins(0, 0, 0, -1)
-        self.product11 = QPushButton(self.widget_20)
-        self.product11.setObjectName(u"product11")
-        self.product11.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product11.setIcon(icon4)
-        self.product11.setIconSize(QSize(70, 120))
-        self.product11.setCheckable(True)
-
-        self.verticalLayout_29.addWidget(self.product11)
-
-        self.prodname11 = QLabel(self.widget_20)
-        self.prodname11.setObjectName(u"prodname11")
-        self.prodname11.setFont(font3)
-        self.prodname11.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname11.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname11.setWordWrap(True)
-
-        self.verticalLayout_29.addWidget(self.prodname11)
-
-
-        self.gridLayout_3.addWidget(self.widget_20, 2, 2, 1, 1)
-
-        self.widget_7 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setMinimumSize(QSize(120, 160))
-        self.widget_7.setMaximumSize(QSize(120, 160))
-        self.widget_7.setSizeIncrement(QSize(40, 0))
-        self.widget_7.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_8 = QVBoxLayout(self.widget_7)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, -1)
-        self.product3 = QPushButton(self.widget_7)
-        self.product3.setObjectName(u"product3")
-        self.product3.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product3.setIcon(icon4)
-        self.product3.setIconSize(QSize(70, 120))
-        self.product3.setCheckable(True)
-
-        self.verticalLayout_8.addWidget(self.product3)
-
-        self.prodname3 = QLabel(self.widget_7)
-        self.prodname3.setObjectName(u"prodname3")
-        self.prodname3.setFont(font3)
-        self.prodname3.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname3.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname3.setWordWrap(True)
-
-        self.verticalLayout_8.addWidget(self.prodname3)
-
-
-        self.gridLayout_3.addWidget(self.widget_7, 0, 2, 1, 1)
-
-        self.widget_17 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_17.setObjectName(u"widget_17")
-        self.widget_17.setMinimumSize(QSize(120, 160))
-        self.widget_17.setMaximumSize(QSize(120, 160))
-        self.widget_17.setSizeIncrement(QSize(40, 0))
-        self.widget_17.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_26 = QVBoxLayout(self.widget_17)
-        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
-        self.verticalLayout_26.setContentsMargins(0, 0, 0, -1)
-        self.product12 = QPushButton(self.widget_17)
-        self.product12.setObjectName(u"product12")
-        self.product12.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product12.setIcon(icon4)
-        self.product12.setIconSize(QSize(70, 120))
-        self.product12.setCheckable(True)
-
-        self.verticalLayout_26.addWidget(self.product12)
-
-        self.prodname12 = QLabel(self.widget_17)
-        self.prodname12.setObjectName(u"prodname12")
-        self.prodname12.setFont(font3)
-        self.prodname12.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname12.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname12.setWordWrap(True)
-
-        self.verticalLayout_26.addWidget(self.prodname12)
-
-
-        self.gridLayout_3.addWidget(self.widget_17, 2, 3, 1, 1)
-
-        self.widget_13 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_13.setObjectName(u"widget_13")
-        self.widget_13.setMinimumSize(QSize(120, 160))
-        self.widget_13.setMaximumSize(QSize(120, 160))
-        self.widget_13.setSizeIncrement(QSize(40, 0))
-        self.widget_13.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_15 = QVBoxLayout(self.widget_13)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, -1)
-        self.product8 = QPushButton(self.widget_13)
-        self.product8.setObjectName(u"product8")
-        self.product8.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product8.setIcon(icon4)
-        self.product8.setIconSize(QSize(70, 120))
-        self.product8.setCheckable(True)
-
-        self.verticalLayout_15.addWidget(self.product8)
-
-        self.prodname8 = QLabel(self.widget_13)
-        self.prodname8.setObjectName(u"prodname8")
-        self.prodname8.setFont(font3)
-        self.prodname8.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname8.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname8.setWordWrap(True)
-
-        self.verticalLayout_15.addWidget(self.prodname8)
-
-
-        self.gridLayout_3.addWidget(self.widget_13, 1, 3, 1, 1)
-
-        self.widget_23 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_23.setObjectName(u"widget_23")
-        self.widget_23.setMinimumSize(QSize(120, 160))
-        self.widget_23.setMaximumSize(QSize(120, 160))
-        self.widget_23.setSizeIncrement(QSize(40, 0))
-        self.widget_23.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_36 = QVBoxLayout(self.widget_23)
-        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.verticalLayout_36.setContentsMargins(0, 0, 0, -1)
-        self.product13 = QPushButton(self.widget_23)
-        self.product13.setObjectName(u"product13")
-        self.product13.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product13.setIcon(icon4)
-        self.product13.setIconSize(QSize(70, 120))
-        self.product13.setCheckable(True)
-
-        self.verticalLayout_36.addWidget(self.product13)
-
-        self.prodname13 = QLabel(self.widget_23)
-        self.prodname13.setObjectName(u"prodname13")
-        self.prodname13.setFont(font3)
-        self.prodname13.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname13.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname13.setWordWrap(True)
-
-        self.verticalLayout_36.addWidget(self.prodname13)
-
-
-        self.gridLayout_3.addWidget(self.widget_23, 3, 0, 1, 1)
-
-        self.widget_5 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setMinimumSize(QSize(120, 160))
-        self.widget_5.setMaximumSize(QSize(120, 160))
-        self.widget_5.setSizeIncrement(QSize(40, 0))
-        self.widget_5.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_6 = QVBoxLayout(self.widget_5)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, -1)
-        self.product1 = QPushButton(self.widget_5)
-        self.product1.setObjectName(u"product1")
-        self.product1.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product1.setIcon(icon4)
-        self.product1.setIconSize(QSize(70, 120))
-        self.product1.setCheckable(True)
-
-        self.verticalLayout_6.addWidget(self.product1)
-
-        self.prodname1 = QLabel(self.widget_5)
-        self.prodname1.setObjectName(u"prodname1")
-        self.prodname1.setFont(font3)
-        self.prodname1.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname1.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname1.setWordWrap(True)
-
-        self.verticalLayout_6.addWidget(self.prodname1)
-
-
-        self.gridLayout_3.addWidget(self.widget_5, 0, 0, 1, 1)
-
-        self.widget_19 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_19.setObjectName(u"widget_19")
-        self.widget_19.setMinimumSize(QSize(120, 160))
-        self.widget_19.setMaximumSize(QSize(120, 160))
-        self.widget_19.setSizeIncrement(QSize(40, 0))
-        self.widget_19.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_28 = QVBoxLayout(self.widget_19)
-        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.verticalLayout_28.setContentsMargins(0, 0, 0, -1)
-        self.product9 = QPushButton(self.widget_19)
-        self.product9.setObjectName(u"product9")
-        self.product9.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product9.setIcon(icon4)
-        self.product9.setIconSize(QSize(70, 120))
-        self.product9.setCheckable(True)
-
-        self.verticalLayout_28.addWidget(self.product9)
-
-        self.prodname9 = QLabel(self.widget_19)
-        self.prodname9.setObjectName(u"prodname9")
-        self.prodname9.setFont(font3)
-        self.prodname9.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname9.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname9.setWordWrap(True)
-
-        self.verticalLayout_28.addWidget(self.prodname9)
-
-
-        self.gridLayout_3.addWidget(self.widget_19, 2, 0, 1, 1)
-
-        self.widget_6 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_6.setObjectName(u"widget_6")
-        self.widget_6.setMinimumSize(QSize(120, 160))
-        self.widget_6.setMaximumSize(QSize(120, 160))
-        self.widget_6.setSizeIncrement(QSize(40, 0))
-        self.widget_6.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_7 = QVBoxLayout(self.widget_6)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, -1)
-        self.product2 = QPushButton(self.widget_6)
-        self.product2.setObjectName(u"product2")
-        self.product2.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product2.setIcon(icon4)
-        self.product2.setIconSize(QSize(70, 120))
-        self.product2.setCheckable(True)
-
-        self.verticalLayout_7.addWidget(self.product2)
-
-        self.prodname2 = QLabel(self.widget_6)
-        self.prodname2.setObjectName(u"prodname2")
-        self.prodname2.setFont(font3)
-        self.prodname2.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname2.setWordWrap(True)
-
-        self.verticalLayout_7.addWidget(self.prodname2)
-
-
-        self.gridLayout_3.addWidget(self.widget_6, 0, 1, 1, 1)
-
-        self.widget_15 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_15.setObjectName(u"widget_15")
-        self.widget_15.setMinimumSize(QSize(120, 160))
-        self.widget_15.setMaximumSize(QSize(120, 160))
-        self.widget_15.setSizeIncrement(QSize(40, 0))
-        self.widget_15.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_19 = QVBoxLayout(self.widget_15)
-        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.verticalLayout_19.setContentsMargins(0, 0, 0, -1)
-        self.product6 = QPushButton(self.widget_15)
-        self.product6.setObjectName(u"product6")
-        self.product6.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product6.setIcon(icon4)
-        self.product6.setIconSize(QSize(70, 120))
-        self.product6.setCheckable(True)
-
-        self.verticalLayout_19.addWidget(self.product6)
-
-        self.prodname6 = QLabel(self.widget_15)
-        self.prodname6.setObjectName(u"prodname6")
-        self.prodname6.setFont(font3)
-        self.prodname6.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname6.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname6.setWordWrap(True)
-
-        self.verticalLayout_19.addWidget(self.prodname6)
-
-
-        self.gridLayout_3.addWidget(self.widget_15, 1, 1, 1, 1)
-
-        self.widget_14 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_14.setObjectName(u"widget_14")
-        self.widget_14.setMinimumSize(QSize(120, 160))
-        self.widget_14.setMaximumSize(QSize(120, 160))
-        self.widget_14.setSizeIncrement(QSize(40, 0))
-        self.widget_14.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_18 = QVBoxLayout(self.widget_14)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.verticalLayout_18.setContentsMargins(0, 0, 0, -1)
-        self.product5 = QPushButton(self.widget_14)
-        self.product5.setObjectName(u"product5")
-        self.product5.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product5.setIcon(icon4)
-        self.product5.setIconSize(QSize(70, 120))
-        self.product5.setCheckable(True)
-
-        self.verticalLayout_18.addWidget(self.product5)
-
-        self.prodname5 = QLabel(self.widget_14)
-        self.prodname5.setObjectName(u"prodname5")
-        self.prodname5.setFont(font3)
-        self.prodname5.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname5.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname5.setWordWrap(True)
-
-        self.verticalLayout_18.addWidget(self.prodname5)
-
-
-        self.gridLayout_3.addWidget(self.widget_14, 1, 0, 1, 1)
-
-        self.widget_8 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setMinimumSize(QSize(120, 160))
-        self.widget_8.setMaximumSize(QSize(120, 160))
-        self.widget_8.setSizeIncrement(QSize(40, 0))
-        self.widget_8.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_9 = QVBoxLayout(self.widget_8)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, -1)
-        self.product4 = QPushButton(self.widget_8)
-        self.product4.setObjectName(u"product4")
-        self.product4.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product4.setIcon(icon4)
-        self.product4.setIconSize(QSize(70, 120))
-        self.product4.setCheckable(True)
-
-        self.verticalLayout_9.addWidget(self.product4)
-
-        self.prodname4 = QLabel(self.widget_8)
-        self.prodname4.setObjectName(u"prodname4")
-        self.prodname4.setFont(font3)
-        self.prodname4.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname4.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname4.setWordWrap(True)
-
-        self.verticalLayout_9.addWidget(self.prodname4)
-
-
-        self.gridLayout_3.addWidget(self.widget_8, 0, 3, 1, 1)
-
-        self.widget_16 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_16.setObjectName(u"widget_16")
-        self.widget_16.setMinimumSize(QSize(120, 160))
-        self.widget_16.setMaximumSize(QSize(120, 160))
-        self.widget_16.setSizeIncrement(QSize(40, 0))
-        self.widget_16.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(59, 59, 59);\n"
-"	border-radius: 5px;\n"
-"}\n"
-"QWidget:hover {\n"
-"	background-color: rgb(79, 79, 79);\n"
-" }         ")
-        self.verticalLayout_20 = QVBoxLayout(self.widget_16)
-        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.verticalLayout_20.setContentsMargins(0, 0, 0, -1)
-        self.product7 = QPushButton(self.widget_16)
-        self.product7.setObjectName(u"product7")
-        self.product7.setStyleSheet(u"QPushButton{\n"
-"	border: none\n"
-"}\n"
-"QPushButton:hover {\n"
-"     background-color: rgb(79, 79, 79);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"     background-color: rgb(99, 99, 99);\n"
-"}")
-        self.product7.setIcon(icon4)
-        self.product7.setIconSize(QSize(70, 120))
-        self.product7.setCheckable(True)
-
-        self.verticalLayout_20.addWidget(self.product7)
-
-        self.prodname7 = QLabel(self.widget_16)
-        self.prodname7.setObjectName(u"prodname7")
-        self.prodname7.setFont(font3)
-        self.prodname7.setStyleSheet(u"color:white;\n"
-"text-align: center;\n"
-"background-color: none;\n"
-"\n"
-"")
-        self.prodname7.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.prodname7.setWordWrap(True)
-
-        self.verticalLayout_20.addWidget(self.prodname7)
-
-
-        self.gridLayout_3.addWidget(self.widget_16, 1, 2, 1, 1)
-
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.gridLayout_2.addWidget(self.scrollArea, 0, 0, 1, 1)
@@ -1603,27 +977,15 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(-1, 20, -1, -1)
         self.dashboard1 = QPushButton(self.icon_only)
         self.dashboard1.setObjectName(u"dashboard1")
-        icon5 = QIcon()
-        icon5.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon5.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.dashboard1.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.dashboard1.setIcon(icon4)
         self.dashboard1.setIconSize(QSize(25, 25))
         self.dashboard1.setCheckable(True)
         self.dashboard1.setAutoExclusive(True)
 
         self.verticalLayout.addWidget(self.dashboard1)
-
-        self.add_item1 = QPushButton(self.icon_only)
-        self.add_item1.setObjectName(u"add_item1")
-        icon6 = QIcon()
-        icon6.addFile(u":/iCons/icons/icons8-add-folder-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon6.addFile(u":/iCons/icons/icons8-add-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.add_item1.setIcon(icon6)
-        self.add_item1.setIconSize(QSize(20, 20))
-        self.add_item1.setCheckable(True)
-        self.add_item1.setAutoExclusive(True)
-
-        self.verticalLayout.addWidget(self.add_item1)
 
 
         self.verticalLayout_3.addLayout(self.verticalLayout)
@@ -1634,10 +996,10 @@ class Ui_MainWindow(object):
 
         self.logout1 = QPushButton(self.icon_only)
         self.logout1.setObjectName(u"logout1")
-        icon7 = QIcon()
-        icon7.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon7.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.logout1.setIcon(icon7)
+        icon5 = QIcon()
+        icon5.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.logout1.setIcon(icon5)
         self.logout1.setCheckable(True)
 
         self.verticalLayout_3.addWidget(self.logout1)
@@ -1708,22 +1070,12 @@ class Ui_MainWindow(object):
         font9.setFamilies([u"Poppins"])
         font9.setPointSize(10)
         self.dashboard2.setFont(font9)
-        self.dashboard2.setIcon(icon5)
+        self.dashboard2.setIcon(icon4)
         self.dashboard2.setIconSize(QSize(25, 25))
         self.dashboard2.setCheckable(True)
         self.dashboard2.setAutoExclusive(True)
 
         self.verticalLayout_2.addWidget(self.dashboard2)
-
-        self.add_item2 = QPushButton(self.word_iicon)
-        self.add_item2.setObjectName(u"add_item2")
-        self.add_item2.setFont(font9)
-        self.add_item2.setIcon(icon6)
-        self.add_item2.setIconSize(QSize(20, 20))
-        self.add_item2.setCheckable(True)
-        self.add_item2.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.add_item2)
 
 
         self.verticalLayout_4.addLayout(self.verticalLayout_2)
@@ -1737,7 +1089,7 @@ class Ui_MainWindow(object):
         font10 = QFont()
         font10.setFamilies([u"Poppins"])
         self.logout2.setFont(font10)
-        self.logout2.setIcon(icon7)
+        self.logout2.setIcon(icon5)
         self.logout2.setCheckable(True)
 
         self.verticalLayout_4.addWidget(self.logout2)
@@ -1754,8 +1106,6 @@ class Ui_MainWindow(object):
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
         self.pushButton_16.toggled.connect(self.word_iicon.setVisible)
         self.pushButton_16.toggled.connect(self.icon_only.setHidden)
-        self.add_item1.toggled.connect(self.add_item2.setChecked)
-        self.add_item2.toggled.connect(self.add_item1.setChecked)
         self.logout1.toggled.connect(MainWindow.close)
         self.logout2.toggled.connect(MainWindow.close)
         self.dashboard2.toggled.connect(self.dashboard1.setChecked)
@@ -1807,40 +1157,12 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Coffito Cafe Menu", None))
         self.searchItemBtn.setText("")
         self.searchMenuItem.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.product10.setText("")
-        self.prodname10.setText(QCoreApplication.translate("MainWindow", u"VIETNAMESE LATTE", None))
-        self.product11.setText("")
-        self.prodname11.setText(QCoreApplication.translate("MainWindow", u"STRAWBERRY LATTE", None))
-        self.product3.setText("")
-        self.prodname3.setText(QCoreApplication.translate("MainWindow", u"LATTE", None))
-        self.product12.setText("")
-        self.prodname12.setText(QCoreApplication.translate("MainWindow", u"MATCHA COFFEE", None))
-        self.product8.setText("")
-        self.prodname8.setText(QCoreApplication.translate("MainWindow", u"SPANISH LATTE", None))
-        self.product13.setText("")
-        self.prodname13.setText(QCoreApplication.translate("MainWindow", u"UBE LATTE", None))
-        self.product1.setText("")
-        self.prodname1.setText(QCoreApplication.translate("MainWindow", u"AMERICANO", None))
-        self.product9.setText("")
-        self.prodname9.setText(QCoreApplication.translate("MainWindow", u"AMERICAN VANILLA", None))
-        self.product2.setText("")
-        self.prodname2.setText(QCoreApplication.translate("MainWindow", u"CARAMEL", None))
-        self.product6.setText("")
-        self.prodname6.setText(QCoreApplication.translate("MainWindow", u"MATCHA", None))
-        self.product5.setText("")
-        self.prodname5.setText(QCoreApplication.translate("MainWindow", u"MOCHA", None))
-        self.product4.setText("")
-        self.prodname4.setText(QCoreApplication.translate("MainWindow", u"VANILLA", None))
-        self.product7.setText("")
-        self.prodname7.setText(QCoreApplication.translate("MainWindow", u"ICED CHOCO", None))
         self.label.setText("")
         self.dashboard1.setText("")
-        self.add_item1.setText("")
         self.logout1.setText("")
         self.label_2.setText("")
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Coffito Cafe", None))
         self.dashboard2.setText(QCoreApplication.translate("MainWindow", u"Homepage", None))
-        self.add_item2.setText(QCoreApplication.translate("MainWindow", u"Sales", None))
         self.logout2.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
     # retranslateUi
 

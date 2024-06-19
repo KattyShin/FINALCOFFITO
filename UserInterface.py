@@ -49,38 +49,39 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Coffito Cafe")
         self.setWindowIcon(QIcon(r'C:\Users\Dennis\Desktop\POS System Coffito\CoffitoLogo (40 x 40 px).png'))
+        self.product_containers = []
 
-        self.product_buttons = {
-            'AMERICANO': self.product1,
-            'CARAMEL': self.product2,
-            'LATTE': self.product3,
-            'VANILLA': self.product4,
-            'MOCHA': self.product5,
-            'MATCHA': self.product6,
-            'ICED CHOCO': self.product7,
-            'SPANISH LATTE': self.product8,
-            'AMERICAN VANILLA': self.product9,
-            'VIETNAMESE LATTE': self.product10,
-            'STRAWBERRY LATTE': self.product11,
-            'MATCHA COFFEE': self.product12,
-            'UBE LATTE': self.product13,
-        }
+        # self.product_buttons = {
+        #     'AMERICANO': self.product1,
+        #     'CARAMEL': self.product2,
+        #     'LATTE': self.product3,
+        #     'VANILLA': self.product4,
+        #     'MOCHA': self.product5,
+        #     'MATCHA': self.product6,
+        #     'ICED CHOCO': self.product7,
+        #     'SPANISH LATTE': self.product8,
+        #     'AMERICAN VANILLA': self.product9,
+        #     'VIETNAMESE LATTE': self.product10,
+        #     'STRAWBERRY LATTE': self.product11,
+        #     'MATCHA COFFEE': self.product12,
+        #     'UBE LATTE': self.product13,
+        # }
 
-        self.product_widgets = {
-            'AMERICANO': self.widget_5,
-            'CARAMEL': self.widget_6,
-            'LATTE': self.widget_7,
-            'VANILLA': self.widget_8,
-            'MOCHA': self.widget_14,
-            'MATCHA': self.widget_15,
-            'ICED CHOCO': self.widget_16,
-            'SPANISH LATTE': self.widget_13,
-            'AMERICAN VANILLA': self.widget_19,
-            'VIETNAMESE LATTE': self.widget_18,
-            'STRAWBERRY LATTE': self.widget_20,
-            'MATCHA COFFEE': self.widget_17,
-            'UBE LATTE': self.widget_23,
-        }
+        # self.product_widgets = {
+        #     'AMERICANO': self.widget_5,
+        #     'CARAMEL': self.widget_6,
+        #     'LATTE': self.widget_7,
+        #     'VANILLA': self.widget_8,
+        #     'MOCHA': self.widget_14,
+        #     'MATCHA': self.widget_15,
+        #     'ICED CHOCO': self.widget_16,
+        #     'SPANISH LATTE': self.widget_13,
+        #     'AMERICAN VANILLA': self.widget_19,
+        #     'VIETNAMESE LATTE': self.widget_18,
+        #     'STRAWBERRY LATTE': self.widget_20,
+        #     'MATCHA COFFEE': self.widget_17,
+        #     'UBE LATTE': self.widget_23,
+        # }
         
         self.conn = self.connect_to_database()
         if self.conn is None:
@@ -107,8 +108,8 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
 
 
-        for product_name, button in self.product_buttons.items():
-            button.clicked.connect(lambda _, name=product_name: self.prodBtnClicked(name))
+        # for product_name, button in self.product_buttons.items():
+        #     button.clicked.connect(lambda _, name=product_name: self.prodBtnClicked(name))
 
         self.removeProdOrder.clicked.connect(self.removeSelectedRow)
 
@@ -674,6 +675,26 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         message_box.exec()
 
+    # def check_new_products(self):
+    #     try:
+    #         cursor = self.conn.cursor()
+    #         query = "SELECT PROD_NAME FROM PRODUCT"
+    #         cursor.execute(query)
+    #         products_in_db = [product[0] for product in cursor.fetchall()]
+    #         cursor.close()
+
+    #         existing_products = set(self.product_buttons.keys())
+    #         new_products = set(products_in_db) - existing_products
+
+    #         if new_products:
+    #             self.add_new_products(new_products)
+    #             print(f"New products added: {', '.join(new_products)}")
+    #         else:
+    #             print("No new products found in the database.")
+
+    #     except (Exception, psycopg2.Error) as error:
+    #         print("Error while checking for new products:", error)
+
     def check_new_products(self):
         try:
             cursor = self.conn.cursor()
@@ -682,8 +703,14 @@ class userInterface(QMainWindow, Ui_MainWindow):
             products_in_db = [product[0] for product in cursor.fetchall()]
             cursor.close()
 
-            existing_products = set(self.product_buttons.keys())
-            new_products = set(products_in_db) - existing_products
+            existing_products = []
+            for child in self.scrollAreaWidgetContents.children():
+                if isinstance(child, QWidget):
+                    ui = child.findChild(Ui_Form)
+                    if ui:
+                        existing_products.append(ui.prodNameLabel.text())
+
+            new_products = set(products_in_db) - set(existing_products)
 
             if new_products:
                 self.add_new_products(new_products)
@@ -694,39 +721,10 @@ class userInterface(QMainWindow, Ui_MainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error while checking for new products:", error)
 
-    def add_new_products(self, new_products):
-        if not self.scrollAreaWidgetContents.layout():
-            self.scrollAreaWidgetContents.setLayout(QBoxLayout())
-        prod_quantity=0
-
-        for product_name in new_products:
-            cursor = self.conn.cursor()
-            query = "SELECT PROD_NAME, PROD_PRICE FROM PRODUCT WHERE PROD_NAME = %s"
-            cursor.execute(query, (product_name,))
-            product = cursor.fetchone()
-            cursor.close()
-
-            if product:
-                prod_name, prod_price = product
-
-                new_product_container = QWidget()
-                ui = Ui_Form()
-                ui.setupUi(new_product_container)
-
-                ui.prodNameLabel.setText(prod_name)
-                
-
-
-                ui.productBtn.clicked.connect(lambda _, name=prod_name, quantity=prod_quantity: self.prodBtnClicked(name, quantity))
-
-                self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
-
-                self.product_buttons[prod_name] = ui.productBtn
-                self.product_widgets[prod_name] = new_product_container
-
     # def add_new_products(self, new_products):
     #     if not self.scrollAreaWidgetContents.layout():
     #         self.scrollAreaWidgetContents.setLayout(QBoxLayout())
+    #     prod_quantity=0
 
     #     for product_name in new_products:
     #         cursor = self.conn.cursor()
@@ -743,14 +741,49 @@ class userInterface(QMainWindow, Ui_MainWindow):
     #             ui.setupUi(new_product_container)
 
     #             ui.prodNameLabel.setText(prod_name)
-    #             # ui.prodPriceLabel.setText(f"Price: {prod_price} PHP")  # Displaying product price
+                
 
-    #             ui.productBtn.clicked.connect(lambda _, name=prod_name: self.prodBtnClicked(name))
+
+    #             ui.productBtn.clicked.connect(lambda _, name=prod_name, quantity=prod_quantity: self.prodBtnClicked(name, quantity))
 
     #             self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
 
     #             self.product_buttons[prod_name] = ui.productBtn
     #             self.product_widgets[prod_name] = new_product_container
+    def add_new_products(self, new_products):
+        if not self.scrollAreaWidgetContents.layout():
+            grid_layout = QGridLayout()
+            self.scrollAreaWidgetContents.setLayout(grid_layout)
+        else:
+            grid_layout = self.scrollAreaWidgetContents.layout()
+
+        row, col = 0, 0
+        max_cols = 4
+
+        for product_name in new_products:
+            cursor = self.conn.cursor()
+            query = "SELECT PROD_NAME, PROD_PRICE FROM PRODUCT WHERE PROD_NAME = %s"
+            cursor.execute(query, (product_name,))
+            product = cursor.fetchone()
+            cursor.close()
+
+            if product:
+                prod_name, prod_price = product
+
+                new_product_container = QWidget()
+                ui = Ui_Form()
+                ui.setupUi(new_product_container)
+
+                ui.prodNameLabel.setText(prod_name)
+                ui.productBtn.clicked.connect(lambda _, name=prod_name: self.prodBtnClicked(name))
+
+                grid_layout.addWidget(new_product_container, row, col)
+
+                col += 1
+                if col >= max_cols:
+                    col = 0
+                    row += 1
+    
 
 
     def mousePressEvent(self, event):

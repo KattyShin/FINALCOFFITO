@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestMofELP.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestNMcXFY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -24,6 +24,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFram
 import resource1_rc
 import main_resources
 import resource1_rcc
+import finalRes
+import dashBg
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -478,9 +480,15 @@ class Ui_MainWindow(object):
         self.DashboardTable = QTableWidget(self.widget_4)
         if (self.DashboardTable.columnCount() < 2):
             self.DashboardTable.setColumnCount(2)
+        font7 = QFont()
+        font7.setFamilies([u"Inter SemiBold"])
+        font7.setPointSize(10)
+        font7.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setFont(font7);
         self.DashboardTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setFont(font7);
         self.DashboardTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         if (self.DashboardTable.rowCount() < 14):
             self.DashboardTable.setRowCount(14)
@@ -522,6 +530,7 @@ class Ui_MainWindow(object):
 "    background-color: #1F1F1F;\n"
 "    border-radius: 3px;\n"
 "    border: 1px solid rgb(50, 50, 50);\n"
+"	color:white;\n"
 "}\n"
 "\n"
 "QTableWidget::section {\n"
@@ -558,9 +567,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QScrollBar::handle:vertical {\n"
-"    background-color: #606060;\n"
-" "
-                        "   min-height: 20px;\n"
+"    background-col"
+                        "or: #606060;\n"
+"    min-height: 20px;\n"
 "    border-radius: 5px;\n"
 "}\n"
 "\n"
@@ -584,7 +593,7 @@ class Ui_MainWindow(object):
         self.DashboardTable.horizontalHeader().setCascadingSectionResizes(True)
         self.DashboardTable.horizontalHeader().setStretchLastSection(True)
         self.DashboardTable.verticalHeader().setVisible(False)
-        self.DashboardTable.verticalHeader().setStretchLastSection(True)
+        self.DashboardTable.verticalHeader().setStretchLastSection(False)
 
         self.verticalLayout_7.addWidget(self.DashboardTable)
 
@@ -651,11 +660,11 @@ class Ui_MainWindow(object):
         self.bestSell1.setObjectName(u"bestSell1")
         self.bestSell1.setMinimumSize(QSize(121, 31))
         self.bestSell1.setMaximumSize(QSize(121, 31))
-        font7 = QFont()
-        font7.setFamilies([u"Poppins"])
-        font7.setPointSize(10)
-        font7.setBold(True)
-        self.bestSell1.setFont(font7)
+        font8 = QFont()
+        font8.setFamilies([u"Poppins"])
+        font8.setPointSize(10)
+        font8.setBold(True)
+        self.bestSell1.setFont(font8)
         self.bestSell1.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell1.setWordWrap(True)
@@ -695,7 +704,7 @@ class Ui_MainWindow(object):
         self.bestSell2.setObjectName(u"bestSell2")
         self.bestSell2.setMinimumSize(QSize(121, 31))
         self.bestSell2.setMaximumSize(QSize(121, 31))
-        self.bestSell2.setFont(font7)
+        self.bestSell2.setFont(font8)
         self.bestSell2.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell2.setWordWrap(True)
@@ -735,7 +744,7 @@ class Ui_MainWindow(object):
         self.bestSell3.setObjectName(u"bestSell3")
         self.bestSell3.setMinimumSize(QSize(121, 31))
         self.bestSell3.setMaximumSize(QSize(121, 31))
-        self.bestSell3.setFont(font7)
+        self.bestSell3.setFont(font8)
         self.bestSell3.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell3.setWordWrap(True)
@@ -775,7 +784,7 @@ class Ui_MainWindow(object):
         self.bestSell4.setObjectName(u"bestSell4")
         self.bestSell4.setMinimumSize(QSize(121, 31))
         self.bestSell4.setMaximumSize(QSize(121, 31))
-        self.bestSell4.setFont(font7)
+        self.bestSell4.setFont(font8)
         self.bestSell4.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell4.setWordWrap(True)
@@ -815,7 +824,7 @@ class Ui_MainWindow(object):
         self.bestSell5.setObjectName(u"bestSell5")
         self.bestSell5.setMinimumSize(QSize(121, 31))
         self.bestSell5.setMaximumSize(QSize(121, 31))
-        self.bestSell5.setFont(font7)
+        self.bestSell5.setFont(font8)
         self.bestSell5.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell5.setWordWrap(True)
@@ -855,7 +864,7 @@ class Ui_MainWindow(object):
         self.bestSell6.setObjectName(u"bestSell6")
         self.bestSell6.setMinimumSize(QSize(121, 31))
         self.bestSell6.setMaximumSize(QSize(121, 31))
-        self.bestSell6.setFont(font7)
+        self.bestSell6.setFont(font8)
         self.bestSell6.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell6.setWordWrap(True)
@@ -895,7 +904,7 @@ class Ui_MainWindow(object):
         self.bestSell7.setObjectName(u"bestSell7")
         self.bestSell7.setMinimumSize(QSize(121, 31))
         self.bestSell7.setMaximumSize(QSize(121, 31))
-        self.bestSell7.setFont(font7)
+        self.bestSell7.setFont(font8)
         self.bestSell7.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell7.setWordWrap(True)
@@ -935,7 +944,7 @@ class Ui_MainWindow(object):
         self.bestSell8.setObjectName(u"bestSell8")
         self.bestSell8.setMinimumSize(QSize(121, 31))
         self.bestSell8.setMaximumSize(QSize(121, 31))
-        self.bestSell8.setFont(font7)
+        self.bestSell8.setFont(font8)
         self.bestSell8.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell8.setWordWrap(True)
@@ -975,7 +984,7 @@ class Ui_MainWindow(object):
         self.bestSell9.setObjectName(u"bestSell9")
         self.bestSell9.setMinimumSize(QSize(121, 31))
         self.bestSell9.setMaximumSize(QSize(121, 31))
-        self.bestSell9.setFont(font7)
+        self.bestSell9.setFont(font8)
         self.bestSell9.setStyleSheet(u"color: white;\n"
 "")
         self.bestSell9.setWordWrap(True)
@@ -1045,11 +1054,11 @@ class Ui_MainWindow(object):
         self.pushButton_14.setObjectName(u"pushButton_14")
         self.pushButton_14.setMinimumSize(QSize(25, 25))
         self.pushButton_14.setMaximumSize(QSize(25, 25))
-        font8 = QFont()
-        font8.setFamilies([u"Roboto"])
-        font8.setPointSize(10)
-        font8.setBold(True)
-        self.pushButton_14.setFont(font8)
+        font9 = QFont()
+        font9.setFamilies([u"Roboto"])
+        font9.setPointSize(10)
+        font9.setBold(True)
+        self.pushButton_14.setFont(font9)
         self.pushButton_14.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -1079,7 +1088,7 @@ class Ui_MainWindow(object):
         self.add_prod_button.setObjectName(u"add_prod_button")
         self.add_prod_button.setMinimumSize(QSize(150, 30))
         self.add_prod_button.setMaximumSize(QSize(150, 25))
-        self.add_prod_button.setFont(font8)
+        self.add_prod_button.setFont(font9)
         self.add_prod_button.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1122,24 +1131,20 @@ class Ui_MainWindow(object):
         self.product_table = QTableWidget(self.widget_35)
         if (self.product_table.columnCount() < 5):
             self.product_table.setColumnCount(5)
-        font9 = QFont()
-        font9.setFamilies([u"Inter SemiBold"])
-        font9.setPointSize(10)
-        font9.setBold(True)
         __qtablewidgetitem16 = QTableWidgetItem()
-        __qtablewidgetitem16.setFont(font9);
+        __qtablewidgetitem16.setFont(font7);
         self.product_table.setHorizontalHeaderItem(0, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        __qtablewidgetitem17.setFont(font9);
+        __qtablewidgetitem17.setFont(font7);
         self.product_table.setHorizontalHeaderItem(1, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        __qtablewidgetitem18.setFont(font9);
+        __qtablewidgetitem18.setFont(font7);
         self.product_table.setHorizontalHeaderItem(2, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        __qtablewidgetitem19.setFont(font9);
+        __qtablewidgetitem19.setFont(font7);
         self.product_table.setHorizontalHeaderItem(3, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        __qtablewidgetitem20.setFont(font9);
+        __qtablewidgetitem20.setFont(font7);
         self.product_table.setHorizontalHeaderItem(4, __qtablewidgetitem20)
         if (self.product_table.rowCount() < 16):
             self.product_table.setRowCount(16)
@@ -1353,7 +1358,7 @@ class Ui_MainWindow(object):
         self.pushButton_16.setObjectName(u"pushButton_16")
         self.pushButton_16.setMinimumSize(QSize(25, 25))
         self.pushButton_16.setMaximumSize(QSize(25, 25))
-        self.pushButton_16.setFont(font8)
+        self.pushButton_16.setFont(font9)
         self.pushButton_16.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -1381,7 +1386,7 @@ class Ui_MainWindow(object):
         self.update_prod_button.setObjectName(u"update_prod_button")
         self.update_prod_button.setMinimumSize(QSize(150, 30))
         self.update_prod_button.setMaximumSize(QSize(150, 25))
-        self.update_prod_button.setFont(font8)
+        self.update_prod_button.setFont(font9)
         self.update_prod_button.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1422,19 +1427,19 @@ class Ui_MainWindow(object):
         if (self.product_table_2.columnCount() < 5):
             self.product_table_2.setColumnCount(5)
         __qtablewidgetitem47 = QTableWidgetItem()
-        __qtablewidgetitem47.setFont(font9);
+        __qtablewidgetitem47.setFont(font7);
         self.product_table_2.setHorizontalHeaderItem(0, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
-        __qtablewidgetitem48.setFont(font9);
+        __qtablewidgetitem48.setFont(font7);
         self.product_table_2.setHorizontalHeaderItem(1, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
-        __qtablewidgetitem49.setFont(font9);
+        __qtablewidgetitem49.setFont(font7);
         self.product_table_2.setHorizontalHeaderItem(2, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
-        __qtablewidgetitem50.setFont(font9);
+        __qtablewidgetitem50.setFont(font7);
         self.product_table_2.setHorizontalHeaderItem(3, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
-        __qtablewidgetitem51.setFont(font9);
+        __qtablewidgetitem51.setFont(font7);
         self.product_table_2.setHorizontalHeaderItem(4, __qtablewidgetitem51)
         if (self.product_table_2.rowCount() < 16):
             self.product_table_2.setRowCount(16)
@@ -1644,7 +1649,7 @@ class Ui_MainWindow(object):
         self.pushButton_17.setObjectName(u"pushButton_17")
         self.pushButton_17.setMinimumSize(QSize(25, 25))
         self.pushButton_17.setMaximumSize(QSize(25, 25))
-        self.pushButton_17.setFont(font8)
+        self.pushButton_17.setFont(font9)
         self.pushButton_17.setStyleSheet(u"background-color: none;\n"
 "border-radius:15px;\n"
 "")
@@ -1672,7 +1677,7 @@ class Ui_MainWindow(object):
         self.update_prod_button_2.setObjectName(u"update_prod_button_2")
         self.update_prod_button_2.setMinimumSize(QSize(150, 30))
         self.update_prod_button_2.setMaximumSize(QSize(150, 25))
-        self.update_prod_button_2.setFont(font8)
+        self.update_prod_button_2.setFont(font9)
         self.update_prod_button_2.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1715,19 +1720,19 @@ class Ui_MainWindow(object):
         if (self.product_table_3.columnCount() < 5):
             self.product_table_3.setColumnCount(5)
         __qtablewidgetitem78 = QTableWidgetItem()
-        __qtablewidgetitem78.setFont(font9);
+        __qtablewidgetitem78.setFont(font7);
         self.product_table_3.setHorizontalHeaderItem(0, __qtablewidgetitem78)
         __qtablewidgetitem79 = QTableWidgetItem()
-        __qtablewidgetitem79.setFont(font9);
+        __qtablewidgetitem79.setFont(font7);
         self.product_table_3.setHorizontalHeaderItem(1, __qtablewidgetitem79)
         __qtablewidgetitem80 = QTableWidgetItem()
-        __qtablewidgetitem80.setFont(font9);
+        __qtablewidgetitem80.setFont(font7);
         self.product_table_3.setHorizontalHeaderItem(2, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
-        __qtablewidgetitem81.setFont(font9);
+        __qtablewidgetitem81.setFont(font7);
         self.product_table_3.setHorizontalHeaderItem(3, __qtablewidgetitem81)
         __qtablewidgetitem82 = QTableWidgetItem()
-        __qtablewidgetitem82.setFont(font9);
+        __qtablewidgetitem82.setFont(font7);
         self.product_table_3.setHorizontalHeaderItem(4, __qtablewidgetitem82)
         if (self.product_table_3.rowCount() < 16):
             self.product_table_3.setRowCount(16)
@@ -1961,7 +1966,7 @@ class Ui_MainWindow(object):
         self.dailySalesBtn.setObjectName(u"dailySalesBtn")
         self.dailySalesBtn.setMinimumSize(QSize(0, 31))
         self.dailySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.dailySalesBtn.setFont(font8)
+        self.dailySalesBtn.setFont(font9)
         self.dailySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -1992,7 +1997,7 @@ class Ui_MainWindow(object):
         self.monthlySalesBtn.setObjectName(u"monthlySalesBtn")
         self.monthlySalesBtn.setMinimumSize(QSize(0, 31))
         self.monthlySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.monthlySalesBtn.setFont(font8)
+        self.monthlySalesBtn.setFont(font9)
         self.monthlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2023,7 +2028,7 @@ class Ui_MainWindow(object):
         self.yearlySalesBtn.setObjectName(u"yearlySalesBtn")
         self.yearlySalesBtn.setMinimumSize(QSize(0, 31))
         self.yearlySalesBtn.setMaximumSize(QSize(16777215, 31))
-        self.yearlySalesBtn.setFont(font8)
+        self.yearlySalesBtn.setFont(font9)
         self.yearlySalesBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2054,7 +2059,7 @@ class Ui_MainWindow(object):
         self.itemSoldBtn.setObjectName(u"itemSoldBtn")
         self.itemSoldBtn.setMinimumSize(QSize(0, 31))
         self.itemSoldBtn.setMaximumSize(QSize(16777215, 31))
-        self.itemSoldBtn.setFont(font8)
+        self.itemSoldBtn.setFont(font9)
         self.itemSoldBtn.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -2233,6 +2238,7 @@ class Ui_MainWindow(object):
         self.dailySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.dailySalesTbl.horizontalHeader().setMinimumSectionSize(100)
         self.dailySalesTbl.horizontalHeader().setDefaultSectionSize(250)
+        self.dailySalesTbl.horizontalHeader().setProperty("showSortIndicator", True)
         self.dailySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.dailySalesTbl.verticalHeader().setVisible(False)
 
@@ -2364,6 +2370,7 @@ class Ui_MainWindow(object):
         self.monthlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.monthlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
         self.monthlySalesTbl.horizontalHeader().setDefaultSectionSize(250)
+        self.monthlySalesTbl.horizontalHeader().setProperty("showSortIndicator", True)
         self.monthlySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.monthlySalesTbl.verticalHeader().setVisible(False)
 
@@ -2495,6 +2502,7 @@ class Ui_MainWindow(object):
         self.yearlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.yearlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
         self.yearlySalesTbl.horizontalHeader().setDefaultSectionSize(250)
+        self.yearlySalesTbl.horizontalHeader().setProperty("showSortIndicator", True)
         self.yearlySalesTbl.horizontalHeader().setStretchLastSection(True)
         self.yearlySalesTbl.verticalHeader().setVisible(False)
 
@@ -2632,6 +2640,7 @@ class Ui_MainWindow(object):
         self.itemSoldTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.itemSoldTbl.horizontalHeader().setMinimumSectionSize(100)
         self.itemSoldTbl.horizontalHeader().setDefaultSectionSize(190)
+        self.itemSoldTbl.horizontalHeader().setProperty("showSortIndicator", True)
         self.itemSoldTbl.horizontalHeader().setStretchLastSection(True)
         self.itemSoldTbl.verticalHeader().setVisible(False)
 
@@ -2816,7 +2825,7 @@ class Ui_MainWindow(object):
         self.pushButton_21.setObjectName(u"pushButton_21")
         self.pushButton_21.setMinimumSize(QSize(0, 31))
         self.pushButton_21.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_21.setFont(font8)
+        self.pushButton_21.setFont(font9)
         self.pushButton_21.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3013,7 +3022,7 @@ class Ui_MainWindow(object):
         self.pushButton_22.setObjectName(u"pushButton_22")
         self.pushButton_22.setMinimumSize(QSize(0, 31))
         self.pushButton_22.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_22.setFont(font8)
+        self.pushButton_22.setFont(font9)
         self.pushButton_22.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3342,7 +3351,7 @@ class Ui_MainWindow(object):
         self.pushButton_31.setObjectName(u"pushButton_31")
         self.pushButton_31.setMinimumSize(QSize(132, 31))
         self.pushButton_31.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_31.setFont(font8)
+        self.pushButton_31.setFont(font9)
         self.pushButton_31.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3658,7 +3667,7 @@ class Ui_MainWindow(object):
         self.pushButton_32.setObjectName(u"pushButton_32")
         self.pushButton_32.setMinimumSize(QSize(132, 31))
         self.pushButton_32.setMaximumSize(QSize(16777215, 31))
-        self.pushButton_32.setFont(font8)
+        self.pushButton_32.setFont(font9)
         self.pushButton_32.setStyleSheet(u"QPushButton {\n"
 "    padding: 6px 14px;\n"
 "    font-family: \"Roboto\", sans-serif;\n"
@@ -3713,11 +3722,27 @@ class Ui_MainWindow(object):
         self.verticalLayout_28.addWidget(self.label_12)
 
         self.stackedWidget.addWidget(self.page)
-        self.manage_account = QWidget()
-        self.manage_account.setObjectName(u"manage_account")
-        self.gridLayout_6 = QGridLayout(self.manage_account)
+        self.homepage = QWidget()
+        self.homepage.setObjectName(u"homepage")
+        self.gridLayout_6 = QGridLayout(self.homepage)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.stackedWidget.addWidget(self.manage_account)
+        self.directToDashboard = QPushButton(self.homepage)
+        self.directToDashboard.setObjectName(u"directToDashboard")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.directToDashboard.sizePolicy().hasHeightForWidth())
+        self.directToDashboard.setSizePolicy(sizePolicy7)
+        self.directToDashboard.setStyleSheet(u"border: none;")
+        icon12 = QIcon()
+        icon12.addFile(u":/dashBg/Downloads/LowCaf.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.directToDashboard.setIcon(icon12)
+        self.directToDashboard.setIconSize(QSize(840, 573))
+        self.directToDashboard.setCheckable(True)
+
+        self.gridLayout_6.addWidget(self.directToDashboard, 0, 0, 1, 1)
+
+        self.stackedWidget.addWidget(self.homepage)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
 
@@ -3733,15 +3758,15 @@ class Ui_MainWindow(object):
 "	color:rgb(255,255,255);\n"
 "	height:30px;\n"
 "	border:none;\n"
-"	border-radius:10;\n"
+"	border-radius:7;\n"
 "	\n"
 "}\n"
-"QPushButton:checked{\n"
-"	background-color: #ECECEC;\n"
+"QPushButton:checked {\n"
+"    background-color: #ECECEC;\n"
 "	color: #FF8C18;\n"
 "	font-weight:bold;\n"
-"}")
-        
+"}\n"
+"")
         self.verticalLayout_3 = QVBoxLayout(self.icon_only)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(3, -1, 3, -1)
@@ -3805,7 +3830,10 @@ class Ui_MainWindow(object):
 
         self.mng_account1 = QPushButton(self.icon_only)
         self.mng_account1.setObjectName(u"mng_account1")
-        self.mng_account1.setIcon(icon5)
+        icon13 = QIcon()
+        icon13.addFile(u":/finalIcons/icons/account-settings (2).png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u":/finalIcons/icons/account-settings (1).png", QSize(), QIcon.Normal, QIcon.On)
+        self.mng_account1.setIcon(icon13)
         self.mng_account1.setIconSize(QSize(20, 20))
         self.mng_account1.setCheckable(True)
         self.mng_account1.setAutoExclusive(True)
@@ -3849,8 +3877,8 @@ class Ui_MainWindow(object):
         self.update_item2.toggled.connect(self.update_item1.setChecked)
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
-        self.stackedWidget.setCurrentIndex(0)
-        self.SalesReportStackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(9)
+        self.SalesReportStackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3952,7 +3980,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem20 = self.product_table_2.horizontalHeaderItem(3)
         ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Category", None));
         ___qtablewidgetitem21 = self.product_table_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Updated At", None));
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Created At", None));
 
         __sortingEnabled1 = self.product_table_2.isSortingEnabled()
         self.product_table_2.setSortingEnabled(False)
@@ -4103,6 +4131,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose Category", None))
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"UPDATE", None))
         self.label_12.setText("")
+        self.directToDashboard.setText("")
         self.label.setText("")
         self.dashboard1.setText("")
         self.add_item1.setText("")
@@ -4112,6 +4141,4 @@ class Ui_MainWindow(object):
         self.mng_account1.setText("")
         self.logout1.setText("")
     # retranslateUi
-
-
 

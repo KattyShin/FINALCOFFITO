@@ -150,6 +150,57 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.SalesReportStackedWidget.setCurrentIndex(3) 
         self.populateItemSoldTable()
     
+    def dashboardDailySales(self):
+        self.DashboardTable.setRowCount(0)
+        self.DashboardTable.setAlternatingRowColors(True)  # Keep alternating row colors
+        
+        try:
+            cur = self.conn.cursor()
+            query = """
+                SELECT sr.SALES_DATE, SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) AS TOTAL_SALES
+                FROM SALES_REPORT sr
+                JOIN PAYMENT_TRANSACTION pt ON sr.PAYMENT_TRANS_ID = pt.PAYMENT_TRANS_ID
+                GROUP BY sr.SALES_DATE
+                ORDER BY sr.SALES_DATE DESC;
+            """
+            cur.execute(query)
+            rows = cur.fetchall()
+            cur.close()
+
+            self.DashboardTable.setRowCount(0)
+            self.DashboardTable.setColumnCount(2)
+            self.DashboardTable.setHorizontalHeaderLabels(["Date", "Total Sales"])
+
+            # Set header properties
+            header = self.DashboardTable.horizontalHeader()
+            header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
+
+            for row_num, row_data in enumerate(rows):
+                sales_date = row_data[0].strftime("%B %d, %Y")  # Format date as "Month Day, Year"
+                total_sales = row_data[1]
+
+                self.DashboardTable.insertRow(row_num)
+
+                # Set item alignment, font color, and font
+                item_date = QtWidgets.QTableWidgetItem(str(sales_date))
+                item_date.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_date.setForeground(white_color)
+                item_date.setFont(font)
+                self.DashboardTable.setItem(row_num, 0, item_date)
+
+                item_sales = QtWidgets.QTableWidgetItem(str(total_sales))
+                item_sales.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_sales.setForeground(white_color)
+                item_sales.setFont(font)
+                self.DashboardTable.setItem(row_num, 1, item_sales)
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving daily sales data from the database:", error)
+            self.show_message_box("Error", f"Error retrieving daily sales data: {error}", QtWidgets.QMessageBox.Critical)
+
 
     def dailySales(self):
         self.dailySalesTbl.setRowCount(0)
@@ -383,6 +434,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.fetch_total_products() #ADDED
         self.fetch_items_sold_today()  #ADDED
         self.fetch_total_sales() #ADDED
+        self.dashboardDailySales()
 
     def switch_to_addProductPage(self):
         self.stackedWidget.setCurrentIndex(1)

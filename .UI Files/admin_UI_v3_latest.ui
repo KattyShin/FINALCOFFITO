@@ -442,7 +442,7 @@ QLabel{
 }</string>
          </property>
          <property name="currentIndex">
-          <number>5</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="dashboard_page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -897,6 +897,7 @@ border-radius:10px;
     background-color: #1F1F1F;
     border-radius: 3px;
     border: 1px solid rgb(50, 50, 50);
+	color:white;
 }
 
 QTableWidget::section {
@@ -4178,6 +4179,9 @@ QScrollBar:hover {
                       <attribute name="horizontalHeaderDefaultSectionSize">
                        <number>250</number>
                       </attribute>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
+                      </attribute>
                       <attribute name="horizontalHeaderStretchLastSection">
                        <bool>true</bool>
                       </attribute>
@@ -4397,6 +4401,9 @@ QScrollBar:hover {
                       </attribute>
                       <attribute name="horizontalHeaderDefaultSectionSize">
                        <number>250</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
                       </attribute>
                       <attribute name="horizontalHeaderStretchLastSection">
                        <bool>true</bool>
@@ -4618,6 +4625,9 @@ QScrollBar:hover {
                       <attribute name="horizontalHeaderDefaultSectionSize">
                        <number>250</number>
                       </attribute>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
+                      </attribute>
                       <attribute name="horizontalHeaderStretchLastSection">
                        <bool>true</bool>
                       </attribute>
@@ -4837,6 +4847,9 @@ QScrollBar:hover {
                       </attribute>
                       <attribute name="horizontalHeaderDefaultSectionSize">
                        <number>190</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                       <bool>true</bool>
                       </attribute>
                       <attribute name="horizontalHeaderStretchLastSection">
                        <bool>true</bool>
@@ -7113,14 +7126,15 @@ QPushButton{
 	color:rgb(255,255,255);
 	height:30px;
 	border:none;
-	border-radius:10;
+	border-radius:7;
 	
 }
-QPushButton:checked{
-	background-color: #ECECEC;
+QPushButton:checked {
+    background-color: #ECECEC;
 	color: #FF8C18;
 	font-weight:bold;
-}</string>
+}
+</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="leftMargin">
@@ -7288,8 +7302,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>:/iCons/icons/personalization.png</normaloff>:/iCons/icons/personalization.png</iconset>
+            <iconset resource="../finalRes.qrc">
+             <normaloff>:/finalIcons/icons/account-settings (2).png</normaloff>
+             <normalon>:/finalIcons/icons/account-settings (1).png</normalon>:/finalIcons/icons/account-settings (2).png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -7346,6 +7361,7 @@ QPushButton:checked{
   <include location="../main_resource.qrc"/>
   <include location="main_resource.qrc"/>
   <include location="resource1_rc.qrc"/>
+  <include location="../finalRes.qrc"/>
  </resources>
  <connections>
   <connection>

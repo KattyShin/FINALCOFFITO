@@ -51,37 +51,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.setWindowIcon(QIcon(r'C:\Users\Dennis\Desktop\POS System Coffito\CoffitoLogo (40 x 40 px).png'))
         self.product_containers = []
 
-        # self.product_buttons = {
-        #     'AMERICANO': self.product1,
-        #     'CARAMEL': self.product2,
-        #     'LATTE': self.product3,
-        #     'VANILLA': self.product4,
-        #     'MOCHA': self.product5,
-        #     'MATCHA': self.product6,
-        #     'ICED CHOCO': self.product7,
-        #     'SPANISH LATTE': self.product8,
-        #     'AMERICAN VANILLA': self.product9,
-        #     'VIETNAMESE LATTE': self.product10,
-        #     'STRAWBERRY LATTE': self.product11,
-        #     'MATCHA COFFEE': self.product12,
-        #     'UBE LATTE': self.product13,
-        # }
-
-        # self.product_widgets = {
-        #     'AMERICANO': self.widget_5,
-        #     'CARAMEL': self.widget_6,
-        #     'LATTE': self.widget_7,
-        #     'VANILLA': self.widget_8,
-        #     'MOCHA': self.widget_14,
-        #     'MATCHA': self.widget_15,
-        #     'ICED CHOCO': self.widget_16,
-        #     'SPANISH LATTE': self.widget_13,
-        #     'AMERICAN VANILLA': self.widget_19,
-        #     'VIETNAMESE LATTE': self.widget_18,
-        #     'STRAWBERRY LATTE': self.widget_20,
-        #     'MATCHA COFFEE': self.widget_17,
-        #     'UBE LATTE': self.widget_23,
-        # }
+        
         
         self.conn = self.connect_to_database()
         if self.conn is None:
@@ -107,10 +77,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.logout2.clicked.connect(self.show_login_window)
 
 
-
-        # for product_name, button in self.product_buttons.items():
-        #     button.clicked.connect(lambda _, name=product_name: self.prodBtnClicked(name))
-
         self.removeProdOrder.clicked.connect(self.removeSelectedRow)
 
         self.timer = QTimer(self)
@@ -120,15 +86,20 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         self.date_time_label = self.DateTimeLabel
 
-        self.searchMenuItem.textChanged.connect(self.filter_products)
+
 
         self.Amt_ContactNum_Val.textChanged.connect(self.calculate_change)
 
         self.payButton.clicked.connect(self.payButtonClicked)
         self.Amt_ContactNum_Val.returnPressed.connect(self.payButtonClicked)
 
-        
+        self.dashboard1.clicked.connect(self.switch_to_dashboardPage)
+        self.dashboard2.clicked.connect(self.switch_to_dashboardPage)
+        self.directToDashboard.clicked.connect(self.switch_to_dashboardPage)
 
+        
+    def switch_to_dashboardPage(self):
+        self.stackedWidget.setCurrentIndex(0)
         
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow
@@ -175,15 +146,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
     def switch_to_orderListPage(self):
         self.stackedWidget_2.setCurrentIndex(0)
         
-
-    def filter_products(self):
-        search_text = self.searchMenuItem.text().lower()
-        
-        for product_name, widget in self.product_widgets.items():
-            if search_text in product_name.lower():
-                widget.show()
-            else:
-                widget.hide()
 
     def update_date_time(self):
         current_date_time = self.get_current_date_time()
@@ -721,35 +683,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error while checking for new products:", error)
 
-    # def add_new_products(self, new_products):
-    #     if not self.scrollAreaWidgetContents.layout():
-    #         self.scrollAreaWidgetContents.setLayout(QBoxLayout())
-    #     prod_quantity=0
-
-    #     for product_name in new_products:
-    #         cursor = self.conn.cursor()
-    #         query = "SELECT PROD_NAME, PROD_PRICE FROM PRODUCT WHERE PROD_NAME = %s"
-    #         cursor.execute(query, (product_name,))
-    #         product = cursor.fetchone()
-    #         cursor.close()
-
-    #         if product:
-    #             prod_name, prod_price = product
-
-    #             new_product_container = QWidget()
-    #             ui = Ui_Form()
-    #             ui.setupUi(new_product_container)
-
-    #             ui.prodNameLabel.setText(prod_name)
-                
-
-
-    #             ui.productBtn.clicked.connect(lambda _, name=prod_name, quantity=prod_quantity: self.prodBtnClicked(name, quantity))
-
-    #             self.scrollAreaWidgetContents.layout().addWidget(new_product_container)
-
-    #             self.product_buttons[prod_name] = ui.productBtn
-    #             self.product_widgets[prod_name] = new_product_container
+  
     def add_new_products(self, new_products):
         if not self.scrollAreaWidgetContents.layout():
             grid_layout = QGridLayout()

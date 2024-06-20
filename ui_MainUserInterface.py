@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainUserInterfaceXnIlyf.ui'
+## Form generated from reading UI file 'MainUserInterfacePpmxvb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1106, 576)
+        MainWindow.resize(1098, 576)
         MainWindow.setStyleSheet(u"background-color:#1F1F1F;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -235,6 +235,7 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}")
         self.order_table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.order_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.order_table.setDragEnabled(False)
         self.order_table.setAlternatingRowColors(True)
         self.order_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -243,7 +244,7 @@ class Ui_MainWindow(object):
         self.order_table.setWordWrap(True)
         self.order_table.horizontalHeader().setCascadingSectionResizes(True)
         self.order_table.horizontalHeader().setMinimumSectionSize(30)
-        self.order_table.horizontalHeader().setDefaultSectionSize(100)
+        self.order_table.horizontalHeader().setDefaultSectionSize(130)
         self.order_table.horizontalHeader().setStretchLastSection(True)
         self.order_table.verticalHeader().setVisible(False)
         self.order_table.verticalHeader().setCascadingSectionResizes(False)
@@ -456,6 +457,7 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}")
         self.order_table_2.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.order_table_2.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.order_table_2.setDragEnabled(False)
         self.order_table_2.setAlternatingRowColors(True)
         self.order_table_2.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -464,7 +466,7 @@ class Ui_MainWindow(object):
         self.order_table_2.setWordWrap(True)
         self.order_table_2.horizontalHeader().setCascadingSectionResizes(True)
         self.order_table_2.horizontalHeader().setMinimumSectionSize(30)
-        self.order_table_2.horizontalHeader().setDefaultSectionSize(100)
+        self.order_table_2.horizontalHeader().setDefaultSectionSize(130)
         self.order_table_2.horizontalHeader().setStretchLastSection(True)
         self.order_table_2.verticalHeader().setVisible(False)
         self.order_table_2.verticalHeader().setCascadingSectionResizes(False)
@@ -878,11 +880,11 @@ class Ui_MainWindow(object):
 
         self.stackedWidget = QStackedWidget(self.widget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.gridLayout_2 = QGridLayout(self.page)
+        self.dashboard = QWidget()
+        self.dashboard.setObjectName(u"dashboard")
+        self.gridLayout_2 = QGridLayout(self.dashboard)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.scrollArea = QScrollArea(self.page)
+        self.scrollArea = QScrollArea(self.dashboard)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setStyleSheet(u"QScrollArea{\n"
 "	background-color:#1F1F1F;\n"
@@ -919,16 +921,31 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 478, 462))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 470, 462))
         self.gridLayout_3 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.gridLayout_2.addWidget(self.scrollArea, 0, 0, 1, 1)
 
-        self.stackedWidget.addWidget(self.page)
+        self.stackedWidget.addWidget(self.dashboard)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
+        self.verticalLayout_6 = QVBoxLayout(self.page_2)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.directToDashboard = QPushButton(self.page_2)
+        self.directToDashboard.setObjectName(u"directToDashboard")
+        sizePolicy.setHeightForWidth(self.directToDashboard.sizePolicy().hasHeightForWidth())
+        self.directToDashboard.setSizePolicy(sizePolicy)
+        self.directToDashboard.setStyleSheet(u"border: none;")
+        icon4 = QIcon()
+        icon4.addFile(u":/dashBg/Downloads/LowCaf.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.directToDashboard.setIcon(icon4)
+        self.directToDashboard.setIconSize(QSize(453, 343))
+        self.directToDashboard.setCheckable(True)
+
+        self.verticalLayout_6.addWidget(self.directToDashboard)
+
         self.stackedWidget.addWidget(self.page_2)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
@@ -977,10 +994,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(-1, 20, -1, -1)
         self.dashboard1 = QPushButton(self.icon_only)
         self.dashboard1.setObjectName(u"dashboard1")
-        icon4 = QIcon()
-        icon4.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon4.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.dashboard1.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.dashboard1.setIcon(icon5)
         self.dashboard1.setIconSize(QSize(25, 25))
         self.dashboard1.setCheckable(True)
         self.dashboard1.setAutoExclusive(True)
@@ -996,10 +1013,10 @@ class Ui_MainWindow(object):
 
         self.logout1 = QPushButton(self.icon_only)
         self.logout1.setObjectName(u"logout1")
-        icon5 = QIcon()
-        icon5.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon5.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.logout1.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.logout1.setIcon(icon6)
         self.logout1.setCheckable(True)
 
         self.verticalLayout_3.addWidget(self.logout1)
@@ -1070,7 +1087,7 @@ class Ui_MainWindow(object):
         font9.setFamilies([u"Poppins"])
         font9.setPointSize(10)
         self.dashboard2.setFont(font9)
-        self.dashboard2.setIcon(icon4)
+        self.dashboard2.setIcon(icon5)
         self.dashboard2.setIconSize(QSize(25, 25))
         self.dashboard2.setCheckable(True)
         self.dashboard2.setAutoExclusive(True)
@@ -1089,7 +1106,7 @@ class Ui_MainWindow(object):
         font10 = QFont()
         font10.setFamilies([u"Poppins"])
         self.logout2.setFont(font10)
-        self.logout2.setIcon(icon5)
+        self.logout2.setIcon(icon6)
         self.logout2.setCheckable(True)
 
         self.verticalLayout_4.addWidget(self.logout2)
@@ -1111,7 +1128,7 @@ class Ui_MainWindow(object):
         self.dashboard2.toggled.connect(self.dashboard1.setChecked)
 
         self.stackedWidget_2.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1157,6 +1174,7 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Coffito Cafe Menu", None))
         self.searchItemBtn.setText("")
         self.searchMenuItem.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.directToDashboard.setText("")
         self.label.setText("")
         self.dashboard1.setText("")
         self.logout1.setText("")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestNMcXFY.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestUYDjiH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -2086,6 +2086,37 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.itemSoldBtn)
 
+        self.transactionsBtn = QPushButton(self.widget_30)
+        self.transactionsBtn.setObjectName(u"transactionsBtn")
+        self.transactionsBtn.setMinimumSize(QSize(0, 31))
+        self.transactionsBtn.setMaximumSize(QSize(16777215, 31))
+        self.transactionsBtn.setFont(font9)
+        self.transactionsBtn.setStyleSheet(u"QPushButton {\n"
+"    padding: 6px 14px;\n"
+"    font-family: \"Roboto\", sans-serif;\n"
+"    border-radius: 6px;\n"
+"    border: none;\n"
+"    color: white;\n"
+"    background: #FF8C18;\n"
+"    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);\n"
+"    user-select: none;\n"
+"    -webkit-user-select: none;\n"
+"    touch-action: manipulation;\n"
+"    transition: background-color 0.2s, box-shadow 0.2s; \n"
+"}\n"
+"QPushButton::checked {\n"
+"    background-color: #B7B7B7;\n"
+"    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) inset;\n"
+"	color:black;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #FFA54E; \n"
+"}")
+        self.transactionsBtn.setCheckable(True)
+        self.transactionsBtn.setAutoExclusive(True)
+
+        self.horizontalLayout_2.addWidget(self.transactionsBtn)
+
 
         self.verticalLayout_10.addWidget(self.widget_30)
 
@@ -2647,6 +2678,147 @@ class Ui_MainWindow(object):
         self.verticalLayout_31.addWidget(self.itemSoldTbl)
 
         self.SalesReportStackedWidget.addWidget(self.ItemSoldPage)
+        self.page_3 = QWidget()
+        self.page_3.setObjectName(u"page_3")
+        self.verticalLayout_117 = QVBoxLayout(self.page_3)
+        self.verticalLayout_117.setObjectName(u"verticalLayout_117")
+        self.transactionTbl = QTableWidget(self.page_3)
+        if (self.transactionTbl.columnCount() < 5):
+            self.transactionTbl.setColumnCount(5)
+        __qtablewidgetitem195 = QTableWidgetItem()
+        __qtablewidgetitem195.setFont(font12);
+        self.transactionTbl.setHorizontalHeaderItem(0, __qtablewidgetitem195)
+        __qtablewidgetitem196 = QTableWidgetItem()
+        __qtablewidgetitem196.setFont(font12);
+        self.transactionTbl.setHorizontalHeaderItem(1, __qtablewidgetitem196)
+        __qtablewidgetitem197 = QTableWidgetItem()
+        __qtablewidgetitem197.setFont(font4);
+        self.transactionTbl.setHorizontalHeaderItem(2, __qtablewidgetitem197)
+        __qtablewidgetitem198 = QTableWidgetItem()
+        __qtablewidgetitem198.setFont(font4);
+        self.transactionTbl.setHorizontalHeaderItem(3, __qtablewidgetitem198)
+        __qtablewidgetitem199 = QTableWidgetItem()
+        __qtablewidgetitem199.setFont(font4);
+        self.transactionTbl.setHorizontalHeaderItem(4, __qtablewidgetitem199)
+        if (self.transactionTbl.rowCount() < 18):
+            self.transactionTbl.setRowCount(18)
+        __qtablewidgetitem200 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(0, __qtablewidgetitem200)
+        __qtablewidgetitem201 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(1, __qtablewidgetitem201)
+        __qtablewidgetitem202 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(2, __qtablewidgetitem202)
+        __qtablewidgetitem203 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(3, __qtablewidgetitem203)
+        __qtablewidgetitem204 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(4, __qtablewidgetitem204)
+        __qtablewidgetitem205 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(5, __qtablewidgetitem205)
+        __qtablewidgetitem206 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(6, __qtablewidgetitem206)
+        __qtablewidgetitem207 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(7, __qtablewidgetitem207)
+        __qtablewidgetitem208 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(8, __qtablewidgetitem208)
+        __qtablewidgetitem209 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(9, __qtablewidgetitem209)
+        __qtablewidgetitem210 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(10, __qtablewidgetitem210)
+        __qtablewidgetitem211 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(11, __qtablewidgetitem211)
+        __qtablewidgetitem212 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(12, __qtablewidgetitem212)
+        __qtablewidgetitem213 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(13, __qtablewidgetitem213)
+        __qtablewidgetitem214 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(14, __qtablewidgetitem214)
+        __qtablewidgetitem215 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(15, __qtablewidgetitem215)
+        __qtablewidgetitem216 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(16, __qtablewidgetitem216)
+        __qtablewidgetitem217 = QTableWidgetItem()
+        self.transactionTbl.setVerticalHeaderItem(17, __qtablewidgetitem217)
+        __qtablewidgetitem218 = QTableWidgetItem()
+        __qtablewidgetitem218.setTextAlignment(Qt.AlignCenter);
+        self.transactionTbl.setItem(6, 1, __qtablewidgetitem218)
+        self.transactionTbl.setObjectName(u"transactionTbl")
+        sizePolicy1.setHeightForWidth(self.transactionTbl.sizePolicy().hasHeightForWidth())
+        self.transactionTbl.setSizePolicy(sizePolicy1)
+        self.transactionTbl.setStyleSheet(u"QTableWidget {\n"
+"    background-color: #1F1F1F;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid rgb(50, 50, 50);\n"
+"	color: white;\n"
+"}\n"
+"\n"
+"QTableWidget::section {\n"
+"    border: none;\n"
+"    border-bottom: 1px solid #d0c6ff;\n"
+"    text-align: center; \n"
+"    padding: 3px 5px;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid rgb(50, 50, 50);\n"
+"    text-align: center; \n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"    text-align: center; \n"
+"}\n"
+"\n"
+"QTableView::item:alternate {\n"
+"    background-color: #272727; \n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #3B3B3B;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #606060;\n"
+"    min-height: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-lin"
+                        "e:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
+"    border: none;\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical,\n"
+"QScrollBar::sub-page:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:hover {\n"
+"    opacity: 0.7;\n"
+"}\n"
+"")
+        self.transactionTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.transactionTbl.setAlternatingRowColors(True)
+        self.transactionTbl.setSortingEnabled(False)
+        self.transactionTbl.horizontalHeader().setCascadingSectionResizes(True)
+        self.transactionTbl.horizontalHeader().setMinimumSectionSize(100)
+        self.transactionTbl.horizontalHeader().setDefaultSectionSize(150)
+        self.transactionTbl.horizontalHeader().setProperty("showSortIndicator", True)
+        self.transactionTbl.horizontalHeader().setStretchLastSection(True)
+        self.transactionTbl.verticalHeader().setVisible(False)
+
+        self.verticalLayout_117.addWidget(self.transactionTbl)
+
+        self.SalesReportStackedWidget.addWidget(self.page_3)
 
         self.gridLayout_4.addWidget(self.SalesReportStackedWidget, 0, 0, 1, 1)
 
@@ -3878,7 +4050,7 @@ class Ui_MainWindow(object):
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
         self.stackedWidget.setCurrentIndex(9)
-        self.SalesReportStackedWidget.setCurrentIndex(3)
+        self.SalesReportStackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4052,6 +4224,7 @@ class Ui_MainWindow(object):
         self.monthlySalesBtn.setText(QCoreApplication.translate("MainWindow", u"Monthly", None))
         self.yearlySalesBtn.setText(QCoreApplication.translate("MainWindow", u"Yearly", None))
         self.itemSoldBtn.setText(QCoreApplication.translate("MainWindow", u"Item Sold", None))
+        self.transactionsBtn.setText(QCoreApplication.translate("MainWindow", u"Transactions", None))
         ___qtablewidgetitem47 = self.dailySalesTbl.horizontalHeaderItem(0)
         ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Date", None));
         ___qtablewidgetitem48 = self.dailySalesTbl.horizontalHeaderItem(1)
@@ -4091,6 +4264,21 @@ class Ui_MainWindow(object):
         __sortingEnabled6 = self.itemSoldTbl.isSortingEnabled()
         self.itemSoldTbl.setSortingEnabled(False)
         self.itemSoldTbl.setSortingEnabled(__sortingEnabled6)
+
+        ___qtablewidgetitem57 = self.transactionTbl.horizontalHeaderItem(0)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Transaction ID", None));
+        ___qtablewidgetitem58 = self.transactionTbl.horizontalHeaderItem(1)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Total Amount", None));
+        ___qtablewidgetitem59 = self.transactionTbl.horizontalHeaderItem(2)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Payment Method", None));
+        ___qtablewidgetitem60 = self.transactionTbl.horizontalHeaderItem(3)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Transaction Details", None));
+        ___qtablewidgetitem61 = self.transactionTbl.horizontalHeaderItem(4)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Date", None));
+
+        __sortingEnabled7 = self.transactionTbl.isSortingEnabled()
+        self.transactionTbl.setSortingEnabled(False)
+        self.transactionTbl.setSortingEnabled(__sortingEnabled7)
 
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Admin", None))
         self.label_19.setText("")

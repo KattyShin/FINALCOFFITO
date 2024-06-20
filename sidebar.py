@@ -66,6 +66,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
         self.dashboard1.clicked.connect(self.switch_to_dashboardPage)
         self.dashboard2.clicked.connect(self.switch_to_dashboardPage)
+        self.directToDashboard.clicked.connect(self.switch_to_dashboardPage)
 
         self.add_item1.clicked.connect(self.switch_to_addProductPage)
         self.add_item2.clicked.connect(self.switch_to_addProductPage)
@@ -133,6 +134,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.monthlySalesBtn.clicked.connect(self.switch_to_monthlySales)
         self.yearlySalesBtn.clicked.connect(self.switch_to_yearlySales)
         self.itemSoldBtn.clicked.connect(self.switch_to_itemSold)
+        self.transactionsBtn.clicked.connect(self.switch_to_transactionDetails)
 
     def switch_to_dailySales(self):
         self.SalesReportStackedWidget.setCurrentIndex(0)
@@ -149,6 +151,10 @@ class mySideBar(QMainWindow, Ui_MainWindow):
     def switch_to_itemSold(self):
         self.SalesReportStackedWidget.setCurrentIndex(3) 
         self.populateItemSoldTable()
+
+    def switch_to_transactionDetails(self):
+        self.SalesReportStackedWidget.setCurrentIndex(4) 
+        self.transactionDetails()
     
     def dashboardDailySales(self):
         self.DashboardTable.setRowCount(0)
@@ -403,7 +409,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 item_prod_name.setFont(font)
                 self.itemSoldTbl.setItem(row_num, 1, item_prod_name)
 
-                item_price = QtWidgets.QTableWidgetItem(f"{prod_price:.2f}")  # Format price to two decimal places
+                item_price = QtWidgets.QTableWidgetItem(f"{prod_price:.2f}") 
                 item_price.setTextAlignment(QtCore.Qt.AlignCenter)
                 item_price.setForeground(white_color)
                 item_price.setFont(font)
@@ -419,7 +425,67 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             print("Error retrieving item sold data from the database:", error)
             self.show_message_box("Error", f"Error retrieving item sold data: {error}", QtWidgets.QMessageBox.Critical)
 
+    def transactionDetails(self):
+        self.transactionTbl.setRowCount(0)
+        self.transactionTbl.setColumnCount(5)
+        self.transactionTbl.setHorizontalHeaderLabels(["Transaction ID", "Total Amount", "Payment Method", "Transaction Details", "Transaction Date"])
 
+        try:
+            cur = self.conn.cursor()
+            query = """
+                SELECT PAYMENT_TRANS_ID, PAYMENT_TRANS_TOT_AMOUNT, PAYMENT_TRANS_METHOD, PAYMENT_TRANS_DETAILS, PAYMENT_TRANS_DATE
+                FROM PAYMENT_TRANSACTION
+            """
+            cur.execute(query)
+            transactions = cur.fetchall()
+            cur.close()
+
+            font = QtGui.QFont("Inter", 10, QtGui.QFont.Medium)
+            white_color = QtGui.QColor("white")
+
+            for row_num, transaction in enumerate(transactions):
+                transaction_id = transaction[0]
+                total_amount = transaction[1]
+                payment_method = transaction[2]
+                transaction_details = transaction[3]
+                transaction_date = transaction[4]
+
+                self.transactionTbl.insertRow(row_num)
+
+                
+                item_transaction_id = QtWidgets.QTableWidgetItem(str(transaction_id))
+                item_transaction_id.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_transaction_id.setForeground(white_color)
+                item_transaction_id.setFont(font)
+                self.transactionTbl.setItem(row_num, 0, item_transaction_id)
+
+                item_total_amount = QtWidgets.QTableWidgetItem(str(total_amount))
+                item_total_amount.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_total_amount.setForeground(white_color)
+                item_total_amount.setFont(font)
+                self.transactionTbl.setItem(row_num, 1, item_total_amount)
+
+                item_payment_method = QtWidgets.QTableWidgetItem(str(payment_method))
+                item_payment_method.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_payment_method.setForeground(white_color)
+                item_payment_method.setFont(font)
+                self.transactionTbl.setItem(row_num, 2, item_payment_method)
+
+                item_transaction_details = QtWidgets.QTableWidgetItem(str(transaction_details))
+                item_transaction_details.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_transaction_details.setForeground(white_color)
+                item_transaction_details.setFont(font)
+                self.transactionTbl.setItem(row_num, 3, item_transaction_details)
+
+                item_transaction_date = QtWidgets.QTableWidgetItem(str(transaction_date))
+                item_transaction_date.setTextAlignment(QtCore.Qt.AlignCenter)
+                item_transaction_date.setForeground(white_color)
+                item_transaction_date.setFont(font)
+                self.transactionTbl.setItem(row_num, 4, item_transaction_date)
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error retrieving transaction data from the database:", error)
+            self.show_message_box("Error", f"Error retrieving transaction data: {error}", QtWidgets.QMessageBox.Critical)
 
     def show_login_window(self):
         from ui_loginPage import Login_MainWindow

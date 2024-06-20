@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget, QCheckBox)
 
 class UpdateAdminWindow(QMainWindow):
      def __init__(self):
@@ -148,6 +148,17 @@ class UpdateAdminWindow(QMainWindow):
         self.verticalLayout_3.addWidget(self.admin_new_pass, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
+        self.show_password_checkbox = QCheckBox(self.updateAdmin_Modal)
+        self.show_password_checkbox.setObjectName(u"show_password_checkbox")
+        self.show_password_checkbox.setText("Show Password")
+        self.show_password_checkbox.setStyleSheet(u"QCheckBox {\n"
+"    color: white;\n"
+"}")
+        self.show_password_checkbox.toggled.connect(self.toggle_password_visibility)
+
+        self.verticalLayout_3.addWidget(self.show_password_checkbox, 0, Qt.AlignmentFlag.AlignHCenter)
+
+
         self.verticalLayout_4.addLayout(self.verticalLayout_3)
 
         self.verticalSpacer_6 = QSpacerItem(20, 24, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -248,6 +259,13 @@ class UpdateAdminWindow(QMainWindow):
 
         QMetaObject.connectSlotsByName(self)
     # setupUi
+
+     def toggle_password_visibility(self, checked):
+        if checked:
+            self.admin_new_pass.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.admin_new_pass.setEchoMode(QLineEdit.EchoMode.Password)
+
 
      def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))

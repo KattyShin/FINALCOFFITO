@@ -618,12 +618,9 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         reply = msg_box.exec_()
         return reply
 
-    
-# new added
     def best_selling(self):
         try:
             cur = self.conn.cursor()
-
 
             select_bestselling = """
                 SELECT P.PROD_NAME, SUM(OI.ORDER_ITEM_QTY) AS total_sold
@@ -634,42 +631,82 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 LIMIT 4
             """
 
-
             cur.execute(select_bestselling)
-
 
             # Fetch top 4 products with highest total sold quantity
             top_products = cur.fetchmany(4)
 
+            # List of best-selling labels
+            best_selling_labels = [
+                self.bestSell1, self.bestSell2, self.bestSell3, self.bestSell4,
+                self.bestSell5, self.bestSell6, self.bestSell7, self.bestSell8, self.bestSell9
+            ]
 
-            # Directly set the text of labels using fetched data
+            # Clear the text of all labels first
+            for label in best_selling_labels:
+                label.setText("")
+
+            # Set the text of labels using fetched data
             for i in range(len(top_products)):
                 product_name, total_sold = top_products[i]
-                # Set the text of labels with product name or details
-                if i == 0:
-                    self.bestSell1.setText(product_name)
-                elif i == 1:
-                    self.bestSell2.setText(product_name)
-                elif i == 2:
-                    self.bestSell3.setText(product_name)
-                elif i == 3:
-                    self.bestSell4.setText(product_name)
-                elif i == 4:
-                    self.bestSell5.setText(product_name)
-                elif i == 5:
-                    self.bestSell6.setText(product_name)
-                elif i == 6:
-                    self.bestSell7.setText(product_name)
-                elif i == 7:
-                    self.bestSell8.setText(product_name)
-                else:
-                    self.bestSell9.setText(product_name)
-
+                best_selling_labels[i].setText(product_name)
 
         except (Exception, psycopg2.Error) as error:
             self.conn.rollback()
             print(error)
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
+    
+# new added
+    # def best_selling(self):
+    #     try:
+    #         cur = self.conn.cursor()
+
+
+    #         select_bestselling = """
+    #             SELECT P.PROD_NAME, SUM(OI.ORDER_ITEM_QTY) AS total_sold
+    #             FROM ORDER_ITEMS OI
+    #             JOIN PRODUCT P ON OI.PROD_ID = P.PROD_ID
+    #             GROUP BY OI.PROD_ID, P.PROD_NAME
+    #             ORDER BY total_sold DESC
+    #             LIMIT 4
+    #         """
+
+
+    #         cur.execute(select_bestselling)
+
+
+    #         # Fetch top 4 products with highest total sold quantity
+    #         top_products = cur.fetchmany(4)
+
+
+    #         # Directly set the text of labels using fetched data
+    #         for i in range(len(top_products)):
+    #             product_name, total_sold = top_products[i]
+    #             # Set the text of labels with product name or details
+    #             if i == 0:
+    #                 self.bestSell1.setText(product_name)
+    #             elif i == 1:
+    #                 self.bestSell2.setText(product_name)
+    #             elif i == 2:
+    #                 self.bestSell3.setText(product_name)
+    #             elif i == 3:
+    #                 self.bestSell4.setText(product_name)
+    #             elif i == 4:
+    #                 self.bestSell5.setText(product_name)
+    #             elif i == 5:
+    #                 self.bestSell6.setText(product_name)
+    #             elif i == 6:
+    #                 self.bestSell7.setText(product_name)
+    #             elif i == 7:
+    #                 self.bestSell8.setText(product_name)
+    #             else:
+    #                 self.bestSell9.setText(product_name)
+
+
+    #     except (Exception, psycopg2.Error) as error:
+    #         self.conn.rollback()
+    #         print(error)
+    #         self.show_message_box("Error", f"{error}", QMessageBox.Critical)
 
 
 

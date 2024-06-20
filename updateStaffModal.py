@@ -50,7 +50,7 @@ class UpdateStaffWindow(QMainWindow):
         self.updateStaff_Modal.setSizePolicy(sizePolicy)
         self.updateStaff_Modal.setMinimumSize(QSize(300, 300))
         self.updateStaff_Modal.setStyleSheet(u"QWidget{\n"
-"	background-color:rgb(59,59,59);\n"
+"	background-color:rgb(80,80,80);\n"
 "	border-radius:10px;\n"
 "}")
         self.verticalLayout_4 = QVBoxLayout(self.updateStaff_Modal)

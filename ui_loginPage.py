@@ -27,7 +27,7 @@ import main_resources
 import resource1_rcc
 
 import psycopg2
-from database_config import get_database_config  # Assuming you have a function to get database config
+from database_config import get_database_config 
 from AdminMain import Ui_MainWindow
 from UserInterface import userInterface
 from sidebar import mySideBar
@@ -45,7 +45,7 @@ class Login_MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.conn = None  # Initialize the connection attribute
+        self.conn = None  
         self.setupUi(self)
         self.userInterface = userInterface()
 
@@ -59,7 +59,6 @@ class Login_MainWindow(QMainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error while connecting to PostgreSQL:", error)
             return None
-
 
     def show_message_box(self, title, message, icon):
         msg_box = QMessageBox()
@@ -91,31 +90,23 @@ class Login_MainWindow(QMainWindow):
         """)
         msg_box.exec_()
 
-
     def check_login(self):
         print("Login check initiated.")
         admin_user_id = 9242
         staff_user_id = 9243
 
-
         username = self.lineEdit_7.text()  
         password = self.lineEdit_8.text()  
 
-
-        # ADDED
         if not username or not password:
             self.show_message_box("Error", "Please fill in all fields", QMessageBox.Critical)
             return
         if len(password) < 7:
             self.show_message_box("Error", " password must be at least 7 characters long", QMessageBox.Critical)
-            return
-       
+            return   
         if not re.search("[a-zA-Z]", password) or not re.search("[0-9]", password):
             self.show_message_box("Error", " password must contain both letters and digits", QMessageBox.Critical)
             return    
-
-
-
 
         try:
             if not self.conn:
@@ -128,7 +119,6 @@ class Login_MainWindow(QMainWindow):
 
             cur = self.conn.cursor()
 
-
             query = "SELECT USER_ID, PASS_WORD FROM USERS WHERE USERNAME = %s AND PASS_WORD = %s"
             cur.execute(query, (username, password))
 
@@ -136,59 +126,37 @@ class Login_MainWindow(QMainWindow):
             user = cur.fetchone()
             cur.close()
 
-
             if user:
-                user_id, _ = user  # Unpack fetched data
-
-
+                user_id, _ = user  
                 if user_id == admin_user_id:
                     print("Login as admin!")
                     self.lineEdit_7.setText("")  
                     self.lineEdit_8.setText("")
 
-
                     self.mySideBar = mySideBar()
                     self.mySideBar.show()
-
-
                     self.addItemWindow = AddItemWindow()
                     self.updateItemWindow = UpdateItemWindow()
                     self.updateAdminWindow = UpdateAdminWindow()
                     self.UpdateStaffWindow = UpdateStaffWindow()
-
-
                     self.hide()
                     return True
-
 
                 elif user_id == staff_user_id:
                     print("Login as staff!")
                     self.userInterface.show()
                     self.lineEdit_7.setText("")  
                     self.lineEdit_8.setText("")  
-
-
                     self.hide()
-
-
                     return True
-
-
                 else:
                     print("Login failed. Invalid username or password.")
                     self.show_message_box("Error", "Login failed. Invalid username or password.", QMessageBox.Critical)
-
-
                     return False
-
-
             else:
                 print("Login failed. Invalid username or password.")
                 self.show_message_box("Error", "Login failed. Invalid username or password.", QMessageBox.Critical)
-
-
                 return False
-
 
         except (Exception, psycopg2.Error) as error:
             print("Error while checking login credentials:", error)
@@ -213,9 +181,7 @@ class Login_MainWindow(QMainWindow):
         self.rightWidget = QWidget(self.centralwidget)
         self.rightWidget.setObjectName(u"rightWidget")
 
-
         self.horizontalLayout.addWidget(self.rightWidget)
-
 
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
@@ -229,27 +195,15 @@ class Login_MainWindow(QMainWindow):
         icon.addFile(u"CoffitoLogo (2).png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setIconSize(QSize(400, 400))
-
-
         self.verticalLayout_4.addWidget(self.pushButton)
-
-
-
-
         self.horizontalLayout.addWidget(self.widget)
-
-
         self.widget_2 = QWidget(self.centralwidget)
         self.widget_2.setObjectName(u"widget_2")
         self.widget_2.setMinimumSize(QSize(350, 494))
         self.verticalLayout = QVBoxLayout(self.widget_2)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalSpacer = QSpacerItem(20, 90, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-
         self.verticalLayout.addItem(self.verticalSpacer)
-
-
         self.widget_3 = QWidget(self.widget_2)
         self.widget_3.setObjectName(u"widget_3")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
@@ -265,11 +219,7 @@ class Login_MainWindow(QMainWindow):
         self.verticalLayout_3 = QVBoxLayout(self.widget_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalSpacer_3 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-
         self.verticalLayout_3.addItem(self.verticalSpacer_3)
-
-
         self.dashboardTxt = QLabel(self.widget_3)
         self.dashboardTxt.setObjectName(u"dashboardTxt")
         font = QFont()
@@ -282,16 +232,9 @@ class Login_MainWindow(QMainWindow):
 "   text-align:center;\n"
 "}")
 
-
         self.verticalLayout_3.addWidget(self.dashboardTxt, 0, Qt.AlignmentFlag.AlignHCenter)
-
-
         self.verticalSpacer_4 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-
         self.verticalLayout_3.addItem(self.verticalSpacer_4)
-
-
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setSpacing(10)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -329,10 +272,7 @@ class Login_MainWindow(QMainWindow):
 "}\n"
 "")
 
-
         self.verticalLayout_2.addWidget(self.lineEdit_7, 0, Qt.AlignmentFlag.AlignHCenter)
-
-
         self.lineEdit_8 = QLineEdit(self.widget_3)
         self.lineEdit_8.setObjectName(u"lineEdit_8")
         sizePolicy1.setHeightForWidth(self.lineEdit_8.sizePolicy().hasHeightForWidth())
@@ -361,27 +301,19 @@ class Login_MainWindow(QMainWindow):
 "}\n"
 "")
         self.lineEdit_8.setEchoMode(QLineEdit.Password) ####
-
-        
-
         self.verticalLayout_2.addWidget(self.lineEdit_8, 0, Qt.AlignmentFlag.AlignHCenter)
-
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
-
-
         self.verticalSpacer_6 = QSpacerItem(20, 24, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        # showing and hiding password
-        self.checkBox_show_password = QCheckBox(self.widget_3)  # ADDED
-        self.checkBox_show_password.setObjectName(u"checkBox_show_password")
-        self.checkBox_show_password.setText("Show Password")  # ADDED
-        self.checkBox_show_password.setStyleSheet(u"QCheckBox { color: white; margin-left: 50px; }")  # ADDED
-        self.checkBox_show_password.stateChanged.connect(self.toggle_password_visibility)  # ADDED
-        self.verticalLayout_2.addWidget(self.checkBox_show_password)  # ADDED
         
+        # showing and hiding password
+        self.checkBox_show_password = QCheckBox(self.widget_3)  
+        self.checkBox_show_password.setObjectName(u"checkBox_show_password")
+        self.checkBox_show_password.setText("Show Password") 
+        self.checkBox_show_password.setStyleSheet(u"QCheckBox { color: white; margin-left: 50px; }") 
+        self.checkBox_show_password.stateChanged.connect(self.toggle_password_visibility)  
+        self.verticalLayout_2.addWidget(self.checkBox_show_password)  
 
         self.verticalLayout_3.addItem(self.verticalSpacer_6)
-
 
         self.loginButton_2 = QPushButton(self.widget_3)
         self.loginButton_2.setObjectName(u"loginButton_2")
@@ -415,54 +347,29 @@ class Login_MainWindow(QMainWindow):
 "}")
         self.loginButton_2.setCheckable(True)
         self.loginButton_2.setAutoExclusive(False)
-
-
         self.verticalLayout_3.addWidget(self.loginButton_2, 0, Qt.AlignmentFlag.AlignHCenter)
-
-
         self.verticalSpacer_7 = QSpacerItem(20, 25, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-
         self.verticalLayout_3.addItem(self.verticalSpacer_7)
-
-
-
-
         self.verticalLayout.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignVCenter)
-
         self.verticalSpacer_2 = QSpacerItem(20, 90, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
         self.verticalLayout.addItem(self.verticalSpacer_2)
-
-
-
-
         self.horizontalLayout.addWidget(self.widget_2, 0, Qt.AlignmentFlag.AlignRight)
-
-
         self.widget_5 = QWidget(self.centralwidget)
         self.widget_5.setObjectName(u"widget_5")
-
-
         self.horizontalLayout.addWidget(self.widget_5)
-
 
         MainWindow.setCentralWidget(self.centralwidget)
 
-
         self.retranslateUi(MainWindow)
-
 
         QMetaObject.connectSlotsByName(MainWindow)
         self.loginButton_2.clicked.connect(self.check_login)
 
-
-        # ADDED
         # Connect signals and slots
         self.lineEdit_7.returnPressed.connect(self.check_login)
         self.lineEdit_8.returnPressed.connect(self.check_login)
 
-    def toggle_password_visibility(self):  # ADDED
+    def toggle_password_visibility(self):  #password hide and show
         if self.checkBox_show_password.isChecked():
             self.lineEdit_8.setEchoMode(QLineEdit.EchoMode.Normal)
         else:
@@ -476,6 +383,6 @@ class Login_MainWindow(QMainWindow):
         self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
         self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
         self.loginButton_2.setText(QCoreApplication.translate("MainWindow", u"Login", None))
-    # retranslateUi
+  
 
 

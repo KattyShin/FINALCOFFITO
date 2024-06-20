@@ -49,9 +49,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Coffito Cafe")
         self.setWindowIcon(QIcon(r'C:\Users\Dennis\Desktop\POS System Coffito\CoffitoLogo (40 x 40 px).png'))
-        self.product_containers = []
-
-        
+        self.product_containers = []      
         
         self.conn = self.connect_to_database()
         if self.conn is None:
@@ -61,14 +59,11 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         self.word_iicon.setHidden(True)
 
-        
-
         self.gcashSelectRBtn.clicked.connect(self.set_gcash_selected)
         self.cashSelectBtn.clicked.connect(self.set_cash_selected)
 
         self.Amt_ContactNum_Val.setHidden(True)
         self.changeAmount.setHidden(True)
-
 
         self.proceedBtn.clicked.connect(self.switch_to_orderSummaryPage)
         self.backBtn.clicked.connect(self.switch_to_orderListPage)
@@ -80,13 +75,11 @@ class userInterface(QMainWindow, Ui_MainWindow):
         self.removeProdOrder.clicked.connect(self.removeSelectedRow)
 
         self.timer = QTimer(self)
-        self.timer.setInterval(1000)  # Update time every second
+        self.timer.setInterval(1000)  
         self.timer.timeout.connect(self.update_date_time)
         self.timer.start()
 
         self.date_time_label = self.DateTimeLabel
-
-
 
         self.Amt_ContactNum_Val.textChanged.connect(self.calculate_change)
 
@@ -136,17 +129,12 @@ class userInterface(QMainWindow, Ui_MainWindow):
         if self.order_table.rowCount() == 0:
             self.show_empty_order_message()
         else:
-            # Move items from order_table to order_table_2
             self.proceed_to_summary_page()
-
-            # Set current index to order summary page
             self.stackedWidget_2.setCurrentIndex(1)
         
-
     def switch_to_orderListPage(self):
         self.stackedWidget_2.setCurrentIndex(0)
         
-
     def update_date_time(self):
         current_date_time = self.get_current_date_time()
         self.date_time_label.setText(current_date_time)
@@ -155,29 +143,14 @@ class userInterface(QMainWindow, Ui_MainWindow):
         current_time = QTime.currentTime().toString('hh:mm:ss')
         current_date = QDate.currentDate()
         month_number = current_date.month()
-        month_text = MONTHS[month_number]  # Convert month number to text
+        month_text = MONTHS[month_number]  
         date_string = f"{month_text} {current_date.day()} {current_date.year()}"
         return f"{date_string} {current_time}"
 
     def show_database_error(self):
         QMessageBox.critical(self, "Database Connection Error", "Failed to connect to the database. Please check your configuration.")
 
-    # def prodBtnClicked(self, productName):
-    #     cursor = self.conn.cursor()
-    #     query = "SELECT PROD_NAME, PROD_PRICE, PROD_QUANTITY FROM PRODUCT WHERE PROD_NAME = %s"
-    #     cursor.execute(query, (productName,))
-    #     product = cursor.fetchone()
-    #     cursor.close()
-
-    #     if product:
-    #         prod_name, prod_price, prod_quantity = product
-    #         print(f"Product Name: {prod_name}, Price: {prod_price}, Quantity: {prod_quantity}")
-    #         self.updateOrderTable(prod_name, prod_price, prod_quantity)
-    #         self.calculateTotalPrice()
-    #     else:
-    #         print(f"Product '{productName}' not found in the database.")
-    
-
+   
     def prodBtnClicked(self, productName):
         try:
             cursor = self.conn.cursor()
@@ -195,9 +168,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
         except (Exception, psycopg2.Error) as error:
             print("Error fetching product from database:", error)
-            self.conn.rollback()  # Rollback the transaction on error
-            # Optionally handle the error or notify the user
-
+            self.conn.rollback()  
         finally:
             if cursor:
                 cursor.close()
@@ -217,23 +188,18 @@ class userInterface(QMainWindow, Ui_MainWindow):
             row_position = self.order_table_2.rowCount()
             self.order_table_2.insertRow(row_position)
 
-            # Set item name
             name_item = QTableWidgetItem(item_name)
             name_item.setTextAlignment(Qt.Alignment.AlignCenter)  
             self.order_table_2.setItem(row_position, 0, name_item)
             
-
-            # Set item price
             price_item = QTableWidgetItem(str(item_price))
             price_item.setTextAlignment(Qt.Alignment.AlignCenter)
             self.order_table_2.setItem(row_position, 1, price_item)
 
-            # Set item quantity
             quantity_item = QTableWidgetItem(str(item_quantity))
             quantity_item.setTextAlignment(Qt.Alignment.AlignCenter)
             self.order_table_2.setItem(row_position, 2, quantity_item)
 
-            # Update total price for order summary
             self.total_price += item_price * item_quantity
 
         self.totalPymtLbl_2.setText(f"{self.total_price:.2f} PHP")
@@ -248,14 +214,12 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 current_quantity = int(self.order_table.item(row, 2).text())
                 new_quantity = current_quantity + 1
                 self.order_table.setItem(row, 2, QTableWidgetItem(str(new_quantity)))
-                item.setForeground(QColor("white"))  # Set foreground color to white
-                item.setTextAlignment(Qt.Alignment.AlignCenter)  # Center align text again
+                item.setForeground(QColor("white"))  
+                item.setTextAlignment(Qt.Alignment.AlignCenter) 
 
-                # Ensure quantity_item alignment stays centered
                 quantity_item = self.order_table.item(row, 2)
                 if quantity_item:
                     quantity_item.setTextAlignment(Qt.Alignment.AlignCenter)
-
                 found = True
                 break
 
@@ -276,10 +240,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
             quantity_item = QTableWidgetItem("1")
             quantity_item.setForeground(QColor("white"))
             quantity_item.setTextAlignment(Qt.Alignment.AlignCenter)
-            self.order_table.setItem(row_position, 2, quantity_item)
-
-            
-
+            self.order_table.setItem(row_position, 2, quantity_item)        
 
     def removeSelectedRow(self):
         selected_row = self.order_table.currentRow()
@@ -287,9 +248,7 @@ class userInterface(QMainWindow, Ui_MainWindow):
             self.order_table.removeRow(selected_row)
             self.calculateTotalPrice()
         else:
-            # QMessageBox.information(self, "No Row Selected", "Please select a row to remove.")
             self.show_message_box('Error','"No Row Selected", "Please select a row to remove.', QMessageBox.Critical)
-
 
     def calculateTotalPrice(self):
         total_price = 0.0
@@ -304,7 +263,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 subtotal = price * quantity
                 total_price += subtotal
         
-        # Update the QLabel with the calculated total price
         self.totalPymtLbl.setText(f"{total_price:.2f} PHP")
 
     def payButtonClicked(self):
@@ -332,85 +290,21 @@ class userInterface(QMainWindow, Ui_MainWindow):
             if not contact_number or not contact_number.isdigit():
                 self.show_invalid_gcash_number_error()
                 return
-             # ADDED
             if len(contact_number) != 11 or not contact_number.startswith("09"):
                 self.show_length_error_message()
                 return
-
-
         self.handle_pay_button()
 
-    # def insert_order_to_database(self, payment_method):
-    #     try:
-    #         # Insert into ORDER_SUMMARY
-    #         cursor = self.conn.cursor()
-
-    #         # Assuming you have the staff ID and customer ID available
-    #         staff_id = 8742  # Replace with actual staff ID
-    #         # cus_id = 1242  # Replace with actual customer ID
-            
-
-    #         # Insert into CUSTOMER to get new CUS_ID
-    #         cursor.execute("INSERT INTO CUSTOMER DEFAULT VALUES RETURNING CUS_ID;")
-    #         cus_id = cursor.fetchone()[0]
-                
-
-    #         order_summary_query = """
-    #         INSERT INTO ORDER_SUMMARY (STAFF_ID, CUS_ID, TOTAL_AMOUNT, PAYMENT_METHOD, PAYMENT_DETAILS)
-    #         VALUES (%s, %s, %s, %s, %s) RETURNING ORDER_SUM_ID;
-    #         """
-    #         order_summary_values = (
-    #             staff_id,
-    #             cus_id,
-    #             self.total_price,
-    #             payment_method,
-    #             self.Amt_ContactNum_Val.text() if self.Amt_ContactNum_Val.isVisible() else None
-    #         )
-
-    #         cursor.execute(order_summary_query, order_summary_values)
-    #         order_sum_id = cursor.fetchone()[0]
-
-    #         # Insert into ORDER_ITEMS
-    #         order_items_query = """
-    #         INSERT INTO ORDER_ITEMS (ORDER_SUM_ID, PROD_ID, QUANTITY, PRICE)
-    #         VALUES (%s, %s, %s, %s);
-    #         """
-
-    #         for row in range(self.order_table.rowCount()):
-    #             item_name = self.order_table.item(row, 0).text()
-    #             item_price = float(self.order_table.item(row, 1).text())
-    #             item_quantity = int(self.order_table.item(row, 2).text())
-
-    #             cursor.execute("SELECT PROD_ID FROM PRODUCT WHERE PROD_NAME = %s", (item_name,))
-    #             prod_id = cursor.fetchone()[0]
-
-    #             order_items_values = (order_sum_id, prod_id, item_quantity, item_price)
-    #             cursor.execute(order_items_query, order_items_values)
-
-    #         self.conn.commit()
-    #         cursor.close()
-    #         return True
-    #     except (Exception, psycopg2.Error) as error:
-    #         print("Error while inserting order into the database:", error)
-    #         self.conn.rollback()
-    #         return False
-
-     #ADDED
+  
     def insert_order_to_database(self, payment_method):
         try:
             cursor = self.conn.cursor()
 
+            staff_id = 8742  #STAFF ID
 
-            # Assuming you have the staff ID available
-            staff_id = 8742  # Replace with actual staff ID
-
-
-            # Insert into CUSTOMER to get new CUS_ID
             cursor.execute("INSERT INTO CUSTOMER DEFAULT VALUES RETURNING CUS_ID;")
             cus_id = cursor.fetchone()[0]
 
-
-            # Insert into ORDERS
             order_summary_query = """
             INSERT INTO ORDERS (STAFF_ID, CUS_ID)
             VALUES (%s, %s) RETURNING ORDER_ID;
@@ -418,8 +312,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
             cursor.execute(order_summary_query, (staff_id, cus_id))
             order_id = cursor.fetchone()[0]
 
-
-            # Insert into ORDER_ITEMS
             order_items_query = """
             INSERT INTO ORDER_ITEMS (ORDER_ID, PROD_ID, ORDER_ITEM_QTY)
             VALUES (%s, %s, %s) RETURNING ORDER_ITEM_ID;
@@ -428,16 +320,12 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 item_name = self.order_table.item(row, 0).text()
                 item_quantity = int(self.order_table.item(row, 2).text())
 
-
                 cursor.execute("SELECT PROD_ID FROM PRODUCT WHERE PROD_NAME = %s", (item_name,))
                 prod_id = cursor.fetchone()[0]
 
-
                 cursor.execute(order_items_query, (order_id, prod_id, item_quantity))
-                order_item_id = cursor.fetchone()[0]  # Fetch the ORDER_ITEM_ID if needed
+                order_item_id = cursor.fetchone()[0] #IN CASE NEEDED
 
-
-            # Insert into PAYMENT_TRANSACTION
             payment_trans_query = """
             INSERT INTO PAYMENT_TRANSACTION (ORDER_ID, PAYMENT_TRANS_TOT_AMOUNT, PAYMENT_TRANS_METHOD, PAYMENT_TRANS_DETAILS)
             VALUES (%s, %s, %s, %s) RETURNING PAYMENT_TRANS_ID;
@@ -445,8 +333,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
             cursor.execute(payment_trans_query, (order_id, self.total_price, payment_method, self.Amt_ContactNum_Val.text() if self.Amt_ContactNum_Val.isVisible() else None))
             payment_trans_id = cursor.fetchone()[0]
 
-
-            # Insert into SALES_REPORT
             sales_report_query = """
             INSERT INTO SALES_REPORT (SALES_DATE, PAYMENT_TRANS_ID)
             VALUES (CURRENT_DATE, %s) RETURNING SALES_ID;
@@ -454,8 +340,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
             cursor.execute(sales_report_query, (payment_trans_id,))
             sales_id = cursor.fetchone()[0]
 
-
-            # Insert into SALES_HISTORY
             sales_history_query = """
             INSERT INTO SALES_HISTORY (DAILY_TOTAL_SALES, GENERAL_TOTAL_SALES, SALES_ID)
             SELECT SUM(pt.PAYMENT_TRANS_TOT_AMOUNT) AS DAILY_TOTAL,
@@ -467,25 +351,19 @@ class userInterface(QMainWindow, Ui_MainWindow):
             """
             cursor.execute(sales_history_query, (sales_id, order_id))
 
-
             self.conn.commit()
             cursor.close()
             return True
-
 
         except (Exception, psycopg2.Error) as error:
             print("Error while inserting order into the database:", error)
             self.conn.rollback()
             return False
 
-
-
-
     def handle_pay_button(self):
         confirmation_reply = self.show_confirmation_dialog(
             'Payment Confirmation', 'Are you sure you want to confirm the payment?'
         )
-
         if confirmation_reply == QMessageBox.Yes:
             if self.insert_order_to_database(self.get_payment_method()):
                 self.show_message_box('Payment Successful', 'Payment has been successfully processed.', QMessageBox.Information)
@@ -493,7 +371,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 self.switch_to_orderListPage()
             else:
                 self.show_message_box('Payment Failed', 'An error occurred while processing the payment. Please try again.', QMessageBox.Critical)
-
 
     def get_payment_method(self):
         if self.gcashSelectRBtn.isChecked():
@@ -601,7 +478,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
 
     def show_length_error_message(self):
         self.show_message_box("Error", "Invalid mobile number.", QMessageBox.Critical)
-
     
     def show_empty_order_message(self):
         message_box = QMessageBox(self)
@@ -609,7 +485,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
         message_box.setText("Please select your order on the Menu...")
         message_box.setIcon(QMessageBox.Icon.Warning)
 
-        # Customize the stylesheet for the QMessageBox
         message_box.setStyleSheet("""
             QMessageBox {
                 
@@ -638,26 +513,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
         """)
 
         message_box.exec()
-
-    # def check_new_products(self):
-    #     try:
-    #         cursor = self.conn.cursor()
-    #         query = "SELECT PROD_NAME FROM PRODUCT"
-    #         cursor.execute(query)
-    #         products_in_db = [product[0] for product in cursor.fetchall()]
-    #         cursor.close()
-
-    #         existing_products = set(self.product_buttons.keys())
-    #         new_products = set(products_in_db) - existing_products
-
-    #         if new_products:
-    #             self.add_new_products(new_products)
-    #             print(f"New products added: {', '.join(new_products)}")
-    #         else:
-    #             print("No new products found in the database.")
-
-    #     except (Exception, psycopg2.Error) as error:
-    #         print("Error while checking for new products:", error)
 
     def check_new_products(self):
         try:
@@ -719,8 +574,6 @@ class userInterface(QMainWindow, Ui_MainWindow):
                 if col >= max_cols:
                     col = 0
                     row += 1
-    
-
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:

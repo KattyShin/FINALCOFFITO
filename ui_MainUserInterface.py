@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainUserInterfacePpmxvb.ui'
+## Form generated from reading UI file 'MainUserInterfaceOpUvNM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -815,66 +815,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.label_8)
 
-        self.search_frame_prod_2 = QWidget(self.Menu_SearchWidget)
-        self.search_frame_prod_2.setObjectName(u"search_frame_prod_2")
-        self.search_frame_prod_2.setMinimumSize(QSize(200, 0))
-        self.search_frame_prod_2.setStyleSheet(u"#search_frame_prod_2{\n"
-"\n"
-"	border-radius: 15px;\n"
-"	background-color:#252525;\n"
-"}\n"
-"#search_frame_prod_2 QPushButton{\n"
-"	\n"
-"	padding: 5px 5px;\n"
-"	border-radius:5px;\n"
-"\n"
-"	\n"
-"}\n"
-"#search_frame_prod_2 QLineEdit{\n"
-"	border: none;\n"
-"	color: white;\n"
-"\n"
-"}\n"
-"\n"
-"#search_frame_prod_2 QPushButton::pressed {\n"
-"\n"
-"	padding-left:10px;\n"
-"\n"
-"}\n"
-"")
-        self.verticalLayout_17 = QVBoxLayout(self.search_frame_prod_2)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.verticalLayout_17.setContentsMargins(2, 2, 2, 2)
-        self.horizontalLayout_31 = QHBoxLayout()
-        self.horizontalLayout_31.setSpacing(2)
-        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
-        self.horizontalLayout_31.setContentsMargins(2, 2, 2, -1)
-        self.searchItemBtn = QPushButton(self.search_frame_prod_2)
-        self.searchItemBtn.setObjectName(u"searchItemBtn")
-        self.searchItemBtn.setMinimumSize(QSize(25, 25))
-        self.searchItemBtn.setMaximumSize(QSize(25, 25))
-        self.searchItemBtn.setFont(font2)
-        self.searchItemBtn.setStyleSheet(u"background-color: none;\n"
-"border-radius:15px;\n"
-"")
-        icon3 = QIcon()
-        icon3.addFile(u":/iCons/icons/icons8-search-26.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.searchItemBtn.setIcon(icon3)
-
-        self.horizontalLayout_31.addWidget(self.searchItemBtn)
-
-        self.searchMenuItem = QLineEdit(self.search_frame_prod_2)
-        self.searchMenuItem.setObjectName(u"searchMenuItem")
-        self.searchMenuItem.setStyleSheet(u"background-color: rgb(37, 37, 37);")
-
-        self.horizontalLayout_31.addWidget(self.searchMenuItem)
-
-
-        self.verticalLayout_17.addLayout(self.horizontalLayout_31)
-
-
-        self.horizontalLayout_2.addWidget(self.search_frame_prod_2)
-
 
         self.verticalLayout_5.addWidget(self.Menu_SearchWidget)
 
@@ -938,9 +878,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.directToDashboard.sizePolicy().hasHeightForWidth())
         self.directToDashboard.setSizePolicy(sizePolicy)
         self.directToDashboard.setStyleSheet(u"border: none;")
-        icon4 = QIcon()
-        icon4.addFile(u":/dashBg/Downloads/LowCaf.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.directToDashboard.setIcon(icon4)
+        icon3 = QIcon()
+        icon3.addFile(u":/dashBg/Downloads/LowCaf.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.directToDashboard.setIcon(icon3)
         self.directToDashboard.setIconSize(QSize(453, 343))
         self.directToDashboard.setCheckable(True)
 
@@ -994,10 +934,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(-1, 20, -1, -1)
         self.dashboard1 = QPushButton(self.icon_only)
         self.dashboard1.setObjectName(u"dashboard1")
-        icon5 = QIcon()
-        icon5.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon5.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.dashboard1.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/iCons/icons/icons8-coffee-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/iCons/icons/icons8-coffee0-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.dashboard1.setIcon(icon4)
         self.dashboard1.setIconSize(QSize(25, 25))
         self.dashboard1.setCheckable(True)
         self.dashboard1.setAutoExclusive(True)
@@ -1013,10 +953,10 @@ class Ui_MainWindow(object):
 
         self.logout1 = QPushButton(self.icon_only)
         self.logout1.setObjectName(u"logout1")
-        icon6 = QIcon()
-        icon6.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon6.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
-        self.logout1.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u":/iCons/icons/icons8-logout-40.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/iCons/icons/icons8-logouto-40.png", QSize(), QIcon.Normal, QIcon.On)
+        self.logout1.setIcon(icon5)
         self.logout1.setCheckable(True)
 
         self.verticalLayout_3.addWidget(self.logout1)
@@ -1087,7 +1027,7 @@ class Ui_MainWindow(object):
         font9.setFamilies([u"Poppins"])
         font9.setPointSize(10)
         self.dashboard2.setFont(font9)
-        self.dashboard2.setIcon(icon5)
+        self.dashboard2.setIcon(icon4)
         self.dashboard2.setIconSize(QSize(25, 25))
         self.dashboard2.setCheckable(True)
         self.dashboard2.setAutoExclusive(True)
@@ -1106,7 +1046,7 @@ class Ui_MainWindow(object):
         font10 = QFont()
         font10.setFamilies([u"Poppins"])
         self.logout2.setFont(font10)
-        self.logout2.setIcon(icon6)
+        self.logout2.setIcon(icon5)
         self.logout2.setCheckable(True)
 
         self.verticalLayout_4.addWidget(self.logout2)
@@ -1172,8 +1112,6 @@ class Ui_MainWindow(object):
         self.dashboardTxt_2.setText(QCoreApplication.translate("MainWindow", u"Welcome to Coffito Cafe", None))
         self.DateTimeLabel.setText("")
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Coffito Cafe Menu", None))
-        self.searchItemBtn.setText("")
-        self.searchMenuItem.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.directToDashboard.setText("")
         self.label.setText("")
         self.dashboard1.setText("")

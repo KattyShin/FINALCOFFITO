@@ -90,48 +90,49 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.add_prod_button.clicked.connect(self.show_add_item_window)
        
         self.dashboardTxt.setHidden(True)
-        self.fetch_total_products() #ADDED
-        self.fetch_items_sold_today()  #ADDED
-        self.fetch_total_sales() #ADDED
+        self.fetch_total_products() 
+        self.fetch_items_sold_today()  
+        self.fetch_total_sales() 
         self.best_selling()
 
+        # ADD ITEM WINDOW
         self.AddItemWindow = AddItemWindow()
         self.AddItemWindow.addProdButton.clicked.connect(self.add_product_to_db)
         self.AddItemWindow.addProd_Name.returnPressed.connect(self.add_product_to_db)
         self.AddItemWindow.addProd_Price.returnPressed.connect(self.add_product_to_db)
 
 
-        self.update_prod_button_2.clicked.connect(self.delete_selected_product)
-        self.update_prod_button.clicked.connect(self.display_and_show_update_item_window)
+        
 
-
+        #UPDATE WINDOW
         self.UpdateItemWindow = UpdateItemWindow()
         self.UpdateItemWindow.pushButton_32.clicked.connect(self.update_product_details)
         self.UpdateItemWindow.upProd_Name.returnPressed.connect(self.update_product_details)
         self.UpdateItemWindow.upProd_Price.returnPressed.connect(self.update_product_details)
+        self.update_prod_button_2.clicked.connect(self.delete_selected_product)
+        self.update_prod_button.clicked.connect(self.display_and_show_update_item_window)
 
 
-        self.lineEdit_3.textChanged.connect(self.search_AddItem)
-        self.lineEdit_4.textChanged.connect(self.search_Update)
-        self.lineEdit_5.textChanged.connect(self.search_Delete)
+        self.lineEdit_3.textChanged.connect(self.search_AddItem)# SEARCH ADD ITEM PLACEHOLDER
+        self.lineEdit_4.textChanged.connect(self.search_Update) # SEARCH UPDATE ITEM PLACEHOLDER
+        self.lineEdit_5.textChanged.connect(self.search_Delete) # SEARCH DELETE ITEM PLACEHOLDER
 
 
-        #admin password
+        
         self.UpdateAdminWindow = UpdateAdminWindow()  
         self.UpdateAdminWindow.updateAdmin.clicked.connect(self.update_admin_acc)
         self.UpdateAdminWindow.adminUsername.returnPressed.connect(self.update_admin_acc)
         self.UpdateAdminWindow.admin_new_pass.returnPressed.connect(self.update_admin_acc)
-
         self.pushButton_21.clicked.connect(self.show_update_admin_window)
 
-        #staff    
+        #UPDATE STAFF WINDOW  
         self.UpdateStaffWindow = UpdateStaffWindow()
         self.UpdateStaffWindow.updateStaffBtn.clicked.connect(self.update_staff_acc)
         self.UpdateStaffWindow.staff_new_pass.returnPressed.connect(self.update_staff_acc)
         self.UpdateStaffWindow.staffUsername.returnPressed.connect(self.update_staff_acc)
-
         self.pushButton_22.clicked.connect(self.show_update_staff_window)
 
+        # SALES REPORT 
         self.dailySalesBtn.clicked.connect(self.switch_to_dailySales)
         self.monthlySalesBtn.clicked.connect(self.switch_to_monthlySales)
         self.yearlySalesBtn.clicked.connect(self.switch_to_yearlySales)
@@ -160,10 +161,10 @@ class mySideBar(QMainWindow, Ui_MainWindow):
     def switch_to_transactionDetails(self):
         self.SalesReportStackedWidget.setCurrentIndex(4) 
         self.transactionDetails()
-    
+    #METHOD TO DISPLAY DASHBOARD DAILY SALES
     def dashboardDailySales(self):
         self.DashboardTable.setRowCount(0)
-        self.DashboardTable.setAlternatingRowColors(True)  # Keep alternating row colors
+        self.DashboardTable.setAlternatingRowColors(True) 
         
         try:
             cur = self.conn.cursor()
@@ -190,12 +191,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             white_color = QtGui.QColor("white")
 
             for row_num, row_data in enumerate(rows):
-                sales_date = row_data[0].strftime("%B %d, %Y")  # Format date as "Month Day, Year"
+                sales_date = row_data[0].strftime("%B %d, %Y") # Format date as "Month Day, Year"
                 total_sales = row_data[1]
 
                 self.DashboardTable.insertRow(row_num)
 
-                # Set item alignment, font color, and font
+        
                 item_date = QtWidgets.QTableWidgetItem(str(sales_date))
                 item_date.setTextAlignment(QtCore.Qt.AlignCenter)
                 item_date.setForeground(white_color)
@@ -212,7 +213,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             print("Error retrieving daily sales data from the database:", error)
             self.show_message_box("Error", f"Error retrieving daily sales data: {error}", QtWidgets.QMessageBox.Critical)
 
-
+    #METHOD TO DISPLY  DAILY SALES IN SALES REPORT MENU
     def dailySales(self):
         self.dailySalesTbl.setRowCount(0)
         self.dailySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
@@ -264,7 +265,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             print("Error retrieving daily sales data from the database:", error)
             self.show_message_box("Error", f"Error retrieving daily sales data: {error}", QtWidgets.QMessageBox.Critical)
 
-
+     #METHOD TO DISPLAY  MONTHLY SALES
     def monthlySales(self):
         self.monthlySalesTbl.setRowCount(0)
         self.monthlySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
@@ -319,7 +320,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving monthly sales data from the database:", error)
             self.show_message_box("Error", f"Error retrieving monthly sales data: {error}", QtWidgets.QMessageBox.Critical)
-
+     #METHOD TO DISPLAY  YEARLY SALES
     def yearlySales(self):
         self.yearlySalesTbl.setRowCount(0)
         self.yearlySalesTbl.setAlternatingRowColors(True)  # Keep alternating row colors
@@ -502,9 +503,9 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentIndex(0)
         self.dashboardTxt.setText("Dashboard")
         self.dashboardTxt.setHidden(False)
-        self.fetch_total_products() #ADDED
-        self.fetch_items_sold_today()  #ADDED
-        self.fetch_total_sales() #ADDED
+        self.fetch_total_products() 
+        self.fetch_items_sold_today()  
+        self.fetch_total_sales() 
         self.dashboardDailySales()
 
     def switch_to_addProductPage(self):
@@ -633,8 +634,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
             cur.execute(select_bestselling)
 
-            # Fetch top 4 products with highest total sold quantity
-            top_products = cur.fetchmany(4)
+            
+            top_products = cur.fetchmany(9)
 
             # List of best-selling labels
             best_selling_labels = [
@@ -642,11 +643,11 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.bestSell5, self.bestSell6, self.bestSell7, self.bestSell8, self.bestSell9
             ]
 
-            # Clear the text of all labels first
+            #CLEAR LABEL 
             for label in best_selling_labels:
                 label.setText("")
 
-            # Set the text of labels using fetched data
+            #DISPLAY BESTSELLING
             for i in range(len(top_products)):
                 product_name, total_sold = top_products[i]
                 best_selling_labels[i].setText(product_name)
@@ -655,71 +656,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.conn.rollback()
             print(error)
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
-    
-# new added
-    # def best_selling(self):
-    #     try:
-    #         cur = self.conn.cursor()
-
-
-    #         select_bestselling = """
-    #             SELECT P.PROD_NAME, SUM(OI.ORDER_ITEM_QTY) AS total_sold
-    #             FROM ORDER_ITEMS OI
-    #             JOIN PRODUCT P ON OI.PROD_ID = P.PROD_ID
-    #             GROUP BY OI.PROD_ID, P.PROD_NAME
-    #             ORDER BY total_sold DESC
-    #             LIMIT 4
-    #         """
-
-
-    #         cur.execute(select_bestselling)
-
-
-    #         # Fetch top 4 products with highest total sold quantity
-    #         top_products = cur.fetchmany(4)
-
-
-    #         # Directly set the text of labels using fetched data
-    #         for i in range(len(top_products)):
-    #             product_name, total_sold = top_products[i]
-    #             # Set the text of labels with product name or details
-    #             if i == 0:
-    #                 self.bestSell1.setText(product_name)
-    #             elif i == 1:
-    #                 self.bestSell2.setText(product_name)
-    #             elif i == 2:
-    #                 self.bestSell3.setText(product_name)
-    #             elif i == 3:
-    #                 self.bestSell4.setText(product_name)
-    #             elif i == 4:
-    #                 self.bestSell5.setText(product_name)
-    #             elif i == 5:
-    #                 self.bestSell6.setText(product_name)
-    #             elif i == 6:
-    #                 self.bestSell7.setText(product_name)
-    #             elif i == 7:
-    #                 self.bestSell8.setText(product_name)
-    #             else:
-    #                 self.bestSell9.setText(product_name)
-
-
-    #     except (Exception, psycopg2.Error) as error:
-    #         self.conn.rollback()
-    #         print(error)
-    #         self.show_message_box("Error", f"{error}", QMessageBox.Critical)
-
-
-
+ 
 
        
     def dispaly_admin_acc(self):
         username = self.label_50.text()
-        # Access the stored unformatted password attribute
         password = self.unformatted_password if hasattr(self, 'unformatted_password') else self.label_52.text()
 
         self.UpdateAdminWindow.adminUsername.setText(username)
         self.UpdateAdminWindow.admin_new_pass.setText(password)
-
 
     def update_admin_acc(self):
         username = self.UpdateAdminWindow.adminUsername.text()
@@ -769,7 +714,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             FROM USERS
             WHERE USER_ID = %s
           """
-            cur.execute(select_query, (user_id,))  # Notice the comma after user_id
+            cur.execute(select_query, (user_id,)) 
             row = cur.fetchone()
      
             if row:
@@ -780,15 +725,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.label_50.setText(username)
                 self.label_52.setText(formatted_password)
 
-
-                 # Store the unformatted password as an attribute
                 self.unformatted_password = password
 
                 self.conn.commit()      
        
             else:
                  print("User not found.")          
-
 
         except (Exception, psycopg2.Error) as error:
             print("Error updating product in PostgreSQL:", error)
@@ -804,20 +746,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             FROM USERS
             WHERE USER_ID = %s
           """
-            cur.execute(select_query, (user_id,))  # Notice the comma after user_id
+            cur.execute(select_query, (user_id,))  
             row = cur.fetchone()
      
             if row:
                 username = row[0]
                 password = row[1]
-
-
                 formatted_password = f"**** {password[4:]}"
-
-
-                 # Store the unformatted password as an attribute
                 self.unformatted_password_staff = password
-
                 self.label_54.setText(username)
                 self.label_56.setText(formatted_password)
                 self.conn.commit()      
@@ -835,9 +771,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
     def display_staff_acc(self):
             username = self.label_54.text()
-            # Access the stored unformatted password attribute
             password = self.unformatted_password_staff if hasattr(self, 'unformatted_password') else self.label_56.text()
-
             self.UpdateStaffWindow.staffUsername.setText(username)
             self.UpdateStaffWindow.staff_new_pass.setText(password)
 
@@ -892,7 +826,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.selected_prod_price = self.product_table_2.item(row, 2).text()
             self.selected_prod_category = self.product_table_2.item(row, 3).text()
 
-            # Set retrieved data into UpdateItemWindow fields before showing it
+            #RETRIEVE AND SET TEXT
             self.UpdateItemWindow.prodId_Label.setText(self.selected_prod_id)
             self.UpdateItemWindow.upProd_Name.setText(self.selected_prod_name)
             self.UpdateItemWindow.upProd_Price.setText(self.selected_prod_price)
@@ -921,8 +855,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
             print(f"Product with PROD_ID {updated_prod_id} updated successfully.")
             self.show_message_box("Success", "Updated successfully.", QMessageBox.Information)
-
-            # Hide UpdateItemWindow
             self.UpdateItemWindow.hide()          
             self.fetch_products_up()
 
@@ -931,15 +863,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.conn.rollback()  
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
 
-     #ADDED
     def fetch_grand_total_sales(self):
         try:
             cur = self.conn.cursor()
             cur.execute("SELECT SUM(PAYMENT_TRANS_TOT_AMOUNT) FROM PAYMENT_TRANSACTION")
             grand_total_sales = cur.fetchone()[0]
-            cur.close()
-           
-            # Convert the total_products to a string before setting it to the label
+            cur.close()       
             self.grandTotalSalesValue.setText(str(grand_total_sales))
 
 
@@ -947,7 +876,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             print("Error retrieving products from the database: ", error)
             self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
             return None
- #ADDED
+        
     def fetch_total_sales(self):
         try:
             cur = self.conn.cursor()
@@ -955,7 +884,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             total_sales_today= cur.fetchone()[0]
             cur.close()
            
-            # Convert the total_products to a string before setting it to the label
             if total_sales_today is not None:
                 self.Dash_TotalSalesValue.setText("₱ " + str(total_sales_today))
             else:
@@ -967,12 +895,10 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
             return None
 
-    # ADDED
     def fetch_items_sold_today(self):
         try:
             cur = self.conn.cursor()
            
-            # Query to get the total items sold based on the current date
             query = """
             SELECT SUM(oi.ORDER_ITEM_QTY)
             FROM ORDER_ITEMS oi
@@ -984,7 +910,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             total_items_sold_today = cur.fetchone()[0]
             cur.close()
            
-            # Convert the total_items_sold_today to a string before setting it to the label
             self.Dash_Total_Items_Sold.setText(str(total_items_sold_today))
 
 
@@ -993,32 +918,26 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.show_message_box("Error", f"Error retrieving items sold from the database: {error}", QMessageBox.Critical)
             return None
 
-    # ADDED
     def fetch_grand_items_sold(self):
         try:
             cur = self.conn.cursor()
            
-            # Query to get the total items sold based on the current date
             query = """
             SELECT SUM(oi.ORDER_ITEM_QTY)
             FROM ORDER_ITEMS oi
             JOIN ORDERS o ON oi.ORDER_ID = o.ORDER_ID
             """
-           
             cur.execute(query)
             total_grand_items_sold= cur.fetchone()[0]
             cur.close()
-           
-            # Convert the total_items_sold_today to a string before setting it to the label
+        
             self.totat_items_sold_value.setText(str(total_grand_items_sold))
-
 
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving items sold from the database: ", error)
             self.show_message_box("Error", f"Error retrieving items sold from the database: {error}", QMessageBox.Critical)
             return None
 
-    #ADDED
     def fetch_total_products(self):
         try:
             cur = self.conn.cursor()
@@ -1026,9 +945,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             total_products = cur.fetchone()[0]
             cur.close()
            
-            # Convert the total_products to a string before setting it to the label
             self.DashTotalProducts.setText(str(total_products))
-
 
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving products from the database: ", error)
@@ -1043,9 +960,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.close()
            
             self.product_table.setRowCount(0)
-            self.product_table.setAlternatingRowColors(True)  # Keep alternating row colors
+            self.product_table.setAlternatingRowColors(True) 
 
-            # Set the header properties
             header = self.product_table.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
@@ -1055,7 +971,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 for col, val in enumerate(product):
                     item = QtWidgets.QTableWidgetItem(str(val))
                     item.setTextAlignment(QtCore.Qt.AlignCenter)
-                    item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                    item.setForeground(QtGui.QColor("white")) 
                     self.product_table.setItem(row, col, item)
 
             vertical_header = self.product_table.verticalHeader()
@@ -1073,9 +989,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.close()
            
             self.product_table_2.setRowCount(0)
-            self.product_table_2.setAlternatingRowColors(True)  # Keep alternating row colors
+            self.product_table_2.setAlternatingRowColors(True)  
 
-            # Set the header properties
             header = self.product_table_2.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
@@ -1085,11 +1000,9 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 for col, val in enumerate(product):
                     item = QtWidgets.QTableWidgetItem(str(val))
                     item.setTextAlignment(QtCore.Qt.AlignCenter)
-                    item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                    item.setForeground(QtGui.QColor("white"))  
                     self.product_table_2.setItem(row, col, item)
 
-
-            # Center align all items in the vertical header as well
             vertical_header = self.product_table_2.verticalHeader()
             vertical_header.setDefaultAlignment(QtCore.Qt.AlignCenter)
 
@@ -1106,9 +1019,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.close()
 
             self.product_table_3.setRowCount(0)
-            self.product_table_3.setAlternatingRowColors(True)  # Keep alternating row colors
+            self.product_table_3.setAlternatingRowColors(True) 
 
-            # Set the header properties
             header = self.product_table_3.horizontalHeader()
             header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
             header.setDefaultAlignment(QtCore.Qt.AlignCenter)
@@ -1118,7 +1030,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 for col, val in enumerate(product):
                     item = QtWidgets.QTableWidgetItem(str(val))
                     item.setTextAlignment(QtCore.Qt.AlignCenter)
-                    item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                    item.setForeground(QtGui.QColor("white"))  
                     self.product_table_3.setItem(row, col, item)
 
             vertical_header = self.product_table_3.verticalHeader()
@@ -1128,7 +1040,6 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         except (Exception, psycopg2.Error) as error:
             print("Error retrieving products from the database: ", error)
             self.show_message_box("Error", f"Error retrieving products from the database: {error}", QMessageBox.Critical)
-
 
     def add_product_to_db(self):
         product_name = self.AddItemWindow.addProd_Name.text().title()
@@ -1154,25 +1065,22 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             cur.execute(insert_query, (product_name, product_price, product_category))
             self.conn.commit()
 
-            # Fetch the newly inserted product
             new_product = cur.fetchone()
             cur.close()
             print("Product added successfully:", new_product)
             self.show_message_box("Success", "Product added successfully.", QMessageBox.Information)
 
-            # Clear input fields
             self.AddItemWindow.addProd_Name.clear()
             self.AddItemWindow.addProd_Price.clear()
             self.AddItemWindow.addProd_Category.setCurrentIndex(0)
 
-            # Hide the AddItemWindow and switch back to the "Add Product" page
             self.AddItemWindow.hide()
-            self.stackedWidget.setCurrentIndex(1)  # Switch to the "Add Product" page
+            self.stackedWidget.setCurrentIndex(1)  
             self.fetch_products()
                
         except (Exception, psycopg2.Error) as error:
             print("Error while inserting product to PostgreSQL:", error)
-            self.conn.rollback()  # Rollback the transaction to ensure the connection is in a good state
+            self.conn.rollback() 
             self.show_message_box("Error", f" {error}", QMessageBox.Critical)
 
 
@@ -1182,7 +1090,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.show_message_box("Error", "No Row Selected", QMessageBox.Warning)
             return
        
-        prod_id = int(self.product_table_3.item(selected_row, 0).text())  # Assuming PROD_ID is in the first column
+        prod_id = int(self.product_table_3.item(selected_row, 0).text())  
         try:
          
             print(f"Product with PROD_ID {prod_id} deleted successfully.")
@@ -1193,38 +1101,33 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 cur.execute(delete_query, (prod_id,))
                 self.conn.commit()
                 cur.close()
-                # Code to delete the product...
+              
                 self.show_message_box("Success", "Deleted successfully.", QMessageBox.Information)
-                self.fetch_products_del()  # Assuming fetch_products_del refreshes product_table_3
+                self.fetch_products_del()  
             else:
-                self.fetch_products_del()  # Assuming fetch_products_del refreshes product_table_3
+                self.fetch_products_del() 
                                      
         except (Exception, psycopg2.Error) as error:
             print("Error deleting product:", error)
-            # QMessageBox.critical(self, "Error", f"Error deleting product: {error}")
             self.show_message_box("Error", f"Error deleting product:{error}", QMessageBox.Critical)
 
 
-#SEARCH BAR
     def search_AddItem(self):
         search_text = self.lineEdit_3.text()
-
-        # Clear previous search results in the table
+  
         self.product_table.setRowCount(0)
 
         try:
             cur = self.conn.cursor()
             if search_text:
-                # Adjust the query as needed based on the table structure
                 search_query = """
                     SELECT PROD_ID, PROD_NAME, PROD_PRICE, PROD_CATEGORY, TO_CHAR(CREATED_AT, 'MM-DD-YYYY') AS CREATED_DATE
                     FROM PRODUCT
                     WHERE PROD_NAME ILIKE %s OR CAST(PROD_ID AS TEXT) ILIKE %s OR PROD_PRICE::TEXT ILIKE %s OR PROD_CATEGORY ILIKE %s
                     OR PROD_CATEGORY ILIKE %s OR TO_CHAR(CREATED_AT, 'MM-DD-YYYY') ILIKE %s
                 """
-                search_params = (f"%{search_text}%",) * 6  # Repeat %s six times for six placeholders
+                search_params = (f"%{search_text}%",) * 6  
                 cur.execute(search_query, search_params)
-
 
             else:              
                 self.fetch_products()
@@ -1239,7 +1142,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                     for col, val in enumerate(result):
                         item = QtWidgets.QTableWidgetItem(str(val))
                         item.setTextAlignment(QtCore.Qt.AlignCenter)
-                        item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                        item.setForeground(QtGui.QColor("white")) 
                         self.product_table.setItem(row, col, item)
 
         except (Exception, psycopg2.Error) as error:
@@ -1254,15 +1157,14 @@ class mySideBar(QMainWindow, Ui_MainWindow):
 
         try:
             cur = self.conn.cursor()
-            if search_text:
-            # Adjust the query as needed based on the table structure
+            if search_text:        
                 search_query = """
                     SELECT PROD_ID, PROD_NAME, PROD_PRICE, PROD_CATEGORY, TO_CHAR(CREATED_AT, 'MM-DD-YYYY') AS CREATED_DATE
                     FROM PRODUCT
                     WHERE PROD_NAME ILIKE %s OR CAST(PROD_ID AS TEXT) ILIKE %s OR PROD_PRICE::TEXT ILIKE %s OR PROD_CATEGORY ILIKE %s
                     OR PROD_CATEGORY ILIKE %s OR TO_CHAR(CREATED_AT, 'MM-DD-YYYY') ILIKE %s
                 """
-                search_params = (f"%{search_text}%",) * 6  # Repeat %s six times for six placeholders
+                search_params = (f"%{search_text}%",) * 6  
                 cur.execute(search_query, search_params)
             else:              
                 self.fetch_products_up()
@@ -1277,7 +1179,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                     for col, val in enumerate(result):
                         item = QtWidgets.QTableWidgetItem(str(val))
                         item.setTextAlignment(QtCore.Qt.AlignCenter)
-                        item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                        item.setForeground(QtGui.QColor("white")) 
                         self.product_table_2.setItem(row, col, item)
 
         except (Exception, psycopg2.Error) as error:
@@ -1286,24 +1188,19 @@ class mySideBar(QMainWindow, Ui_MainWindow):
    
     def search_Delete(self):
         search_text = self.lineEdit_5.text()
-
-        # Clear previous search results in the table
         self.product_table_3.setRowCount(0)
 
         try:
             cur = self.conn.cursor()
             if search_text:
-                # Adjust the query as needed based on the table structure
                 search_query = """
                     SELECT PROD_ID, PROD_NAME, PROD_PRICE, PROD_CATEGORY, TO_CHAR(CREATED_AT, 'MM-DD-YYYY') AS CREATED_DATE
                     FROM PRODUCT
                     WHERE PROD_NAME ILIKE %s OR CAST(PROD_ID AS TEXT) ILIKE %s OR PROD_PRICE::TEXT ILIKE %s OR PROD_CATEGORY ILIKE %s
                     OR PROD_CATEGORY ILIKE %s OR TO_CHAR(CREATED_AT, 'MM-DD-YYYY') ILIKE %s
                 """
-                search_params = (f"%{search_text}%",) * 6  # Repeat %s six times for six placeholders
+                search_params = (f"%{search_text}%",) * 6  
                 cur.execute(search_query, search_params)
-
-
             else:              
                 self.fetch_products_del()
                 return
@@ -1318,7 +1215,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                     for col, val in enumerate(result):
                         item = QtWidgets.QTableWidgetItem(str(val))
                         item.setTextAlignment(QtCore.Qt.AlignCenter)
-                        item.setForeground(QtGui.QColor("white"))  # Set text color to white
+                        item.setForeground(QtGui.QColor("white"))  
                         self.product_table_3.setItem(row, col, item)
 
         except (Exception, psycopg2.Error) as error:

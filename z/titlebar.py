@@ -1,22 +1,32 @@
-import sys
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton
+import matplotlib.pyplot as plt
 
+# Monthly sales data from January to December
+months = ["January", "February", "March", "April", "May", "June", 
+          "July", "August", "September", "October", "November", "December"]
+sales = [10000, 12000, 9000, 14000, 15000, 13000, 16000, 17000, 14000, 18000, 19000, 20000]
 
-class CustomTitleBar(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setFixedHeight(40)
-        self.setObjectName("CustomTitleBar")
+# Create the plot
+plt.figure(figsize=(12, 6))
 
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 0)
+# Plot the data
+plt.plot(months, sales, marker='o', linestyle='-', color='#0d6efd', linewidth=2, markersize=8)
 
-        self.title_label = QLabel("Modern Title Bar")
-        self.title_label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(self.title_label)
+# Add titles and labels
+plt.title('Monthly Sales Data', fontsize=16, fontweight='bold', color='#333333')
+plt.xlabel('Month', fontsize=14, fontweight='bold', color='#333333')
+plt.ylabel('Sales (in PHP)', fontsize=14, fontweight='bold', color='#333333')
 
-        self.close_button = QPushButton("X")
-        self.close_button.setObjectName("CloseButton")
-        self.close_button.clicked.connect(self.parentWidget().close)
-        layout.addWidget(self.close_button)
+# Customize the grid
+plt.grid(True, which='both', linestyle='--', linewidth=0.5, color='gray', alpha=0.7)
+
+# Customize the ticks
+plt.xticks(fontsize=12, fontweight='bold', color='#333333')
+plt.yticks(fontsize=12, fontweight='bold', color='#333333')
+
+# Customize the spines
+for spine in plt.gca().spines.values():
+    spine.set_edgecolor('#333333')
+
+# Display the plot
+plt.tight_layout()
+plt.show()

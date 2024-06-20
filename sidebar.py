@@ -83,6 +83,8 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.mng_account1.clicked.connect(self.switch_to_manageAccountsPage)
         self.mng_account2.clicked.connect(self.switch_to_manageAccountsPage)
 
+        self.toolButton_10.clicked.connect(self.switch_to_lastPage)
+
         self.toolButton.clicked.connect(self.maximizeOrNormalize)
 
         self.add_prod_button.clicked.connect(self.show_add_item_window)
@@ -135,6 +137,9 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         self.yearlySalesBtn.clicked.connect(self.switch_to_yearlySales)
         self.itemSoldBtn.clicked.connect(self.switch_to_itemSold)
         self.transactionsBtn.clicked.connect(self.switch_to_transactionDetails)
+
+    def switch_to_lastPage(self):
+        self.stackedWidget.setCurrentIndex(8)
 
     def switch_to_dailySales(self):
         self.SalesReportStackedWidget.setCurrentIndex(0)

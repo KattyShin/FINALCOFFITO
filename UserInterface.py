@@ -287,7 +287,9 @@ class userInterface(QMainWindow, Ui_MainWindow):
             self.order_table.removeRow(selected_row)
             self.calculateTotalPrice()
         else:
-            QMessageBox.information(self, "No Row Selected", "Please select a row to remove.")
+            # QMessageBox.information(self, "No Row Selected", "Please select a row to remove.")
+            self.show_message_box('Error','"No Row Selected", "Please select a row to remove.', QMessageBox.Critical)
+
 
     def calculateTotalPrice(self):
         total_price = 0.0

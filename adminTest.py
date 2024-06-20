@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'admin_UI_v3_latestjePTFe.ui'
+## Form generated from reading UI file 'admin_UI_v3_latestxKOLak.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -853,7 +853,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.widget_4.sizePolicy().hasHeightForWidth())
         self.widget_4.setSizePolicy(sizePolicy1)
-        self.widget_4.setMinimumSize(QSize(0, 360))
+        self.widget_4.setMinimumSize(QSize(0, 300))
         self.widget_4.setStyleSheet(u"background-color: #3B3B3B;\n"
 "border-radius:10px;\n"
 "")
@@ -985,9 +985,7 @@ class Ui_MainWindow(object):
 "    opacity: 0.7;\n"
 "}\n"
 "")
-        self.DashboardTable.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.DashboardTable.setAlternatingRowColors(True)
-        self.DashboardTable.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.DashboardTable.setSortingEnabled(True)
         self.DashboardTable.horizontalHeader().setCascadingSectionResizes(True)
         self.DashboardTable.horizontalHeader().setStretchLastSection(True)
@@ -998,6 +996,39 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_6.addWidget(self.widget_4)
+
+        self.widget_11 = QWidget(self.dashboard_page)
+        self.widget_11.setObjectName(u"widget_11")
+        self.widget_11.setMinimumSize(QSize(0, 200))
+        self.verticalLayout_118 = QVBoxLayout(self.widget_11)
+        self.verticalLayout_118.setObjectName(u"verticalLayout_118")
+        self.label_8 = QLabel(self.widget_11)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font4)
+
+        self.verticalLayout_118.addWidget(self.label_8, 0, Qt.AlignmentFlag.AlignTop)
+
+        self.line_3 = QFrame(self.widget_11)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setStyleSheet(u"background-color: white;\n"
+"")
+        self.line_3.setFrameShape(QFrame.Shape.HLine)
+        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.verticalLayout_118.addWidget(self.line_3)
+
+        self.lineGraphContainer = QWidget(self.widget_11)
+        self.lineGraphContainer.setObjectName(u"lineGraphContainer")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.lineGraphContainer.sizePolicy().hasHeightForWidth())
+        self.lineGraphContainer.setSizePolicy(sizePolicy3)
+
+        self.verticalLayout_118.addWidget(self.lineGraphContainer)
+
+
+        self.verticalLayout_6.addWidget(self.widget_11)
 
 
         self.gridLayout_2.addLayout(self.verticalLayout_6, 0, 0, 1, 1)
@@ -1120,9 +1151,6 @@ class Ui_MainWindow(object):
 
         self.widget_35 = QWidget(self.widget_31)
         self.widget_35.setObjectName(u"widget_35")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.widget_35.sizePolicy().hasHeightForWidth())
         self.widget_35.setSizePolicy(sizePolicy3)
         self.widget_35.setStyleSheet(u"background-color: rgb(59, 59, 59);\n"
@@ -1284,7 +1312,6 @@ class Ui_MainWindow(object):
 "QScrollBar:hover {\n"
 "    opacity: 0.7;\n"
 "}")
-        self.product_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.product_table.setDragEnabled(False)
         self.product_table.setAlternatingRowColors(True)
         self.product_table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -1576,7 +1603,6 @@ class Ui_MainWindow(object):
 "QScrollBar:hover {\n"
 "    opacity: 0.7;\n"
 "}")
-        self.product_table_2.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.product_table_2.setDragEnabled(False)
         self.product_table_2.setAlternatingRowColors(True)
         self.product_table_2.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -1870,7 +1896,6 @@ class Ui_MainWindow(object):
 "QScrollBar:hover {\n"
 "    opacity: 0.7;\n"
 "}")
-        self.product_table_3.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.product_table_3.setDragEnabled(False)
         self.product_table_3.setAlternatingRowColors(True)
         self.product_table_3.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -2269,9 +2294,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.dailySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.dailySalesTbl.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.dailySalesTbl.setAlternatingRowColors(True)
-        self.dailySalesTbl.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.dailySalesTbl.setSortingEnabled(False)
         self.dailySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.dailySalesTbl.horizontalHeader().setMinimumSectionSize(100)
@@ -2403,9 +2426,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.monthlySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.monthlySalesTbl.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.monthlySalesTbl.setAlternatingRowColors(True)
-        self.monthlySalesTbl.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.monthlySalesTbl.setSortingEnabled(False)
         self.monthlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.monthlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
@@ -2537,9 +2558,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.yearlySalesTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.yearlySalesTbl.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.yearlySalesTbl.setAlternatingRowColors(True)
-        self.yearlySalesTbl.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.yearlySalesTbl.setSortingEnabled(False)
         self.yearlySalesTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.yearlySalesTbl.horizontalHeader().setMinimumSectionSize(50)
@@ -2677,9 +2696,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.itemSoldTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.itemSoldTbl.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.itemSoldTbl.setAlternatingRowColors(True)
-        self.itemSoldTbl.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.itemSoldTbl.setSortingEnabled(False)
         self.itemSoldTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.itemSoldTbl.horizontalHeader().setMinimumSectionSize(100)
@@ -2820,9 +2837,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.transactionTbl.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.transactionTbl.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.transactionTbl.setAlternatingRowColors(True)
-        self.transactionTbl.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.transactionTbl.setSortingEnabled(False)
         self.transactionTbl.horizontalHeader().setCascadingSectionResizes(True)
         self.transactionTbl.horizontalHeader().setMinimumSectionSize(100)
@@ -4064,7 +4079,7 @@ class Ui_MainWindow(object):
         self.update_item2.toggled.connect(self.update_item1.setChecked)
         self.dashboard1.toggled.connect(self.dashboard2.setChecked)
 
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(0)
         self.SalesReportStackedWidget.setCurrentIndex(0)
 
 
@@ -4117,6 +4132,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Date", None));
         ___qtablewidgetitem1 = self.DashboardTable.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Sales", None));
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Monthly Sales Data", None))
         self.pushButton_14.setText("")
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.add_prod_button.setText(QCoreApplication.translate("MainWindow", u"Add Item", None))

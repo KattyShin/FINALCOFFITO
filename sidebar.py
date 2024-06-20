@@ -840,6 +840,15 @@ class mySideBar(QMainWindow, Ui_MainWindow):
         updated_prod_price = self.UpdateItemWindow.upProd_Price.text()
         updated_prod_category = self.UpdateItemWindow.upProd_Category.currentText()
 
+        if updated_prod_price == "" or updated_prod_name == "":
+                self.show_message_box("Error", "Please fill in the fields", QMessageBox.Critical)
+                return
+        try:
+            float(updated_prod_price)        
+        except ValueError:
+            self.show_message_box("Error", "Product price must be a valid numeric value.", QMessageBox.Critical)
+            return
+        
         try:
             cur = self.conn.cursor()
             update_query = """

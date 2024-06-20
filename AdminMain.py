@@ -4106,7 +4106,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Total Sales", None))
         self.pushButton.setText("")
         self.Dash_TotalSalesValue.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Total Item Sold", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Total Cups Sold", None))
         self.pushButton_3.setText("")
         self.Dash_Total_Items_Sold.setText(QCoreApplication.translate("MainWindow", u"48,760", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Total No. of Products", None))

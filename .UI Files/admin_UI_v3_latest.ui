@@ -442,638 +442,10 @@ QLabel{
 }</string>
          </property>
          <property name="currentIndex">
-          <number>9</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="dashboard_page">
           <layout class="QGridLayout" name="gridLayout_2">
-           <item row="0" column="0">
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <property name="rightMargin">
-              <number>10</number>
-             </property>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <property name="spacing">
-                <number>10</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>10</number>
-               </property>
-               <item>
-                <widget class="QWidget" name="widget" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>170</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: #3B3B3B;
-border-radius:10px;
-</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_29">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>9</number>
-                  </property>
-                  <item>
-                   <widget class="QWidget" name="widget_15" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_30">
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QLabel" name="label_15">
-                       <property name="font">
-                        <font>
-                         <family>Poppins SemiBold</family>
-                         <pointsize>10</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Total Sales</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="widget_19" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_29">
-                     <property name="leftMargin">
-                      <number>12</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="pushButton">
-                       <property name="minimumSize">
-                        <size>
-                         <width>30</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="icon">
-                        <iconset>
-                         <normaloff>:/iCons/icons/icons8-total-sales-100.png</normaloff>:/iCons/icons/icons8-total-sales-100.png</iconset>
-                       </property>
-                       <property name="iconSize">
-                        <size>
-                         <width>45</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="Dash_TotalSalesValue">
-                       <property name="font">
-                        <font>
-                         <family>Poppins Black</family>
-                         <pointsize>18</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>48,760</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QWidget" name="widget_2" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>170</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: #3B3B3B;
-border-radius:10px;
-</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_33">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>9</number>
-                  </property>
-                  <item>
-                   <widget class="QWidget" name="widget_17" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_34">
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QLabel" name="label_22">
-                       <property name="font">
-                        <font>
-                         <family>Poppins SemiBold</family>
-                         <pointsize>10</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Total Item Sold</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="widget_74" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_31">
-                     <property name="leftMargin">
-                      <number>12</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_3">
-                       <property name="minimumSize">
-                        <size>
-                         <width>30</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="icon">
-                        <iconset>
-                         <normaloff>:/iCons/icons/coffee-cup (2).png</normaloff>:/iCons/icons/coffee-cup (2).png</iconset>
-                       </property>
-                       <property name="iconSize">
-                        <size>
-                         <width>40</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="Dash_Total_Items_Sold">
-                       <property name="font">
-                        <font>
-                         <family>Poppins Black</family>
-                         <pointsize>18</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>48,760</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QWidget" name="widget_3" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>170</width>
-                   <height>90</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: #3B3B3B;
-border-radius:10px;
-</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_35">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>9</number>
-                  </property>
-                  <item>
-                   <widget class="QWidget" name="widget_18" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_36">
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QLabel" name="label_23">
-                       <property name="font">
-                        <font>
-                         <family>Poppins SemiBold</family>
-                         <pointsize>10</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Total No. of Products</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="widget_75" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_32">
-                     <property name="leftMargin">
-                      <number>12</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_4">
-                       <property name="minimumSize">
-                        <size>
-                         <width>30</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="icon">
-                        <iconset>
-                         <normaloff>:/iCons/icons/coffee-cup4.png</normaloff>:/iCons/icons/coffee-cup4.png</iconset>
-                       </property>
-                       <property name="iconSize">
-                        <size>
-                         <width>40</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="DashTotalProducts">
-                       <property name="font">
-                        <font>
-                         <family>Poppins Black</family>
-                         <pointsize>18</pointsize>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>17</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_4" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>360</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: #3B3B3B;
-border-radius:10px;
-</string>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_7">
-                <item>
-                 <widget class="QLabel" name="label_6">
-                  <property name="font">
-                   <font>
-                    <family>Poppins SemiBold</family>
-                    <pointsize>12</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Sales</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="Line" name="line">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: white;
-</string>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTableWidget" name="DashboardTable">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                    <horstretch>50</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QTableWidget {
-    background-color: #1F1F1F;
-    border-radius: 3px;
-    border: 1px solid rgb(50, 50, 50);
-	color:white;
-}
-
-QTableWidget::section {
-    border: none;
-    border-bottom: 1px solid #d0c6ff;
-    text-align: center; /* Set text alignment to center */
-    padding: 3px 5px;
-}
-
-QHeaderView::section {
-    background-color: rgb(50, 50, 50);
-    color: white;
-    border: none;
-    border-bottom: 1px solid rgb(50, 50, 50);
-    text-align: center; /* Set text alignment to center */
-    padding: 2px 4px;
-}
-
-QTableView::item {
-    color: white;
-    padding: 5px;
-    text-align: center; /* Set text alignment to center */
-}
-
-QTableView::item:alternate {
-    background-color: #272727; 
-}
-
-QScrollBar:vertical {
-    border: none;
-    background: #3B3B3B;
-    width: 10px;
-    margin: 0px 0px 0px 0px;
-}
-
-QScrollBar::handle:vertical {
-    background-color: #606060;
-    min-height: 20px;
-    border-radius: 5px;
-}
-
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-    border: none;
-    background: none;
-}
-
-QScrollBar::add-page:vertical,
-QScrollBar::sub-page:vertical {
-    background: none;
-}
-
-QScrollBar:hover {
-    opacity: 0.7;
-}
-</string>
-                  </property>
-                  <property name="alternatingRowColors">
-                   <bool>true</bool>
-                  </property>
-                  <property name="sortingEnabled">
-                   <bool>true</bool>
-                  </property>
-                  <attribute name="horizontalHeaderCascadingSectionResizes">
-                   <bool>true</bool>
-                  </attribute>
-                  <attribute name="horizontalHeaderStretchLastSection">
-                   <bool>true</bool>
-                  </attribute>
-                  <attribute name="verticalHeaderVisible">
-                   <bool>false</bool>
-                  </attribute>
-                  <attribute name="verticalHeaderStretchLastSection">
-                   <bool>false</bool>
-                  </attribute>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <row>
-                   <property name="text">
-                    <string/>
-                   </property>
-                  </row>
-                  <column>
-                   <property name="text">
-                    <string>Date</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Inter SemiBold</family>
-                     <pointsize>10</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Sales</string>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Inter SemiBold</family>
-                     <pointsize>10</pointsize>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                  </column>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="0" column="1">
             <widget class="QWidget" name="widget_5" native="true">
              <property name="minimumSize">
@@ -2011,6 +1383,640 @@ border-radius:7px;
              </layout>
             </widget>
            </item>
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <property name="rightMargin">
+              <number>10</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>170</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #3B3B3B;
+border-radius:10px;
+</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_29">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_15" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_30">
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_15">
+                       <property name="font">
+                        <font>
+                         <family>Poppins SemiBold</family>
+                         <pointsize>10</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Total Sales</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_19" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_29">
+                     <property name="leftMargin">
+                      <number>12</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QPushButton" name="pushButton">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>:/iCons/icons/icons8-total-sales-100.png</normaloff>:/iCons/icons/icons8-total-sales-100.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>45</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="Dash_TotalSalesValue">
+                       <property name="font">
+                        <font>
+                         <family>Poppins Black</family>
+                         <pointsize>18</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>48,760</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_2" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>170</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #3B3B3B;
+border-radius:10px;
+</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_33">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_17" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_34">
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_22">
+                       <property name="font">
+                        <font>
+                         <family>Poppins SemiBold</family>
+                         <pointsize>10</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Total Item Sold</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_74" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_31">
+                     <property name="leftMargin">
+                      <number>12</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_3">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>:/iCons/icons/coffee-cup (2).png</normaloff>:/iCons/icons/coffee-cup (2).png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="Dash_Total_Items_Sold">
+                       <property name="font">
+                        <font>
+                         <family>Poppins Black</family>
+                         <pointsize>18</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>48,760</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_3" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>170</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #3B3B3B;
+border-radius:10px;
+</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_35">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_18" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_36">
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_23">
+                       <property name="font">
+                        <font>
+                         <family>Poppins SemiBold</family>
+                         <pointsize>10</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Total No. of Products</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_75" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_32">
+                     <property name="leftMargin">
+                      <number>12</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_4">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>:/iCons/icons/coffee-cup4.png</normaloff>:/iCons/icons/coffee-cup4.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="DashTotalProducts">
+                       <property name="font">
+                        <font>
+                         <family>Poppins Black</family>
+                         <pointsize>18</pointsize>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>17</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_4" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>360</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: #3B3B3B;
+border-radius:10px;
+</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="font">
+                   <font>
+                    <family>Poppins SemiBold</family>
+                    <pointsize>12</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Sales</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: white;
+</string>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="DashboardTable">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>50</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QTableWidget {
+    background-color: #1F1F1F;
+    border-radius: 3px;
+    border: 1px solid rgb(50, 50, 50);
+	color:white;
+}
+
+QTableWidget::section {
+    border: none;
+    border-bottom: 1px solid #d0c6ff;
+    text-align: center; /* Set text alignment to center */
+    padding: 3px 5px;
+}
+
+QHeaderView::section {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    text-align: center; /* Set text alignment to center */
+    padding: 2px 4px;
+}
+
+QTableView::item {
+    color: white;
+    padding: 5px;
+    text-align: center; /* Set text alignment to center */
+}
+
+QTableView::item:alternate {
+    background-color: #272727; 
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #3B3B3B;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #606060;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:hover {
+    opacity: 0.7;
+}
+</string>
+                  </property>
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                  </property>
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>true</bool>
+                  </property>
+                  <attribute name="horizontalHeaderCascadingSectionResizes">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderStretchLastSection">
+                   <bool>false</bool>
+                  </attribute>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <row>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </row>
+                  <column>
+                   <property name="text">
+                    <string>Date</string>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Inter SemiBold</family>
+                     <pointsize>10</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Sales</string>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Inter SemiBold</family>
+                     <pointsize>10</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="add_product">
@@ -2311,6 +2317,9 @@ QScrollBar::sub-page:vertical {
 QScrollBar:hover {
     opacity: 0.7;
 }</string>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
                    </property>
                    <property name="dragEnabled">
                     <bool>false</bool>
@@ -2870,6 +2879,9 @@ QScrollBar::sub-page:vertical {
 QScrollBar:hover {
     opacity: 0.7;
 }</string>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
                    </property>
                    <property name="dragEnabled">
                     <bool>false</bool>
@@ -3435,6 +3447,9 @@ QScrollBar::sub-page:vertical {
 QScrollBar:hover {
     opacity: 0.7;
 }</string>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
                    </property>
                    <property name="dragEnabled">
                     <bool>false</bool>
@@ -4233,8 +4248,14 @@ QScrollBar:hover {
                       <property name="horizontalScrollBarPolicy">
                        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                      </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                       </property>
                       <property name="sortingEnabled">
                        <bool>false</bool>
@@ -4456,8 +4477,14 @@ QScrollBar:hover {
                       <property name="horizontalScrollBarPolicy">
                        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                      </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                       </property>
                       <property name="sortingEnabled">
                        <bool>false</bool>
@@ -4679,8 +4706,14 @@ QScrollBar:hover {
                       <property name="horizontalScrollBarPolicy">
                        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                      </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                       </property>
                       <property name="sortingEnabled">
                        <bool>false</bool>
@@ -4902,8 +4935,14 @@ QScrollBar:hover {
                       <property name="horizontalScrollBarPolicy">
                        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                      </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                       </property>
                       <property name="sortingEnabled">
                        <bool>false</bool>
@@ -5152,8 +5191,14 @@ QScrollBar:hover {
                       <property name="horizontalScrollBarPolicy">
                        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                       </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                      </property>
                       <property name="alternatingRowColors">
                        <bool>true</bool>
+                      </property>
+                      <property name="selectionBehavior">
+                       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                       </property>
                       <property name="sortingEnabled">
                        <bool>false</bool>

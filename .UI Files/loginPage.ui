@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>534</height>
+    <width>947</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,7 +48,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resource1_rc.qrc">
+          <iconset>
            <normaloff>:/iCons/icons/CoffitoLogo (2).png</normaloff>:/iCons/icons/CoffitoLogo (2).png</iconset>
          </property>
          <property name="iconSize">

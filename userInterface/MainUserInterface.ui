@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1106</width>
+    <width>1098</width>
     <height>576</height>
    </rect>
   </property>
@@ -285,6 +285,9 @@ QScrollBar:hover {
                 <property name="horizontalScrollBarPolicy">
                  <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                 </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
                 <property name="dragEnabled">
                  <bool>false</bool>
                 </property>
@@ -310,7 +313,7 @@ QScrollBar:hover {
                  <number>30</number>
                 </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>100</number>
+                 <number>130</number>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
@@ -695,6 +698,9 @@ QScrollBar:hover {
                 <property name="horizontalScrollBarPolicy">
                  <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
                 </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                </property>
                 <property name="dragEnabled">
                  <bool>false</bool>
                 </property>
@@ -720,7 +726,7 @@ QScrollBar:hover {
                  <number>30</number>
                 </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>100</number>
+                 <number>130</number>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
@@ -1419,126 +1425,15 @@ QPushButton:hover {
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QWidget" name="search_frame_prod_2" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>200</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">#search_frame_prod_2{
-
-	border-radius: 15px;
-	background-color:#252525;
-}
-#search_frame_prod_2 QPushButton{
-	
-	padding: 5px 5px;
-	border-radius:5px;
-
-	
-}
-#search_frame_prod_2 QLineEdit{
-	border: none;
-	color: white;
-
-}
-
-#search_frame_prod_2 QPushButton::pressed {
-
-	padding-left:10px;
-
-}
-</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_17">
-             <property name="leftMargin">
-              <number>2</number>
-             </property>
-             <property name="topMargin">
-              <number>2</number>
-             </property>
-             <property name="rightMargin">
-              <number>2</number>
-             </property>
-             <property name="bottomMargin">
-              <number>2</number>
-             </property>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_31">
-               <property name="spacing">
-                <number>2</number>
-               </property>
-               <property name="leftMargin">
-                <number>2</number>
-               </property>
-               <property name="topMargin">
-                <number>2</number>
-               </property>
-               <property name="rightMargin">
-                <number>2</number>
-               </property>
-               <item>
-                <widget class="QPushButton" name="searchItemBtn">
-                 <property name="minimumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>25</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: none;
-border-radius:15px;
-</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset>
-                   <normaloff>:/iCons/icons/icons8-search-26.png</normaloff>:/iCons/icons/icons8-search-26.png</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="searchMenuItem">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(37, 37, 37);</string>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
-         <widget class="QWidget" name="page">
+         <widget class="QWidget" name="dashboard">
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
             <widget class="QScrollArea" name="scrollArea">
@@ -1588,7 +1483,7 @@ QScrollBar:hover {
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>478</width>
+                <width>470</width>
                 <height>462</height>
                </rect>
               </property>
@@ -1598,7 +1493,39 @@ QScrollBar:hover {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_2"/>
+         <widget class="QWidget" name="page_2">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QPushButton" name="directToDashboard">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: none;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../dashBg.qrc">
+               <normaloff>:/dashBg/Downloads/LowCaf.png</normaloff>:/dashBg/Downloads/LowCaf.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>453</width>
+               <height>343</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -1927,6 +1854,7 @@ QLabel{
   <include location="../main_resource.qrc"/>
   <include location="../resourcesLatest.qrc"/>
   <include location="../res.qrc"/>
+  <include location="../dashBg.qrc"/>
  </resources>
  <connections>
   <connection>

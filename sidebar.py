@@ -629,13 +629,12 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 JOIN PRODUCT P ON OI.PROD_ID = P.PROD_ID
                 GROUP BY OI.PROD_ID, P.PROD_NAME
                 ORDER BY total_sold DESC
-                LIMIT 4
+                LIMIT 9
             """
 
             cur.execute(select_bestselling)
 
-            
-            top_products = cur.fetchmany(9)
+            top_products = cur.fetchall()
 
             # List of best-selling labels
             best_selling_labels = [
@@ -643,11 +642,11 @@ class mySideBar(QMainWindow, Ui_MainWindow):
                 self.bestSell5, self.bestSell6, self.bestSell7, self.bestSell8, self.bestSell9
             ]
 
-            #CLEAR LABEL 
+            # Clear labels
             for label in best_selling_labels:
                 label.setText("")
 
-            #DISPLAY BESTSELLING
+            # Display best-selling products
             for i in range(len(top_products)):
                 product_name, total_sold = top_products[i]
                 best_selling_labels[i].setText(product_name)
@@ -656,6 +655,7 @@ class mySideBar(QMainWindow, Ui_MainWindow):
             self.conn.rollback()
             print(error)
             self.show_message_box("Error", f"{error}", QMessageBox.Critical)
+
  
 
        

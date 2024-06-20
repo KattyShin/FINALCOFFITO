@@ -48,6 +48,7 @@ class Login_MainWindow(QMainWindow):
         self.conn = None  
         self.setupUi(self)
         self.userInterface = userInterface()
+        self.setWindowIcon(QIcon(r'C:\Users\Dennis\Desktop\POS System Coffito\CoffitoLogo (40 x 40 px).png'))
 
 
     def connect_to_database(self):
